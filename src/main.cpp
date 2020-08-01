@@ -7,6 +7,9 @@
 #include "Eigen-3.3/Eigen/QR"
 #include "helpers.h"
 #include "json.hpp"
+#include"spline.h"
+#include "car.h"
+
 
 // for convenience
 using nlohmann::json;
@@ -17,11 +20,11 @@ int main() {
   uWS::Hub h;
 
   // Load up map values for waypoint's x,y,s and d normalized normal vectors
-  vector<double> map_waypoints_x;
-  vector<double> map_waypoints_y;
-  vector<double> map_waypoints_s;
-  vector<double> map_waypoints_dx;
-  vector<double> map_waypoints_dy;
+  vector<double> map_waypoints_x{};
+  vector<double> map_waypoints_y{};
+  vector<double> map_waypoints_s{};
+  vector<double> map_waypoints_dx{};
+  vector<double> map_waypoints_dy{};
 
   // Waypoint map to read from
   string map_file_ = "../data/highway_map.csv";
@@ -32,6 +35,8 @@ int main() {
 
   string line;
   while (getline(in_map_, line)) {
+    //std::cout<<"we are in"<<std::endl;
+    
     std::istringstream iss(line);
     double x;
     double y;
@@ -97,8 +102,21 @@ int main() {
            * TODO: define a path made up of (x,y) points that the car will visit
            *   sequentially every .02 seconds
            */
-
-
+		  
+          
+          /*
+          std::cout<<"vectors size: "<<map_waypoints_x.size()<<","<<map_waypoints_y.size()<<
+            ","<<map_waypoints_s.size()<<std::endl;
+          std::cout<<"InfoAboutTheCurrentLocation"<<std::endl<<std::flush;
+         */
+          car carCurr(car_x,car_y,car_s,car_d,car_yaw,2,car_speed);
+          std::cout<<"Car velocity: "<<car_speed<<","<<carCurr._speed<<std::endl;          
+          
+          generateTrajectory(previous_path_x,previous_path_y,next_x_vals,next_y_vals,carCurr,
+                              map_waypoints_x,map_waypoints_y,map_waypoints_s,47.5);    
+          
+          //car_speed=carCurr._speed;
+	  //END ------------------------
           msgJson["next_x"] = next_x_vals;
           msgJson["next_y"] = next_y_vals;
 
