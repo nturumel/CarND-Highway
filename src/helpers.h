@@ -4,10 +4,13 @@
 #include <math.h>
 #include <string>
 #include <vector>
+#include "car.h"
+#include "spline.h"
 
 // for convenience
 using std::string;
 using std::vector;
+
 
 // Checks if the SocketIO event has JSON data.
 // If there is data the JSON object in string format will be returned,
@@ -127,9 +130,11 @@ vector<double> getFrenet(double x, double y, double theta,
 }
 
 // Transform from Frenet s,d coordinates to Cartesian x,y
-vector<double> getXY(double s, double d, const vector<double> &maps_s, 
+vector<double> getXY(double s, double d, 
+                     const vector<double> &maps_s,
                      const vector<double> &maps_x, 
-                     const vector<double> &maps_y) {
+                     const vector<double> &maps_y) 
+{
   int prev_wp = -1;
 
   while (s > maps_s[prev_wp+1] && (prev_wp < (int)(maps_s.size()-1))) {
@@ -153,5 +158,160 @@ vector<double> getXY(double s, double d, const vector<double> &maps_s,
 
   return {x,y};
 }
+void generateTrajectory(
+  vector<double> previous_path_x, 
+  vector<double> previous_path_y,
+  vector<double>& next_x_vals, 
+  vector<double>& next_y_vals, 
+  car& carCurr,
+  vector<double> map_waypoints_x, 
+  vector<double> map_waypoints_y, 
+  vector<double> map_waypoints_s,
+  double ref_vel)
+{
+  double lane_width=4;
+  
+  double car_vel=carCurr._speed; 
+  double ref_x=carCurr._x;
+  double ref_y=carCurr._y;
+  double ref_yaw=deg2rad(carCurr._yaw);
+  double lane=carCurr._endLane;
+  
+  double vel_add=0;
+  if(ref_vel<car_vel)
+  {
+  	vel_add=-0.224;
+  }
+  else if(ref_vel>car_vel)
+  {
+  	vel_add=+0.224;
+  }
+  
+  
+  int previous_path_size=previous_path_x.size();
+  vector<double> ptsx{};
+  vector<double> ptsy{};
+ 
+  if(previous_path_size<2)
+  {
+    double prev_car_x = carCurr._x-cos(carCurr._yaw); 
+    double prev_car_y = carCurr._y-sin(carCurr._yaw); 
 
+    ptsx.push_back(prev_car_x);
+    ptsx.push_back(ref_x);
+
+    ptsy.push_back(prev_car_y);
+    ptsy.push_back(ref_y);
+  }
+  else
+  {
+    ref_x=previous_path_x[previous_path_size-1];
+    ref_y=previous_path_y[previous_path_size-1];
+
+
+    double prev_ref_x=previous_path_x[previous_path_size-2];
+    double prev_ref_y=previous_path_y[previous_path_size-2];
+    ref_yaw=atan2(ref_y-prev_ref_y,ref_x-prev_ref_x);
+
+    //Use two points to tangent
+    ptsx.push_back( prev_ref_x);
+    ptsx.push_back( ref_x);
+
+    ptsy.push_back( prev_ref_y);
+    ptsy.push_back( ref_y);
+  }
+
+  //std::cout<<"creating frenet"<<std::endl;
+  
+  //In Frenet
+  vector<double> next_wp0= getXY((carCurr._s+30),(lane_width*(lane-1)+lane_width/2)
+  ,map_waypoints_s,map_waypoints_x,map_waypoints_y);
+  vector<double> next_wp1= getXY((carCurr._s+60),(lane_width*(lane-1)+lane_width/2),
+  map_waypoints_s,map_waypoints_x,map_waypoints_y);
+  vector<double> next_wp2= getXY((carCurr._s+90),(lane_width*(lane-1)+lane_width/2),
+  map_waypoints_s,map_waypoints_x,map_waypoints_y);
+
+  
+  ptsx.push_back(next_wp0[0]);
+  ptsx.push_back(next_wp1[0]);
+  ptsx.push_back(next_wp2[0]);
+
+  ptsy.push_back(next_wp0[1]);
+  ptsy.push_back(next_wp1[1]);
+  ptsy.push_back(next_wp2[1]);
+
+  
+  //transform to car coordinates
+  for(int i=0;i<ptsx.size();++i)
+  {
+    double shift_x=ptsx[i]-ref_x;
+    double shift_y=ptsy[i]-ref_y;
+    
+    ptsx[i]=(shift_x*cos(0-ref_yaw)-shift_y*sin(0-ref_yaw));
+    ptsy[i]=(shift_x*sin(0-ref_yaw)+shift_y*cos(0-ref_yaw));
+  }
+  
+  //create a spline
+  tk::spline s;
+  s.set_points(ptsx,ptsy);
+ 
+  //std::cout<<"created spline"<<std::endl;
+  
+  //we are pushing back all the pts left from our previous cycle
+  for(int i=0;i<previous_path_size;++i)
+  {
+    next_x_vals.push_back(previous_path_x[i]);
+    next_y_vals.push_back(previous_path_y[i]);
+  } 
+  
+  
+  //we now select points on the spline
+  double target_x=30;
+  double target_y=s(target_x);
+  double d=sqrt(target_x*target_x+target_y*target_y);
+  
+  double add_on=0;
+  /*
+  technically we do not need to transform ...
+  we can keep things the same.. just add x_point+=ref_x
+  deal with this later, for some reason, keeping it as is is creating spline problem
+  print out and see with and without transform what you get
+  
+  */
+  //std::cout<<"starting traj"<<std::endl;
+  (car_vel)+=vel_add;
+  int N = d/(0.02*(car_vel)/2.24);
+    
+    //std::cout<<"velocity: "<<car_vel<<std::endl;
+  	
+    
+  while(next_x_vals.size()<50)
+  {
+    double add=(target_x)/N;
+    double x_point=add_on+add;
+    double y_point=s(x_point);
+    
+    add_on=x_point;
+    
+    //transform to global
+    double x_ref=x_point;
+    double y_ref=y_point;
+    
+    x_point=(x_ref*cos(ref_yaw)-y_ref*sin(ref_yaw));
+    y_point=(x_ref*sin(ref_yaw)+y_ref*cos(ref_yaw));
+    
+    x_point +=ref_x;
+    y_point +=ref_y;
+    
+    // push into next vec
+    next_x_vals.push_back(x_point);
+    next_y_vals.push_back(y_point);
+    
+    carCurr._x+=add;    
+  }
+  
+  carCurr._speed=car_vel; 
+  return;
+  
+}
 #endif  // HELPERS_H
