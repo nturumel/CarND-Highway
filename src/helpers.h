@@ -3,6 +3,7 @@
 
 #include <math.h>
 #include <string>
+#include <algorithm>  
 #include <vector>
 #include "car.h"
 #include "spline.h"
@@ -11,7 +12,7 @@
 using std::string;
 using std::vector;
 
-
+double max_acc=0.448;
 // Checks if the SocketIO event has JSON data.
 // If there is data the JSON object in string format will be returned,
 //   else the empty string "" will be returned.
@@ -178,15 +179,16 @@ void generateTrajectory(
   double lane=carCurr._endLane;
   
   double vel_add=0;
+  double delta=fabs(ref_vel-car_vel);
+  int steps=1;
   if(ref_vel<car_vel)
   {
-  	vel_add=-0.224;
+  	vel_add=(-1*std::min<double>((delta/steps),max_acc));
   }
   else if(ref_vel>car_vel)
   {
-  	vel_add=+0.224;
+  	vel_add=std::min<double>((delta/steps),max_acc);
   }
-  
   
   int previous_path_size=previous_path_x.size();
   vector<double> ptsx{};
@@ -221,7 +223,6 @@ void generateTrajectory(
     ptsy.push_back( ref_y);
   }
 
-  //std::cout<<"creating frenet"<<std::endl;
   
   //In Frenet
   vector<double> next_wp0= getXY((carCurr._s+30),(lane_width*(lane-1)+lane_width/2)
@@ -255,7 +256,6 @@ void generateTrajectory(
   tk::spline s;
   s.set_points(ptsx,ptsy);
  
-  //std::cout<<"created spline"<<std::endl;
   
   //we are pushing back all the pts left from our previous cycle
   for(int i=0;i<previous_path_size;++i)
@@ -278,11 +278,9 @@ void generateTrajectory(
   print out and see with and without transform what you get
   
   */
-  //std::cout<<"starting traj"<<std::endl;
   (car_vel)+=vel_add;
   int N = d/(0.02*(car_vel)/2.24);
     
-    //std::cout<<"velocity: "<<car_vel<<std::endl;
   	
     
   while(next_x_vals.size()<50)
