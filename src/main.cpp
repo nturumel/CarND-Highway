@@ -35,8 +35,6 @@ int main() {
 
   string line;
   while (getline(in_map_, line)) {
-    //std::cout<<"we are in"<<std::endl;
-    
     std::istringstream iss(line);
     double x;
     double y;
@@ -91,7 +89,7 @@ int main() {
 
           // Sensor Fusion Data, a list of all other cars on the same side 
           //   of the road.
-          auto sensor_fusion = j[1]["sensor_fusion"];
+          vector<vector<double>> sensor_fusion = j[1]["sensor_fusion"];
 
           json msgJson;
 
@@ -103,20 +101,14 @@ int main() {
            *   sequentially every .02 seconds
            */
 		  
+          //START ----------------------
           
-          /*
-          std::cout<<"vectors size: "<<map_waypoints_x.size()<<","<<map_waypoints_y.size()<<
-            ","<<map_waypoints_s.size()<<std::endl;
-          std::cout<<"InfoAboutTheCurrentLocation"<<std::endl<<std::flush;
-         */
           car carCurr(car_x,car_y,car_s,car_d,car_yaw,2,car_speed);
-          std::cout<<"Car velocity: "<<car_speed<<","<<carCurr._speed<<std::endl;          
           
           generateTrajectory(previous_path_x,previous_path_y,next_x_vals,next_y_vals,carCurr,
                               map_waypoints_x,map_waypoints_y,map_waypoints_s,47.5);    
           
-          //car_speed=carCurr._speed;
-	  //END ------------------------
+          //END ------------------------
           msgJson["next_x"] = next_x_vals;
           msgJson["next_y"] = next_y_vals;
 
@@ -151,4 +143,12 @@ int main() {
   }
   
   h.run();
+}
+
+std::pair<int,double> costFunc(vector<vector<double>>& sensor_fusion)
+{
+  
+  
+  
+  
 }
