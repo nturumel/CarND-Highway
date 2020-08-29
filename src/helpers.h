@@ -13,6 +13,8 @@ using std::string;
 using std::vector;
 
 double max_acc=0.448;
+double lane_width=4;
+
 // Checks if the SocketIO event has JSON data.
 // If there is data the JSON object in string format will be returned,
 //   else the empty string "" will be returned.
@@ -168,33 +170,40 @@ void generateTrajectory(
   vector<double> map_waypoints_x, 
   vector<double> map_waypoints_y, 
   vector<double> map_waypoints_s,
-  double ref_vel)
+  double ref_vel, int finalLane, int size)
 {
-  double lane_width=4;
   
-  double car_vel=carCurr._speed; 
-  double ref_x=carCurr._x;
-  double ref_y=carCurr._y;
-  double ref_yaw=deg2rad(carCurr._yaw);
-  double lane=carCurr._endLane;
+  double& car_vel = carCurr._speed; 
+  double ref_x = carCurr._x;
+  double ref_y = carCurr._y;
+  double ref_yaw = deg2rad(carCurr._yaw);
+  int& lane = finalLane;
+  
   
   double vel_add=0;
   double delta=fabs(ref_vel-car_vel);
   int steps=1;
-  if(ref_vel<car_vel)
+
+  if(ref_vel < car_vel)
   {
   	vel_add=(-1*std::min<double>((delta/steps),max_acc));
   }
-  else if(ref_vel>car_vel)
+  else if(ref_vel > car_vel)
   {
   	vel_add=std::min<double>((delta/steps),max_acc);
   }
-  
-  int previous_path_size=previous_path_x.size();
+  if (carCurr._lane != lane)
+  {
+      vel_add *= 0.8;
+  }
+  std::cout << " Car values: " << car_vel << "," << ref_x << "," << ref_y << "," << ref_yaw << "," << lane << "," << vel_add << std::endl;
+  int previous_path_size = previous_path_x.size();
   vector<double> ptsx{};
   vector<double> ptsy{};
+
+  std::cout << "previous_path_size: " << previous_path_size << std::endl;
  
-  if(previous_path_size<2)
+  if(previous_path_size < 2)
   {
     double prev_car_x = carCurr._x-cos(carCurr._yaw); 
     double prev_car_y = carCurr._y-sin(carCurr._yaw); 
@@ -225,11 +234,11 @@ void generateTrajectory(
 
   
   //In Frenet
-  vector<double> next_wp0= getXY((carCurr._s+30),(lane_width*(lane-1)+lane_width/2)
+  vector<double> next_wp0= getXY((carCurr._s+30),(lane_width*(lane)+lane_width/2)
   ,map_waypoints_s,map_waypoints_x,map_waypoints_y);
-  vector<double> next_wp1= getXY((carCurr._s+60),(lane_width*(lane-1)+lane_width/2),
+  vector<double> next_wp1= getXY((carCurr._s+60),(lane_width*(lane)+lane_width/2),
   map_waypoints_s,map_waypoints_x,map_waypoints_y);
-  vector<double> next_wp2= getXY((carCurr._s+90),(lane_width*(lane-1)+lane_width/2),
+  vector<double> next_wp2= getXY((carCurr._s+90),(lane_width*(lane)+lane_width/2),
   map_waypoints_s,map_waypoints_x,map_waypoints_y);
 
   
@@ -241,7 +250,6 @@ void generateTrajectory(
   ptsy.push_back(next_wp1[1]);
   ptsy.push_back(next_wp2[1]);
 
-  
   //transform to car coordinates
   for(int i=0;i<ptsx.size();++i)
   {
@@ -271,19 +279,15 @@ void generateTrajectory(
   double d=sqrt(target_x*target_x+target_y*target_y);
   
   double add_on=0;
-  /*
-  technically we do not need to transform ...
-  we can keep things the same.. just add x_point+=ref_x
-  deal with this later, for some reason, keeping it as is is creating spline problem
-  print out and see with and without transform what you get
-  
-  */
   (car_vel)+=vel_add;
+  //std::cout << " Car vel requested: " << ref_vel << std::endl;
+
+  //std::cout << " Car vel: " << car_vel << std::endl;
+
   int N = d/(0.02*(car_vel)/2.24);
     
-  	
     
-  while(next_x_vals.size()<50)
+  while(next_x_vals.size()<size)
   {
     double add=(target_x)/N;
     double x_point=add_on+add;
@@ -292,7 +296,7 @@ void generateTrajectory(
     add_on=x_point;
     
     //transform to global
-    double x_ref=x_point;
+    double x_ref=x_point; 
     double y_ref=y_point;
     
     x_point=(x_ref*cos(ref_yaw)-y_ref*sin(ref_yaw));
@@ -308,7 +312,52 @@ void generateTrajectory(
     carCurr._x+=add;    
   }
   
-  carCurr._speed=car_vel; 
+  //check if end lane reached if not keep adding .. 
+  bool hitLane = true;
+  while (hitLane)
+  {
+      double backX = next_x_vals[next_x_vals.size() - 1];
+      double backY = next_y_vals[next_y_vals.size() - 1];
+
+      double prevBackX = next_x_vals[next_x_vals.size() - 2];
+      double prevBackY = next_y_vals[next_y_vals.size() - 2];
+
+      double theta = atan2(backY - prevBackY, backX - prevBackX);
+
+      vector<double> frenet = getFrenet(backX, backY, theta, map_waypoints_x, map_waypoints_y);
+
+      double& d = frenet[1];
+      double lane = d / lane_width;
+      if (lane == finalLane)
+      {
+          hitLane = false;
+      }
+      else
+      {
+          double add = (target_x) / N;
+          double x_point = add_on + add;
+          double y_point = s(x_point);
+
+          add_on = x_point;
+
+          //transform to global
+          double x_ref = x_point;
+          double y_ref = y_point;
+
+          x_point = (x_ref * cos(ref_yaw) - y_ref * sin(ref_yaw));
+          y_point = (x_ref * sin(ref_yaw) + y_ref * cos(ref_yaw));
+
+          x_point += ref_x;
+          y_point += ref_y;
+
+          // push into next vec
+          next_x_vals.push_back(x_point);
+          next_y_vals.push_back(y_point);
+
+          carCurr._x += add;
+      }
+  }
+
   return;
   
 }
