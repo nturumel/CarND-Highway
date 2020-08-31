@@ -170,7 +170,7 @@ void generateTrajectory(
   vector<double> map_waypoints_x, 
   vector<double> map_waypoints_y, 
   vector<double> map_waypoints_s,
-  double ref_vel, int finalLane, int size)
+  double ref_vel, int finalLane, int size = 20)
 {
   
   double& car_vel = carCurr._speed; 
@@ -196,13 +196,12 @@ void generateTrajectory(
   {
       vel_add *= 0.8;
   }
-  std::cout << " Car values: " << car_vel << "," << ref_x << "," << ref_y << "," << ref_yaw << "," << lane << "," << vel_add << std::endl;
   int previous_path_size = previous_path_x.size();
   vector<double> ptsx{};
   vector<double> ptsy{};
 
-  std::cout << "previous_path_size: " << previous_path_size << std::endl;
- 
+  std::cout << " Car values: " << car_vel << "," << lane << "," << vel_add << std::endl;
+  
   if(previous_path_size < 2)
   {
     double prev_car_x = carCurr._x-cos(carCurr._yaw); 
@@ -280,10 +279,7 @@ void generateTrajectory(
   
   double add_on=0;
   (car_vel)+=vel_add;
-  //std::cout << " Car vel requested: " << ref_vel << std::endl;
-
-  //std::cout << " Car vel: " << car_vel << std::endl;
-
+  
   int N = d/(0.02*(car_vel)/2.24);
     
     
@@ -314,6 +310,7 @@ void generateTrajectory(
   
   //check if end lane reached if not keep adding .. 
   bool hitLane = true;
+  int after = 0;
   while (hitLane)
   {
       double backX = next_x_vals[next_x_vals.size() - 1];
@@ -323,14 +320,16 @@ void generateTrajectory(
       double prevBackY = next_y_vals[next_y_vals.size() - 2];
 
       double theta = atan2(backY - prevBackY, backX - prevBackX);
+      theta = rad2deg(theta);
 
       vector<double> frenet = getFrenet(backX, backY, theta, map_waypoints_x, map_waypoints_y);
 
-      double& d = frenet[1];
-      double lane = d / lane_width;
+      int lane = frenet[1] / lane_width; // this is not working 
+      std::cout << "theta: " << theta << std::endl;
       if (lane == finalLane)
       {
           hitLane = false;
+          after++;
       }
       else
       {

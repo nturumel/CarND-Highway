@@ -106,14 +106,17 @@ int main() {
                              */
 
                              //START ----------------------
+                            cout << endl << "New main Call" << endl;
+                            int prevSize = previous_path_x.size();
                             car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
-                            BehaviourPlanner b(carCurr, previous_path_x.size(), sensor_fusion);
-                            if (b.collision() || previous_path_x.size() <= 10)
+                            BehaviourPlanner b(carCurr, prevSize, sensor_fusion);
+                            if (b.collision())
                             {
+                                std::cout << "previous size" << prevSize << std::endl;
                                 pair<double, int> nextState = b.choseAction();
+                                std::cout << "Collision" << std::endl;
                                 std::cout << "Next action gotten" << std::endl;
                                 std::cout << nextState.first << "," << nextState.second << std::endl;
-                                int size = carCurr._lane == nextState.second ? 20 : 20;
                                 generateTrajectory(previous_path_x,
                                     previous_path_y,
                                     next_x_vals,
@@ -122,14 +125,31 @@ int main() {
                                     map_waypoints_x,
                                     map_waypoints_y,
                                     map_waypoints_s,
-                                    nextState.first, nextState.second, size);
+                                    nextState.first, nextState.second, 10);
+                            }
+                            else if (previous_path_x.size() <= 10)
+                            {
+                                pair<double, int> nextState = b.choseAction();
+                                std::cout << "low path" << std::endl;
+                                std::cout << "Next action gotten" << std::endl;
+                                std::cout << nextState.first << "," << nextState.second << std::endl;
+                                generateTrajectory(previous_path_x,
+                                    previous_path_y,
+                                    next_x_vals,
+                                    next_y_vals,
+                                    carCurr,
+                                    map_waypoints_x,
+                                    map_waypoints_y,
+                                    map_waypoints_s,
+                                    nextState.first, nextState.second,15);
+
                             }
                             else
                             {
                                 next_x_vals = (previous_path_x);
                                 next_y_vals = (previous_path_y);
                             }
-
+                            
 
                             //END ------------------------
                             msgJson["next_x"] = next_x_vals;

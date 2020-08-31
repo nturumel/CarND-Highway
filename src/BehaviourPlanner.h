@@ -13,16 +13,18 @@
 using namespace std;
 
 static double maxReturn = 1e6;
-double comfortFactor, speedFactor, bufferFactor, safetyFactor;
+double laneChangeFactor, speedChangeFactor, speedFactor, bufferFactor, safetyFactor;
 void streamIn()
 {
 	ifstream in;
 	in.open("/home/workspace/CarND-Path-Planning-Project/src/values.txt");
-	in >> comfortFactor;
+	in >> laneChangeFactor;
+	in >> speedChangeFactor;
 	in >> speedFactor;
 	in >> bufferFactor;
 	in >> safetyFactor;
-	//cout << "The values are: " << comfortFactor << "," << speedFactor << "," << bufferFactor << "," << safetyFactor << endl;
+	cout << "The order is: " << "laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor" << endl;
+	cout << "The values are: " << laneChangeFactor << "," << speedChangeFactor << "," << speedFactor << "," << bufferFactor << "," << safetyFactor << endl;
 	in.close();
 }
 
@@ -34,9 +36,8 @@ private:
 	car& _carCurr;
 	int _lanes = 3;
 	int _laneWidth = 4;
-	double _maxSpeed = 47.5;
+	double _maxSpeed = 45;
 	double _redZone = 30.0;
-	double _collideZone = _redZone;
 	vector <double> _maxLaneSpeeds;
 	vector<vector<car*>> _relCars;
 
@@ -104,7 +105,7 @@ private:
 
 		}
 		
-		/*
+		
 
 		// debug info
 		cout << "hashcars" << endl;
@@ -133,13 +134,32 @@ private:
 		{
 			cout << "i: " << i << ":" << _maxLaneSpeeds[i] << endl;
 		}
-		*/
+		cout << "Sensed data end" << endl;
+		
 	}
 
 	// cost functions
-	double comfortCost(int lane)
+	double laneChangeCost(int lane)
 	{
 		return (fabs(_carCurr._lane - lane));
+	}
+	double speedChangeCost(int lane)
+	{
+		car* front = _relCars[lane][1];
+		if (!front)
+		{
+			return 0;
+		}
+		
+		int N = (front->_distance)/(15 * 0.02 * _carCurr._speed);
+		double deltaVel = fabs(_carCurr._speed - _maxLaneSpeeds[lane]);
+
+		if (deltaVel > N * 0.448)
+		{
+			return maxReturn;
+		}
+
+		return deltaVel;
 	}
 	double speedCost(int lane)
 	{
@@ -238,9 +258,6 @@ private:
 public:
 	BehaviourPlanner(car& carCurr, int prevSize, vector<vector<double>>& sensor_fusion) :_carCurr(carCurr), _prevSize(prevSize)
 	{
-		// initialise collision zone
-		_collideZone = _carCurr._speed * 0.02 * _prevSize;
-
 		// initialise hashCar
 		for (auto sensed : sensor_fusion)
 		{
@@ -258,7 +275,16 @@ public:
 			if (0 <= lane && lane < _lanes)
 			{
 				car temp(x, y, s, d, yaw, lane, speed);
-				temp._distance = (s + _prevSize * 0.02 * speed) - _carCurr._s;
+				if (lane == _carCurr._lane && _carCurr._s > s)
+				{
+					cout << "Right Behind" << endl;
+					temp._distance = (s) - _carCurr._s;
+
+				}
+				else
+				{
+					temp._distance = (s + _prevSize * 0.02 * speed) - _carCurr._s;
+				}
 				_hashCar[lane].emplace_back(temp);
 			}
 		}
@@ -273,7 +299,7 @@ public:
 		car* front = _relCars[_carCurr._lane][1];
 		if (front)
 		{
-			return ((_relCars[_carCurr._lane][1])->_distance < _collideZone);
+			return ((_relCars[_carCurr._lane][1])->_distance < _redZone);
 
 		}
 		return false;
@@ -285,12 +311,11 @@ public:
 		double max = maxReturn;
 		pair<double, int> result = make_pair(_maxLaneSpeeds[_carCurr._lane], _carCurr._lane);
 		
-		// low speed keep in lane
-		if (_carCurr._speed < 30)
+		if (_carCurr._speed < 10)
 		{
 			return result;
 		}
-
+		
 		for (int i = 0; i < _lanes; ++i)
 		{
 			if (i > _carCurr._lane + 1 || i < _carCurr._lane - 1)
@@ -300,10 +325,29 @@ public:
 			else
 			{
 				double cost = 0;
-				cost += comfortFactor * comfortCost(i);
-				cost += speedFactor * speedCost(i);
-				cost += bufferFactor * bufferCost(i);
-				cost += safetyFactor * safetyCost(i);
+				
+				double costAdd;
+				costAdd = laneChangeCost(i);
+				cout << "Lane change cost: " << costAdd << endl;
+				cost += laneChangeFactor * costAdd;
+				
+				costAdd = speedChangeCost(i);
+				cout << "Speed change cost: " << costAdd << endl;
+				cost += speedChangeFactor * costAdd;
+
+				costAdd = speedCost(i);
+				cout << "Max speed change cost: " << costAdd << endl;
+				cost += speedFactor * costAdd;
+
+				costAdd = bufferCost(i);
+				cout << "Buffer cost: " << costAdd << endl;
+				cost += bufferFactor * costAdd;
+
+
+				costAdd = safetyCost(i);
+				cout << "Safety cost: " << costAdd << endl;
+				cost += safetyFactor * costAdd;
+
 				if (max > cost)
 				{
 					max = cost;
