@@ -1,0 +1,140 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of CMakeCXXCompilerId.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are build\cmakefiles\3.13.0-rc2\compileridcxx\CMakeCXXCompilerId.cpp, build\cmakefiles\3.5.1\compileridcxx\CMakeCXXCompilerId.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of CMakeCCompilerId.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are build\cmakefiles\3.13.0-rc2\compileridc\CMakeCCompilerId.c, build\cmakefiles\3.5.1\compileridc\CMakeCCompilerId.c.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\btl\libs\blas\main.cpp, src\eigen-3.3\bench\btl\libs\blaze\main.cpp, src\eigen-3.3\bench\btl\libs\gmm\main.cpp, src\eigen-3.3\bench\btl\libs\mtl4\main.cpp, src\eigen-3.3\bench\btl\libs\stl\main.cpp, src\eigen-3.3\bench\btl\libs\tvmet\main.cpp, src\eigen-3.3\bench\btl\libs\ublas\main.cpp, src\main.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of main_adv.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\btl\libs\eigen2\main_adv.cpp, src\eigen-3.3\bench\btl\libs\eigen3\main_adv.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of main_linear.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\btl\libs\eigen2\main_linear.cpp, src\eigen-3.3\bench\btl\libs\eigen3\main_linear.cpp, src\eigen-3.3\bench\btl\libs\tensors\main_linear.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of main_matmat.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\btl\libs\eigen2\main_matmat.cpp, src\eigen-3.3\bench\btl\libs\eigen3\main_matmat.cpp, src\eigen-3.3\bench\btl\libs\tensors\main_matmat.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of main_vecmat.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\btl\libs\eigen2\main_vecmat.cpp, src\eigen-3.3\bench\btl\libs\eigen3\main_vecmat.cpp, src\eigen-3.3\bench\btl\libs\tensors\main_vecmat.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of sparse_product.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\bench\sparse_product.cpp, src\eigen-3.3\test\sparse_product.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of complex_double.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\blas\complex_double.cpp, src\eigen-3.3\lapack\complex_double.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of complex_single.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\blas\complex_single.cpp, src\eigen-3.3\lapack\complex_single.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of double.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\blas\double.cpp, src\eigen-3.3\lapack\double.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of single.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\blas\single.cpp, src\eigen-3.3\lapack\single.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of cholesky.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\lapack\cholesky.cpp, src\eigen-3.3\test\cholesky.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of lu.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\lapack\lu.cpp, src\eigen-3.3\test\lu.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of EulerAngles.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\unsupported\doc\examples\EulerAngles.cpp, src\eigen-3.3\unsupported\test\EulerAngles.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1044,5): warning MSB8027: Two or more files with the name of FFT.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are src\eigen-3.3\unsupported\doc\examples\FFT.cpp, src\eigen-3.3\unsupported\test\FFT.cpp.
+  BehaviourPlanner.cpp
+c1xx : fatal error C1083: Cannot open source file: 'BehaviourPlanner.cpp': No such file or directory
+  CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+  feature_tests.cxx
+  car.cpp
+c1xx : fatal error C1083: Cannot open source file: 'car.cpp': No such file or directory
+  Global.cpp
+c1xx : fatal error C1083: Cannot open source file: 'Global.cpp': No such file or directory
+  helpers.cpp
+c1xx : fatal error C1083: Cannot open source file: 'helpers.cpp': No such file or directory
+  analyze-blocking-sizes.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\analyze-blocking-sizes.cpp(22,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  basicbenchmark.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\BenchUtil.h(5,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchBlasGemm.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchBlasGemm.cpp(11,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchCholesky.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchCholesky.cpp(13,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchEigenSolver.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchEigenSolver.cpp(14,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchFFT.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchFFT.cpp(12,10): fatal error C1083: Cannot open include file: 'bench/BenchUtil.h': No such file or directory
+  benchGeometry.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchGeometry.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchmark-blocking-sizes.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchmark-blocking-sizes.cpp(24,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchmark.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchmark.cpp(5,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchmarkSlice.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchmarkSlice.cpp(5,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchmarkX.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchmarkX.cpp(5,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchmarkXcwise.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchmarkXcwise.cpp(4,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  benchVecAdd.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\benchVecAdd.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  Generating Code...
+  Compiling...
+  bench_gemm.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\bench_gemm.cpp(14,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  bench_norm.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\bench_norm.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  bench_reverse.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\bench_reverse.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  bench_sum.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\bench_sum.cpp(2,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  mean.cxx
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\data\mean.cxx(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  regularize.cxx
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\data\regularize.cxx(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  smooth.cxx
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\data\smooth.cxx(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\blas\main.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\blaze\main.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  btl_blitz.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\blitz\btl_blitz.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  btl_tiny_blitz.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\blitz\btl_tiny_blitz.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  btl_tiny_eigen2.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen2\btl_tiny_eigen2.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_adv.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen2\main_adv.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_linear.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen2\main_linear.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_matmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen2\main_matmat.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_vecmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen2\main_vecmat.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  btl_tiny_eigen3.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen3\btl_tiny_eigen3.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_adv.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen3\main_adv.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_linear.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen3\main_linear.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_matmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen3\main_matmat.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  Generating Code...
+  Compiling...
+  main_vecmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\eigen3\main_vecmat.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\gmm\main.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\mtl4\main.cpp(18,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\stl\main.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_linear.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\tensors\main_linear.cpp(10,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_matmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\tensors\main_matmat.cpp(9,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main_vecmat.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\tensors\main_vecmat.cpp(9,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\tvmet\main.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  main.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\btl\libs\ublas\main.cpp(20,10): fatal error C1083: Cannot open include file: 'utilities.h': No such file or directory
+  check_cache_queries.cpp
+  dense_solvers.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\BenchTimer.h(31,7): error C2059: syntax error: 'volatile'
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\BenchTimer.h(35,7): error C2059: syntax error: 'volatile'
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\BenchTimer.h(38,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  eig33.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\eig33.cpp(40,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  geometry.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\geometry.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Geometry': No such file or directory
+  gemm.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\perf_monitoring\gemm\gemm.cpp(4,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  lazy_gemm.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\perf_monitoring\gemm\lazy_gemm.cpp(4,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  product_threshold.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\product_threshold.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  quatmul.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\quatmul.cpp(2,10): fatal error C1083: Cannot open include file: 'Eigen/Core': No such file or directory
+  quat_slerp.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\quat_slerp.cpp(3,10): fatal error C1083: Cannot open include file: 'Eigen/Geometry': No such file or directory
+  sparse_cholesky.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\sparse_cholesky.cpp : fatal error C1041: cannot open program database 'C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\Debug\vc142.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  sparse_dense_product.cpp
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\sparse_dense_product.cpp : fatal error C1041: cannot open program database 'C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\Debug\vc142.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  Generating Code...
+C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\src\eigen-3.3\bench\check_cache_queries.cpp : fatal error C1090: PDB API call failed, error code '3': C:\Users\nihar\Documents\GitHub\CarND-Path-Planning-Project\Debug\vc142.pdb

@@ -3,14 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Eigen-3.3/Eigen/Core"
-#include "Eigen-3.3/Eigen/QR"
-#include "helpers.h"
 #include "json.hpp"
-#include"spline.h"
-#include "car.h"
 #include "BehaviourPlanner.h"
-
+#include "TrajectoryPlanner.h"
 
 // for convenience
 using nlohmann::json;
@@ -21,7 +16,6 @@ int main() {
 
     uWS::Hub h;
 
-    streamIn();
 
     // Load up map values for waypoint's x,y,s and d normalized normal vectors
     vector<double> map_waypoints_x{};
@@ -97,8 +91,7 @@ int main() {
 
                             json msgJson;
 
-                            vector<double> next_x_vals;
-                            vector<double> next_y_vals;
+                           
 
                             /**
                              * TODO: define a path made up of (x,y) points that the car will visit
@@ -107,50 +100,28 @@ int main() {
 
                              //START ----------------------
                             cout << endl << "New main Call" << endl;
-                            int prevSize = previous_path_x.size();
                             car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
-                            BehaviourPlanner b(carCurr, prevSize, sensor_fusion);
-                            if (b.collision())
-                            {
-                                std::cout << "previous size" << prevSize << std::endl;
-                                pair<double, int> nextState = b.choseAction();
-                                std::cout << "Collision" << std::endl;
-                                std::cout << "Next action gotten" << std::endl;
-                                std::cout << nextState.first << "," << nextState.second << std::endl;
-                                generateTrajectory(previous_path_x,
-                                    previous_path_y,
-                                    next_x_vals,
-                                    next_y_vals,
-                                    carCurr,
-                                    map_waypoints_x,
-                                    map_waypoints_y,
-                                    map_waypoints_s,
-                                    nextState.first, nextState.second, 10);
-                            }
-                            else if (previous_path_x.size() <= 10)
-                            {
-                                pair<double, int> nextState = b.choseAction();
-                                std::cout << "low path" << std::endl;
-                                std::cout << "Next action gotten" << std::endl;
-                                std::cout << nextState.first << "," << nextState.second << std::endl;
-                                generateTrajectory(previous_path_x,
-                                    previous_path_y,
-                                    next_x_vals,
-                                    next_y_vals,
-                                    carCurr,
-                                    map_waypoints_x,
-                                    map_waypoints_y,
-                                    map_waypoints_s,
-                                    nextState.first, nextState.second,15);
-
-                            }
-                            else
-                            {
-                                next_x_vals = (previous_path_x);
-                                next_y_vals = (previous_path_y);
-                            }
                             
+                            cout << endl << "Created behaviour planner" << endl;
+                            BehaviourPlanner b(carCurr, previous_path_x.size(), sensor_fusion);
+                            pair<double, int> next = b.returnNextAction();
 
+                            cout << endl << "got next action" << endl;
+                            cout << next.first << "," << next.second << endl;
+                            
+                            cout << endl << "Created trajectory planner" << endl;
+                            TrajectoryPlanner t;  
+                            vector<vector<double>> nextTraj = t.generateTrajectory
+                            (previous_path_x, previous_path_y, 
+                                carCurr, 
+                            map_waypoints_x, map_waypoints_y, 
+                            map_waypoints_s, next.first, next.second);
+                            cout << endl << "got trajectory " << endl;
+
+
+                            vector<double>& next_x_vals = nextTraj[0];
+                            vector<double>& next_y_vals = nextTraj[1];
+                            
                             //END ------------------------
                             msgJson["next_x"] = next_x_vals;
                             msgJson["next_y"] = next_y_vals;
