@@ -51,7 +51,7 @@ vector<double> getXY(double s, double d,
     const vector<double>& maps_x,
     const vector<double>& maps_y);
 
-void global2Car(vector<double>& inputVec, double refYaw, double refX, double refY);
+void global2Car(vector<double>& ptsx, vector<double>& ptsy, double refYaw, double refX, double refY);
 void car2Global(double x, double y, double refYaw, double refX, double refY);
 
 

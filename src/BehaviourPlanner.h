@@ -25,7 +25,7 @@ private:
 
 
 	// keep track of size of previous point vector
-	int _prevSize = maxUsePrev;
+	int _prevSize;
 
 	// see if collision imminent
 	bool collision();

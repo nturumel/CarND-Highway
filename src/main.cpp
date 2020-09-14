@@ -89,8 +89,7 @@ int main() {
                             //   of the road.
                             vector<vector<double>> sensor_fusion = j[1]["sensor_fusion"];
 
-                            json msgJson;
-
+                            
                            
 
                             /**
@@ -102,6 +101,9 @@ int main() {
                             cout << endl << "New main Call" << endl;
                             car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
                             
+                            std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
+
+
                             cout << endl << "Created behaviour planner" << endl;
                             BehaviourPlanner b(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next = b.returnNextAction();
@@ -109,7 +111,7 @@ int main() {
                             cout << endl << "got next action" << endl;
                             cout << next.first << "," << next.second << endl;
                             
-                            cout << endl << "Created trajectory planner" << endl;
+                            cout << endl << "Creating trajectory planner" << endl;
                             TrajectoryPlanner t;  
                             vector<vector<double>> nextTraj = t.generateTrajectory
                             (previous_path_x, previous_path_y, 
@@ -117,14 +119,15 @@ int main() {
                             map_waypoints_x, map_waypoints_y, 
                             map_waypoints_s, next.first, next.second);
                             cout << endl << "got trajectory " << endl;
+                            cout << "x size: " << nextTraj[0].size() << ", y size: " << nextTraj[1].size() << endl;
+                            cout << nextTraj[0].back() << "," << nextTraj[1].back() << endl;
 
-
-                            vector<double>& next_x_vals = nextTraj[0];
-                            vector<double>& next_y_vals = nextTraj[1];
                             
                             //END ------------------------
-                            msgJson["next_x"] = next_x_vals;
-                            msgJson["next_y"] = next_y_vals;
+                            json msgJson;
+
+                            msgJson["next_x"] = nextTraj[0];
+                            msgJson["next_y"] = nextTraj[1];
 
                             auto msg = "42[\"control\"," + msgJson.dump() + "]";
 
@@ -138,6 +141,22 @@ int main() {
                     }
                 }  // end websocket if
         }); // end h.onMessage
+
+    // We don't need this since we're not using HTTP but if it's removed the
+    // program
+    // doesn't compile :-(
+    h.onHttpRequest([](uWS::HttpResponse* res, uWS::HttpRequest req, char* data,
+        size_t, size_t) {
+            const std::string s = "<h1>Hello world!</h1>";
+            if (req.getUrl().valueLength == 1) {
+                res->end(s.data(), s.length());
+            }
+            else {
+                // i guess this should be done more gracefully?
+                res->end(nullptr, 0);
+            }
+        });
+
 
     h.onConnection([&h](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
         std::cout << "Connected!!!" << std::endl;
@@ -160,5 +179,6 @@ int main() {
 
     h.run();
 }
+
 
 
