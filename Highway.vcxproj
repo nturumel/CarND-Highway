@@ -108,6 +108,7 @@
     <ClCompile Include="car.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="helpers.cpp" />
+    <ClCompile Include="spline.cpp" />
     <ClCompile Include="src\eigen-3.3\bench\analyze-blocking-sizes.cpp" />
     <ClCompile Include="src\eigen-3.3\bench\basicbenchmark.cpp" />
     <ClCompile Include="src\eigen-3.3\bench\benchBlasGemm.cpp" />

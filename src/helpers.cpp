@@ -145,15 +145,15 @@ vector<double> getXY(double s, double d,
     return { x,y };
 }
 
-void global2Car(vector<double>& inputVec, double refYaw, double refX, double refY)
+void global2Car(vector<double>& ptsx, vector<double>& ptsy, double refYaw, double refX, double refY)
 {
-    for (int i = 0; i < inputVec.size(); ++i)
+    for (int i = 0; i < ptsx.size(); ++i)
     {
-        double shiftX = inputVec[i] - refX;
-        double shiftY = inputVec[i] - refY;
+        double shiftX = ptsx[i] - refX;
+        double shiftY = ptsy[i] - refY;
 
-        inputVec[i] = (shiftX * cos(0 - refYaw) - shiftY * sin(0 - refYaw));
-        inputVec[i] = (shiftX * sin(0 - refYaw) + shiftY * cos(0 - refYaw));
+        ptsx[i] = (shiftX * cos(0 - refYaw) - shiftY * sin(0 - refYaw));
+        ptsy[i] = (shiftX * sin(0 - refYaw) + shiftY * cos(0 - refYaw));
     }
 }
 
