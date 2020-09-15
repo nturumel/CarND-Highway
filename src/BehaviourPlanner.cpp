@@ -4,9 +4,7 @@
 
 void BehaviourPlanner::nearestCar()
 {
-	// load the weights 
-	streamIn();
-
+	
 	// initialise maxSpeed vector
 	_maxLaneSpeeds = vector<double>(nlane, maxVel);
 	for (int i = 0; i < nlane; ++i)
@@ -221,6 +219,10 @@ bool BehaviourPlanner::collision()
 
 BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<double>>& sensor_fusion) :_carCurr(carCurr), _prevSize(prevSize)
 {
+	// load the weights 
+	streamIn();
+
+
 	cout << "\t" << "In Constuctor" << endl;
 	//set prevSize
 	_prevSize = std::min(maxUsePrev, prevSize);
@@ -241,7 +243,7 @@ BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<dou
 		double yaw = atan2(vy, vx);
 		int lane = (d / laneWidth);
 
-		if (0 <= lane && lane < lane)
+		if (0 <= lane && lane < nlane)
 		{
 			car temp(x, y, s, d, yaw, lane, speed);
 			if (lane == _carCurr._lane && _carCurr._s > s)

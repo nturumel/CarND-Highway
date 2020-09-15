@@ -12,10 +12,10 @@ using nlohmann::json;
 using std::string;
 using std::vector;
 
-int main() {
+int main() 
+{
 
     uWS::Hub h;
-
 
     // Load up map values for waypoint's x,y,s and d normalized normal vectors
     vector<double> map_waypoints_x{};
@@ -30,45 +30,52 @@ int main() {
     double max_s = 6945.554;
 
     std::ifstream in_map_(map_file_.c_str(), std::ifstream::in);
-
+  
+   
     string line;
-    while (getline(in_map_, line)) {
-        std::istringstream iss(line);
-        double x;
-        double y;
-        float s;
-        float d_x;
-        float d_y;
-        iss >> x;
-        iss >> y;
-        iss >> s;
-        iss >> d_x;
-        iss >> d_y;
-        map_waypoints_x.push_back(x);
-        map_waypoints_y.push_back(y);
-        map_waypoints_s.push_back(s);
-        map_waypoints_dx.push_back(d_x);
-        map_waypoints_dy.push_back(d_y);
+    while (getline(in_map_, line)) 
+    {
+    std::istringstream iss(line);
+    double x;
+    double y;
+    float s;
+    float d_x;
+    float d_y;
+    iss >> x;
+    iss >> y;
+    iss >> s;
+    iss >> d_x;
+    iss >> d_y;
+    map_waypoints_x.push_back(x);
+    map_waypoints_y.push_back(y);
+    map_waypoints_s.push_back(s);
+    map_waypoints_dx.push_back(d_x);
+    map_waypoints_dy.push_back(d_y);
     }
 
-    h.onMessage([&map_waypoints_x, &map_waypoints_y, &map_waypoints_s,
-        &map_waypoints_dx, &map_waypoints_dy]
-        (uWS::WebSocket<uWS::SERVER> ws, char* data, size_t length,
-            uWS::OpCode opCode) {
-                // "42" at the start of the message means there's a websocket message event.
-                // The 4 signifies a websocket message
-                // The 2 signifies a websocket event
-                if (length && length > 2 && data[0] == '4' && data[1] == '2') {
 
-                    auto s = hasData(data);
 
-                    if (s != "") {
-                        auto j = json::parse(s);
+     h.onMessage([&map_waypoints_x,&map_waypoints_y,&map_waypoints_s, &map_waypoints_dx,&map_waypoints_dy]
+              (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
+               uWS::OpCode opCode) 
+         {
+             // "42" at the start of the message means there's a websocket message event.
+             // The 4 signifies a websocket message
+             // The 2 signifies a websocket event
+             if (length && length > 2 && data[0] == '4' && data[1] == '2') {
 
-                        string event = j[0].get<string>();
+                 auto s = hasData(data);
+
+                 if (s != "") 
+                 {
+                     auto j = json::parse(s);
+                     string event = j[0].get<string>();
 
                         if (event == "telemetry") {
                             // j[1] is the data JSON object
+
+                            // Main car's localization Data
+                             // j[1] is the data JSON object
 
                             // Main car's localization Data
                             double car_x = j[1]["x"];
@@ -79,8 +86,8 @@ int main() {
                             double car_speed = j[1]["speed"];
 
                             // Previous path data given to the Planner
-                            vector<double> previous_path_x = j[1]["previous_path_x"];
-                            vector<double> previous_path_y = j[1]["previous_path_y"];
+                            auto previous_path_x = j[1]["previous_path_x"];
+                            auto previous_path_y = j[1]["previous_path_y"];
                             // Previous path's end s and d values 
                             double end_path_s = j[1]["end_path_s"];
                             double end_path_d = j[1]["end_path_d"];
@@ -89,15 +96,16 @@ int main() {
                             //   of the road.
                             vector<vector<double>> sensor_fusion = j[1]["sensor_fusion"];
 
+
                             
                            
 
                             /**
                              * TODO: define a path made up of (x,y) points that the car will visit
                              *   sequentially every .02 seconds
-                             */
+                            */
 
-                             //START ----------------------
+                            //START ----------------------
                             cout << endl << "New main Call" << endl;
                             car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
                             
@@ -119,9 +127,11 @@ int main() {
                             map_waypoints_x, map_waypoints_y, 
                             map_waypoints_s, next.first, next.second);
                             cout << endl << "got trajectory " << endl;
+                            
+                            /*
                             cout << "x size: " << nextTraj[0].size() << ", y size: " << nextTraj[1].size() << endl;
                             cout << nextTraj[0].back() << "," << nextTraj[1].back() << endl;
-
+                            */
                             
                             //END ------------------------
                             json msgJson;
@@ -142,21 +152,7 @@ int main() {
                 }  // end websocket if
         }); // end h.onMessage
 
-    // We don't need this since we're not using HTTP but if it's removed the
-    // program
-    // doesn't compile :-(
-    h.onHttpRequest([](uWS::HttpResponse* res, uWS::HttpRequest req, char* data,
-        size_t, size_t) {
-            const std::string s = "<h1>Hello world!</h1>";
-            if (req.getUrl().valueLength == 1) {
-                res->end(s.data(), s.length());
-            }
-            else {
-                // i guess this should be done more gracefully?
-                res->end(nullptr, 0);
-            }
-        });
-
+   
 
     h.onConnection([&h](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
         std::cout << "Connected!!!" << std::endl;
