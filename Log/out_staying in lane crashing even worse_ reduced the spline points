@@ -1,0 +1,3605 @@
+Script started on Wed Sep 16 23:46:01 2020
+Listening to port 4567
+Connected!!!
+ Car values: 124.834,6.16483,0,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-1,0,40.5128,80.4897,118.659,
+0,0,1.99404,9.27531,23.9294,
+ Spline points transformed
+Prev size is: 0 The path vec: 0
+	 in creating spline
+Spline Created
+Speed is: 0
+acceleration: 5
+Speed updated: 0.5
+acceleration: 5
+Speed updated: 1
+acceleration: 5
+Speed updated: 1.5
+acceleration: 4.50485
+Speed updated: 1.95049
+acceleration: 4.18414
+Speed updated: 2.3689
+acceleration: 3.94681
+Speed updated: 2.76358
+acceleration: 3.75862
+Speed updated: 3.13945
+acceleration: 3.60289
+Speed updated: 3.49974
+acceleration: 3.47022
+Speed updated: 3.84677
+acceleration: 3.35476
+Speed updated: 4.18225
+acceleration: 3.25265
+Speed updated: 4.50753
+acceleration: 3.16118
+Speed updated: 4.82366
+acceleration: 3.07841
+Speed updated: 5.13151
+acceleration: 3.00285
+Speed updated: 5.43182
+acceleration: 2.9334
+Speed updated: 5.72518
+acceleration: 2.86917
+Speed updated: 6.01213
+acceleration: 2.80944
+Speed updated: 6.29311
+acceleration: 2.75366
+Speed updated: 6.56852
+acceleration: 2.70135
+Speed updated: 6.83872
+acceleration: 2.65213
+Speed updated: 7.104
+acceleration: 2.60565
+Speed updated: 7.36465
+acceleration: 2.56165
+Speed updated: 7.62091
+acceleration: 2.51988
+Speed updated: 7.87301
+acceleration: 2.48013
+Speed updated: 8.12116
+acceleration: 2.44224
+Speed updated: 8.36554
+acceleration: 2.40603
+Speed updated: 8.60633
+acceleration: 2.37138
+Speed updated: 8.84368
+acceleration: 2.33815
+Speed updated: 9.07775
+acceleration: 2.30625
+Speed updated: 9.30865
+acceleration: 2.27558
+Speed updated: 9.53654
+acceleration: 2.24604
+Speed updated: 9.76151
+acceleration: 2.21757
+Speed updated: 9.98368
+acceleration: 2.19009
+Speed updated: 10.2032
+acceleration: 2.16353
+Speed updated: 10.42
+acceleration: 2.13784
+Speed updated: 10.6344
+acceleration: 2.11297
+Speed updated: 10.8464
+acceleration: 2.08887
+Speed updated: 11.056
+acceleration: 2.0655
+Speed updated: 11.2634
+acceleration: 2.0428
+Speed updated: 11.4686
+acceleration: 2.02076
+Speed updated: 11.6717
+acceleration: 1.99932
+Speed updated: 11.8727
+acceleration: 1.97846
+Speed updated: 12.0718
+acceleration: 1.95816
+Speed updated: 12.2689
+acceleration: 1.93837
+Speed updated: 12.4642
+acceleration: 1.91909
+Speed updated: 12.6578
+acceleration: 1.90027
+Speed updated: 12.8496
+acceleration: 1.88191
+Speed updated: 13.0397
+acceleration: 1.86397
+Speed updated: 13.2282
+acceleration: 1.84644
+Speed updated: 13.4151
+acceleration: 1.82931
+Speed updated: 13.6005
+the end: 917.533,1128.75
+got the trajectory
+ Car values: 124.894,6.16535,3.35186,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.271966,0,32.5538,72.6805,111.161,
+0,0,1.20167,7.60614,21.4239,
+ Spline points transformed
+Prev size is: 47 The path vec: 47
+	 in creating spline
+Spline Created
+Speed is: 13.5983
+acceleration: 1.81274
+Speed updated: 13.7796
+acceleration: 1.79657
+Speed updated: 13.9593
+acceleration: 1.78075
+Speed updated: 14.1373
+the end: 918.37,1128.77
+got the trajectory
+ Car values: 125.098,6.16712,7.02456,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.282764,0,31.9189,72.0367,110.496,
+0,0,1.2458,7.70764,21.5895,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 14.1382
+acceleration: 1.7652
+Speed updated: 14.3147
+acceleration: 1.75004
+Speed updated: 14.4897
+acceleration: 1.7352
+Speed updated: 14.6633
+acceleration: 1.72066
+Speed updated: 14.8354
+the end: 919.536,1128.8
+got the trajectory
+ Car values: 125.515,6.16975,10.786,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.296583,0,31.1715,71.2977,109.772,
+0,0,1.20585,7.62016,21.4752,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 14.8291
+acceleration: 1.70693
+Speed updated: 14.9998
+acceleration: 1.69295
+Speed updated: 15.1691
+acceleration: 1.67925
+Speed updated: 15.3371
+acceleration: 1.6658
+Speed updated: 15.5037
+acceleration: 1.6526
+Speed updated: 15.6691
+the end: 921.069,1128.84
+got the trajectory
+ Car values: 126.087,6.17274,14.07,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.313402,0,30.21,70.339,108.814,
+0,0,1.19369,7.59672,21.4666,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 15.6701
+acceleration: 1.63957
+Speed updated: 15.8341
+acceleration: 1.62685
+Speed updated: 15.9968
+acceleration: 1.61437
+Speed updated: 16.1583
+acceleration: 1.6021
+Speed updated: 16.3185
+acceleration: 1.59005
+Speed updated: 16.4777
+the end: 922.684,1128.88
+got the trajectory
+ Car values: 126.797,6.17582,17.0463,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.329552,0,29.3074,69.4555,107.965,
+0,0,1.10791,7.39938,21.1941,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 16.4776
+acceleration: 1.57821
+Speed updated: 16.6354
+acceleration: 1.56656
+Speed updated: 16.7921
+acceleration: 1.55512
+Speed updated: 16.9477
+acceleration: 1.54386
+Speed updated: 17.1021
+acceleration: 1.53277
+Speed updated: 17.2556
+the end: 924.378,1128.94
+got the trajectory
+ Car values: 127.456,6.17749,19.2445,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.345209,0,28.2749,68.4402,106.982,
+1.73472e-18,0,1.03021,7.22034,20.9476,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 17.2604
+acceleration: 1.52152
+Speed updated: 17.4126
+acceleration: 1.5108
+Speed updated: 17.5637
+acceleration: 1.50025
+Speed updated: 17.7138
+acceleration: 1.48986
+Speed updated: 17.8629
+the end: 925.788,1128.99
+got the trajectory
+ Car values: 128.387,6.17858,21.8393,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.357274,0,27.7964,67.975,106.537,
+0,0,0.973269,7.09307,20.7948,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 17.8637
+acceleration: 1.47957
+Speed updated: 18.0117
+acceleration: 1.4695
+Speed updated: 18.1587
+acceleration: 1.45957
+Speed updated: 18.3047
+acceleration: 1.44979
+Speed updated: 18.4498
+acceleration: 1.44015
+Speed updated: 18.5939
+the end: 927.617,1129.07
+got the trajectory
+ Car values: 129.65,6.17655,24.7269,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.371944,0,27.2296,67.4131,105.974,
+0,0,0.952705,7.06438,20.8154,
+ Spline points transformed
+Prev size is: 44 The path vec: 44
+	 in creating spline
+Spline Created
+Speed is: 18.5972
+acceleration: 1.43043
+Speed updated: 18.7403
+acceleration: 1.42107
+Speed updated: 18.8824
+acceleration: 1.41184
+Speed updated: 19.0237
+acceleration: 1.40274
+Speed updated: 19.1641
+acceleration: 1.39376
+Speed updated: 19.3036
+acceleration: 1.3849
+Speed updated: 19.4424
+the end: 929.906,1129.17
+got the trajectory
+ Car values: 130.575,6.17247,26.5713,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.388864,0,25.8675,66.0733,104.676,
+3.46945e-18,0,0.855023,6.83865,20.5087,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 19.4432
+acceleration: 1.3761
+Speed updated: 19.5808
+acceleration: 1.36749
+Speed updated: 19.7176
+acceleration: 1.35899
+Speed updated: 19.8536
+acceleration: 1.35059
+Speed updated: 19.9888
+the end: 931.486,1129.25
+got the trajectory
+ Car values: 131.565,6.16601,28.3134,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.399852,0,25.2752,65.4895,104.102,
+3.46945e-18,0,0.818233,6.769,20.4525,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 19.9926
+acceleration: 1.34207
+Speed updated: 20.1268
+acceleration: 1.3339
+Speed updated: 20.2602
+acceleration: 1.32583
+Speed updated: 20.3929
+acceleration: 1.31786
+Speed updated: 20.5248
+the end: 933.11,1129.34
+got the trajectory
+ Car values: 132.887,6.15351,30.413,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.410545,0,24.9724,66.1327,103.797,
+0,0,0.801691,7.23018,20.5197,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 20.5272
+acceleration: 1.30985
+Speed updated: 20.6582
+acceleration: 1.30208
+Speed updated: 20.7885
+acceleration: 1.2944
+Speed updated: 20.918
+acceleration: 1.28682
+Speed updated: 21.0468
+acceleration: 1.27932
+Speed updated: 21.175
+the end: 935.198,1129.46
+got the trajectory
+ Car values: 134.011,6.1382,32.0169,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.423499,0,24.0071,65.1398,102.879,
+0,0,0.726247,7.25026,20.3265,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 21.1749
+acceleration: 1.27191
+Speed updated: 21.3021
+acceleration: 1.26459
+Speed updated: 21.4286
+acceleration: 1.25736
+Speed updated: 21.5544
+acceleration: 1.25022
+Speed updated: 21.6796
+the end: 936.914,1129.57
+got the trajectory
+ Car values: 135.494,6.11501,33.9333,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.433605,0,23.7716,64.8449,102.63,
+0,0,0.717592,7.52912,20.4712,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 21.6802
+acceleration: 1.24311
+Speed updated: 21.8046
+acceleration: 1.23613
+Speed updated: 21.9282
+acceleration: 1.22922
+Speed updated: 22.0512
+acceleration: 1.22239
+Speed updated: 22.1735
+acceleration: 1.21564
+Speed updated: 22.2952
+the end: 939.114,1129.72
+got the trajectory
+ Car values: 137.06,6.08753,35.7992,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.445979,0,23.1351,64.1594,102.013,
+3.46945e-18,0,0.66812,7.71909,20.4595,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 22.2989
+acceleration: 1.20875
+Speed updated: 22.4198
+acceleration: 1.20215
+Speed updated: 22.54
+acceleration: 1.19561
+Speed updated: 22.6596
+acceleration: 1.18915
+Speed updated: 22.7786
+acceleration: 1.18276
+Speed updated: 22.897
+the end: 941.374,1129.88
+got the trajectory
+ Car values: 138.372,6.0609,37.2013,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.45799,0,22.1813,63.1556,101.046,
+0,0,0.659805,7.97687,20.6085,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 22.8995
+acceleration: 1.17629
+Speed updated: 23.0172
+acceleration: 1.17003
+Speed updated: 23.1342
+acceleration: 1.16384
+Speed updated: 23.2506
+acceleration: 1.15771
+Speed updated: 23.3664
+the end: 943.225,1130.02
+got the trajectory
+ Car values: 140.082,6.01769,38.9414,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.467412,0,22.0365,62.9442,100.875,
+0,0,0.658156,8.34269,20.8509,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 23.3706
+acceleration: 1.15142
+Speed updated: 23.4858
+acceleration: 1.14542
+Speed updated: 23.6003
+acceleration: 1.13948
+Speed updated: 23.7143
+acceleration: 1.1336
+Speed updated: 23.8277
+acceleration: 1.12777
+Speed updated: 23.9406
+the end: 945.589,1130.2
+got the trajectory
+ Car values: 141.867,5.96415,40.6251,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.478832,0,22.1316,62.2873,100.254,
+0,0,0.901916,8.75577,21.1563,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 23.9416
+acceleration: 1.12195
+Speed updated: 24.0538
+acceleration: 1.11624
+Speed updated: 24.1655
+acceleration: 1.11058
+Speed updated: 24.2767
+acceleration: 1.10497
+Speed updated: 24.3875
+acceleration: 1.09941
+Speed updated: 24.4979
+the end: 948.009,1130.39
+got the trajectory
+ Car values: 143.348,5.91384,41.9267,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.490018,0,21.1755,61.3234,99.3732,
+6.93889e-18,0,0.976347,8.81985,20.9625,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 24.5009
+acceleration: 1.09375
+Speed updated: 24.6103
+acceleration: 1.0883
+Speed updated: 24.7193
+acceleration: 1.08291
+Speed updated: 24.8279
+acceleration: 1.07756
+Speed updated: 24.9363
+the end: 949.983,1130.57
+got the trajectory
+ Car values: 145.263,5.84043,43.4966,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.498734,0,21.097,61.2235,99.3581,
+0,0,1.10001,8.99967,20.8736,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 24.9367
+acceleration: 1.07221
+Speed updated: 25.044
+acceleration: 1.06697
+Speed updated: 25.1509
+acceleration: 1.06177
+Speed updated: 25.2576
+acceleration: 1.0566
+Speed updated: 25.3643
+acceleration: 1.05145
+Speed updated: 25.4711
+the end: 952.497,1130.81
+got the trajectory
+ Car values: 147.246,5.75564,45.0212,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.509461,0,20.5514,60.6984,98.977,
+0,0,1.10695,8.86173,20.2626,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 25.473
+acceleration: 1.04623
+Speed updated: 25.5777
+acceleration: 1.04122
+Speed updated: 25.6821
+acceleration: 1.03624
+Speed updated: 25.7865
+acceleration: 1.03129
+Speed updated: 25.891
+acceleration: 1.02636
+Speed updated: 25.9958
+the end: 955.06,1131.09
+got the trajectory
+ Car values: 149.297,5.65837,46.4911,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.519859,0,20.0216,60.1859,98.5986,
+0,0,1.11134,8.74927,19.6902,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 25.9929
+acceleration: 1.02155
+Speed updated: 26.0952
+acceleration: 1.01676
+Speed updated: 26.1972
+acceleration: 1.01199
+Speed updated: 26.2994
+acceleration: 1.00724
+Speed updated: 26.4018
+acceleration: 1.0025
+Speed updated: 26.5047
+the end: 957.671,1131.41
+got the trajectory
+ Car values: 150.85,5.62347,47.9426,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.530052,0,18.9508,59.162,97.7177,
+0,0,1.01877,8.39584,18.8215,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 26.5026
+acceleration: 0.997843
+Speed updated: 26.6025
+acceleration: 0.99325
+Speed updated: 26.7022
+acceleration: 0.988679
+Speed updated: 26.8021
+acceleration: 0.984118
+Speed updated: 26.9025
+acceleration: 0.979555
+Speed updated: 27.0035
+the end: 960.326,1131.77
+got the trajectory
+ Car values: 153.029,5.71795,49.3274,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.539934,0,18.4525,58.6895,97.379,
+0,0,0.980697,8.21824,18.1361,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 26.9967
+acceleration: 0.975283
+Speed updated: 27.0943
+acceleration: 0.970875
+Speed updated: 27.1919
+acceleration: 0.966486
+Speed updated: 27.2897
+acceleration: 0.962102
+Speed updated: 27.388
+acceleration: 0.957711
+Speed updated: 27.4871
+the end: 963.025,1132.17
+got the trajectory
+ Car values: 155.268,5.80727,50.6841,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.549558,0,17.9703,58.2448,97.0755,
+0,0,0.899266,7.94858,17.2987,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 27.4779
+acceleration: 0.95371
+Speed updated: 27.5733
+acceleration: 0.949474
+Speed updated: 27.6687
+acceleration: 0.945257
+Speed updated: 27.7643
+acceleration: 0.941045
+Speed updated: 27.8604
+acceleration: 0.936828
+Speed updated: 27.9572
+the end: 965.765,1132.61
+got the trajectory
+ Car values: 157.104,5.87428,51.7426,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.558991,0,17.0375,57.3595,96.3652,
+0,0,0.779337,7.58805,16.4102,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 27.9495
+acceleration: 0.932926
+Speed updated: 28.0429
+acceleration: 0.928853
+Speed updated: 28.1362
+acceleration: 0.924798
+Speed updated: 28.2296
+acceleration: 0.920748
+Speed updated: 28.3235
+the end: 967.986,1133
+got the trajectory
+ Car values: 159.451,5.95408,53.0455,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.566222,0,17.134,57.4585,96.5394,
+0,0,0.759028,7.6199,16.1032,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 28.3111
+acceleration: 0.91723
+Speed updated: 28.4029
+acceleration: 0.913276
+Speed updated: 28.4946
+acceleration: 0.909341
+Speed updated: 28.5863
+acceleration: 0.905414
+Speed updated: 28.6784
+acceleration: 0.901486
+Speed updated: 28.7711
+the end: 970.797,1133.51
+got the trajectory
+ Car values: 161.855,6.02712,54.303,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.575054,0,16.6857,57.0226,96.1842,
+0,0,0.704341,7.58532,15.688,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 28.7527
+acceleration: 0.898328
+Speed updated: 28.8426
+acceleration: 0.894516
+Speed updated: 28.9324
+acceleration: 0.890721
+Speed updated: 29.0222
+acceleration: 0.886936
+Speed updated: 29.1123
+acceleration: 0.88315
+Speed updated: 29.2029
+the end: 973.645,1134.06
+got the trajectory
+ Car values: 164.315,6.08515,55.5338,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.583742,0,16.2503,56.5438,95.8379,
+1.38778e-17,0,0.638702,7.54342,15.2889,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 29.1871
+acceleration: 0.880017
+Speed updated: 29.2751
+acceleration: 0.876338
+Speed updated: 29.363
+acceleration: 0.872678
+Speed updated: 29.4509
+acceleration: 0.869028
+Speed updated: 29.539
+acceleration: 0.865382
+Speed updated: 29.6274
+the end: 976.531,1134.63
+got the trajectory
+ Car values: 166.83,6.12191,56.7395,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.591882,0,15.8251,56.1156,95.4507,
+0,0,0.615325,7.68685,15.2212,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 29.5941
+acceleration: 0.863105
+Speed updated: 29.6804
+acceleration: 0.859547
+Speed updated: 29.7666
+acceleration: 0.856005
+Speed updated: 29.8528
+acceleration: 0.852474
+Speed updated: 29.9392
+acceleration: 0.848945
+Speed updated: 30.026
+the end: 979.452,1135.24
+got the trajectory
+ Car values: 168.88,6.12907,57.6697,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.599748,0,14.8957,55.1937,94.569,
+0,0,0.572867,7.73898,15.0604,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 29.9874
+acceleration: 0.846981
+Speed updated: 30.0722
+acceleration: 0.843535
+Speed updated: 30.1568
+acceleration: 0.840103
+Speed updated: 30.2415
+acceleration: 0.836678
+Speed updated: 30.3265
+the end: 981.814,1135.73
+got the trajectory
+ Car values: 171.489,6.10973,58.8329,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.606168,0,15.0944,55.3965,94.8126,
+0,0,0.525824,7.86184,14.9601,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 30.3084
+acceleration: 0.833978
+Speed updated: 30.3919
+acceleration: 0.830621
+Speed updated: 30.4751
+acceleration: 0.827283
+Speed updated: 30.5582
+acceleration: 0.823957
+Speed updated: 30.6413
+acceleration: 0.820639
+Speed updated: 30.7247
+the end: 984.797,1136.38
+got the trajectory
+ Car values: 174.149,6.05682,59.9419,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.613762,0,15.6874,54.9956,94.4358,
+0,0,1.0253,8.10434,15.0671,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 30.6881
+acceleration: 0.818774
+Speed updated: 30.7704
+acceleration: 0.815506
+Speed updated: 30.8536
+acceleration: 0.812207
+Speed updated: 30.9388
+acceleration: 0.808838
+Speed updated: 31.027
+acceleration: 0.805363
+Speed updated: 31.119
+the end: 987.808,1137.07
+got the trajectory
+ Car values: 176.311,5.98869,60.7988,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.621395,0,14.7499,54.1977,93.769,
+0,0,1.08083,7.3351,13.5094,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 31.0698
+acceleration: 0.803681
+Speed updated: 31.1508
+acceleration: 0.8005
+Speed updated: 31.234
+acceleration: 0.797243
+Speed updated: 31.3211
+acceleration: 0.793843
+Speed updated: 31.4136
+the end: 990.229,1137.69
+got the trajectory
+ Car values: 179.056,5.86962,61.8629,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.62696,0,14.9901,54.5635,94.252,
+-2.77556e-17,0,1.18021,6.5827,11.9523,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.348
+acceleration: 0.792794
+Speed updated: 31.4282
+acceleration: 0.789675
+Speed updated: 31.5113
+acceleration: 0.786449
+Speed updated: 31.5996
+acceleration: 0.783031
+Speed updated: 31.695
+acceleration: 0.77935
+Speed updated: 31.7992
+the end: 993.265,1138.54
+got the trajectory
+ Car values: 181.171,5.84532,62.9277,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.633798,0,13.9698,53.6892,93.5187,
+-2.77556e-17,0,1.0104,5.20629,9.40428,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.6899
+acceleration: 0.779548
+Speed updated: 31.7688
+acceleration: 0.77651
+Speed updated: 31.851
+acceleration: 0.773355
+Speed updated: 31.9387
+acceleration: 0.769998
+Speed updated: 32.0338
+acceleration: 0.766364
+Speed updated: 32.1381
+the end: 996.304,1139.47
+got the trajectory
+ Car values: 184.007,5.98529,63.9005,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.639618,0,13.6372,53.4568,92.4719,
+-2.77556e-17,0,0.917457,4.02113,6.94912,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.9809
+acceleration: 0.768384
+Speed updated: 32.0587
+acceleration: 0.765416
+Speed updated: 32.1398
+acceleration: 0.762331
+Speed updated: 32.2264
+acceleration: 0.759045
+Speed updated: 32.3204
+acceleration: 0.75549
+Speed updated: 32.4232
+the end: 999.343,1140.49
+got the trajectory
+ Car values: 186.888,6.09982,64.8753,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.644042,0,13.3257,53.2062,92.2682,
+2.77556e-17,0,0.831738,3.01685,4.65861,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.2021
+acceleration: 0.759967
+Speed updated: 32.279
+acceleration: 0.757052
+Speed updated: 32.3592
+acceleration: 0.754024
+Speed updated: 32.4446
+acceleration: 0.750804
+Speed updated: 32.5371
+acceleration: 0.747329
+Speed updated: 32.6379
+the end: 1002.38,1141.57
+got the trajectory
+ Car values: 189.812,6.1915,65.8143,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.647707,0,13.0402,52.9566,92.0259,
+0,0,0.741582,2.12589,2.59156,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.3854
+acceleration: 0.753036
+Speed updated: 32.4616
+acceleration: 0.750166
+Speed updated: 32.5407
+acceleration: 0.747194
+Speed updated: 32.6246
+acceleration: 0.744047
+Speed updated: 32.7149
+acceleration: 0.740671
+Speed updated: 32.8128
+the end: 1005.41,1142.7
+got the trajectory
+ Car values: 192.778,6.26494,66.7148,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.649038,0,12.7812,52.7137,91.7624,
+0,0,0.682666,1.47606,0.966325,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.4519
+acceleration: 0.75053
+Speed updated: 32.5278
+acceleration: 0.747677
+Speed updated: 32.6065
+acceleration: 0.744727
+Speed updated: 32.6898
+acceleration: 0.741611
+Speed updated: 32.7791
+acceleration: 0.73828
+Speed updated: 32.8754
+the end: 1008.43,1143.86
+got the trajectory
+ Car values: 195.783,6.32377,67.5709,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.650677,0,12.5564,52.5459,91.5083,
+0,0,0.640171,0.982108,-0.372639,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.5338
+acceleration: 0.747451
+Speed updated: 32.6094
+acceleration: 0.744617
+Speed updated: 32.6877
+acceleration: 0.741689
+Speed updated: 32.7704
+acceleration: 0.738601
+Speed updated: 32.859
+acceleration: 0.735306
+Speed updated: 32.9543
+the end: 1011.44,1145.05
+got the trajectory
+ Car values: 198.828,6.36503,68.4625,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.650323,0,12.3652,52.3562,91.2769,
+2.77556e-17,0,0.622553,0.686161,-1.39767,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.5161
+acceleration: 0.748114
+Speed updated: 32.5918
+acceleration: 0.745276
+Speed updated: 32.6702
+acceleration: 0.742342
+Speed updated: 32.7531
+acceleration: 0.739246
+Speed updated: 32.8419
+acceleration: 0.735941
+Speed updated: 32.9374
+the end: 1014.45,1146.26
+got the trajectory
+ Car values: 201.291,6.37727,69.1032,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.65054,0,11.5946,51.5854,90.4683,
+-2.77556e-17,0,0.611562,0.477755,-2.16845,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 32.527
+acceleration: 0.747707
+Speed updated: 32.6028
+acceleration: 0.744864
+Speed updated: 32.6821
+acceleration: 0.741898
+Speed updated: 32.7669
+acceleration: 0.738732
+Speed updated: 32.8589
+the end: 1016.84,1147.22
+got the trajectory
+ Car values: 204.402,6.33126,69.9044,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.647769,0,12.0629,52.1126,90.9554,
+0,0,0.6232,0.418741,-2.76838,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.3885
+acceleration: 0.752919
+Speed updated: 32.4647
+acceleration: 0.750049
+Speed updated: 32.5439
+acceleration: 0.747072
+Speed updated: 32.6281
+acceleration: 0.743918
+Speed updated: 32.7186
+acceleration: 0.740534
+Speed updated: 32.8165
+the end: 1019.83,1148.44
+got the trajectory
+ Car values: 207.544,6.20203,70.6862,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.647086,0,11.9876,52.0358,90.1141,
+0,0,0.558657,0.161689,-3.73323,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.3543
+acceleration: 0.754209
+Speed updated: 32.4305
+acceleration: 0.751337
+Speed updated: 32.5091
+acceleration: 0.748381
+Speed updated: 32.5916
+acceleration: 0.745283
+Speed updated: 32.6793
+acceleration: 0.742002
+Speed updated: 32.7729
+the end: 1022.8,1149.66
+got the trajectory
+ Car values: 210.712,5.98325,71.3571,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.646165,0,11.9396,51.9878,89.9477,
+0,0,0.545239,0.150832,-4.60215,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.3082
+acceleration: 0.755948
+Speed updated: 32.3845
+acceleration: 0.753067
+Speed updated: 32.4631
+acceleration: 0.750109
+Speed updated: 32.5453
+acceleration: 0.747019
+Speed updated: 32.6324
+acceleration: 0.743758
+Speed updated: 32.725
+the end: 1025.77,1150.88
+got the trajectory
+ Car values: 212.894,5.98742,71.8835,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.644324,0,10.9108,50.9587,88.8322,
+0,0,0.538555,0.114051,-5.25985,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.2162
+acceleration: 0.759432
+Speed updated: 32.2931
+acceleration: 0.756521
+Speed updated: 32.373
+acceleration: 0.753502
+Speed updated: 32.4579
+acceleration: 0.750303
+Speed updated: 32.5492
+acceleration: 0.746874
+Speed updated: 32.6477
+the end: 1028.73,1152.11
+got the trajectory
+ Car values: 216.106,6.17967,72.2109,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.643271,0,10.9232,50.9694,88.6986,
+0,0,0.475617,-0.0851087,-6.4595,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.1635
+acceleration: 0.76143
+Speed updated: 32.2404
+acceleration: 0.758516
+Speed updated: 32.3195
+acceleration: 0.755523
+Speed updated: 32.4022
+acceleration: 0.7524
+Speed updated: 32.4898
+acceleration: 0.749106
+Speed updated: 32.5827
+the end: 1031.68,1153.34
+got the trajectory
+ Car values: 219.335,6.32048,72.5303,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.641038,0,10.9573,51.0039,88.6118,
+2.77556e-17,0,0.45722,-0.0682339,-7.28567,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.0519
+acceleration: 0.765675
+Speed updated: 32.1291
+acceleration: 0.762738
+Speed updated: 32.2082
+acceleration: 0.759736
+Speed updated: 32.2904
+acceleration: 0.756621
+Speed updated: 32.3768
+acceleration: 0.753358
+Speed updated: 32.468
+the end: 1034.62,1154.55
+got the trajectory
+ Car values: 222.568,6.42384,72.4598,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.639332,0,11.0048,50.144,88.5562,
+-2.77556e-17,0,0.465586,0.131059,-7.92672,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.9666
+acceleration: 0.768931
+Speed updated: 32.0441
+acceleration: 0.765974
+Speed updated: 32.1234
+acceleration: 0.762955
+Speed updated: 32.2058
+acceleration: 0.759826
+Speed updated: 32.2923
+acceleration: 0.756552
+Speed updated: 32.3835
+the end: 1037.56,1155.76
+got the trajectory
+ Car values: 225.807,6.49849,72.7186,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.638549,0,11.0656,50.1662,88.5224,
+-2.77556e-17,0,0.486781,-0.198923,-8.50884,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.9275
+acceleration: 0.770426
+Speed updated: 32.0052
+acceleration: 0.767457
+Speed updated: 32.085
+acceleration: 0.764415
+Speed updated: 32.1683
+acceleration: 0.761248
+Speed updated: 32.2562
+acceleration: 0.757916
+Speed updated: 32.3494
+the end: 1040.49,1156.97
+got the trajectory
+ Car values: 229.043,6.55421,72.4844,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.638549,0,11.1265,50.1876,88.4651,
+0,0,0.480546,-0.66848,-9.34076,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.9275
+acceleration: 0.770426
+Speed updated: 32.0052
+acceleration: 0.767457
+Speed updated: 32.0851
+acceleration: 0.764413
+Speed updated: 32.1684
+acceleration: 0.761243
+Speed updated: 32.2564
+acceleration: 0.757909
+Speed updated: 32.3496
+the end: 1043.43,1158.17
+got the trajectory
+ Car values: 232.278,6.59241,72.4543,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.637239,0,11.1878,50.2109,88.0975,
+0,0,0.483242,-1.0966,-10.0513,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.8619
+acceleration: 0.772935
+Speed updated: 31.9399
+acceleration: 0.769949
+Speed updated: 32.0202
+acceleration: 0.766885
+Speed updated: 32.1041
+acceleration: 0.763689
+Speed updated: 32.1927
+acceleration: 0.760322
+Speed updated: 32.2867
+the end: 1046.36,1159.38
+got the trajectory
+ Car values: 235.499,6.62439,72.3786,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.636318,0,11.2408,50.2237,87.9761,
+0,0,0.470792,-1.59411,-11.0969,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.8159
+acceleration: 0.774702
+Speed updated: 31.8941
+acceleration: 0.771705
+Speed updated: 31.9744
+acceleration: 0.768631
+Speed updated: 32.0584
+acceleration: 0.765429
+Speed updated: 32.1469
+acceleration: 0.762062
+Speed updated: 32.2406
+the end: 1049.29,1160.58
+got the trajectory
+ Car values: 238.715,6.64915,72.2664,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.635397,0,11.3448,50.2364,87.854,
+0,0,0.481777,-2.09204,-12.142,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.7698
+acceleration: 0.77647
+Speed updated: 31.8482
+acceleration: 0.77346
+Speed updated: 31.929
+acceleration: 0.770367
+Speed updated: 32.0136
+acceleration: 0.767134
+Speed updated: 32.1031
+acceleration: 0.763725
+Speed updated: 32.1981
+the end: 1052.21,1161.78
+got the trajectory
+ Car values: 241.926,6.67369,72.0707,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.634476,0,11.3974,50.2475,87.73,
+2.77556e-17,0,0.492413,-2.59213,-13.1884,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.7238
+acceleration: 0.778241
+Speed updated: 31.8025
+acceleration: 0.775217
+Speed updated: 31.8837
+acceleration: 0.772101
+Speed updated: 31.9691
+acceleration: 0.768834
+Speed updated: 32.0598
+acceleration: 0.765376
+Speed updated: 32.1563
+the end: 1055.12,1162.98
+got the trajectory
+ Car values: 245.193,6.67478,71.9556,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.633948,0,11.5115,50.3137,87.6417,
+0,0,0.481721,-3.1784,-14.3841,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.6974
+acceleration: 0.779258
+Speed updated: 31.7761
+acceleration: 0.776228
+Speed updated: 31.8574
+acceleration: 0.773107
+Speed updated: 31.9428
+acceleration: 0.769838
+Speed updated: 32.0334
+acceleration: 0.766382
+Speed updated: 32.1296
+the end: 1058.03,1164.19
+got the trajectory
+ Car values: 248.387,6.65475,71.6993,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.633028,0,11.556,49.5857,87.5063,
+2.77556e-17,0,0.483262,-3.79546,-15.4342,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.6514
+acceleration: 0.78103
+Speed updated: 31.7304
+acceleration: 0.777986
+Speed updated: 31.8123
+acceleration: 0.77484
+Speed updated: 31.8986
+acceleration: 0.77153
+Speed updated: 31.9905
+acceleration: 0.768017
+Speed updated: 32.0885
+the end: 1060.94,1165.4
+got the trajectory
+ Car values: 251.571,6.6393,71.5075,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.632504,0,11.5955,49.4949,87.3404,
+0,0,0.463768,-4.73258,-16.612,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.6252
+acceleration: 0.782043
+Speed updated: 31.7043
+acceleration: 0.77899
+Speed updated: 31.7865
+acceleration: 0.77583
+Speed updated: 31.8733
+acceleration: 0.7725
+Speed updated: 31.9658
+acceleration: 0.768961
+Speed updated: 32.0644
+the end: 1063.84,1166.61
+got the trajectory
+ Car values: 254.11,6.63783,71.1889,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.630667,0,10.9934,48.7886,86.5785,
+2.77556e-17,0,0.455075,-5.45742,-17.5134,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 31.5334
+acceleration: 0.785594
+Speed updated: 31.6131
+acceleration: 0.78251
+Speed updated: 31.6966
+acceleration: 0.77929
+Speed updated: 31.7857
+acceleration: 0.775859
+Speed updated: 31.8817
+the end: 1066.14,1167.58
+got the trajectory
+ Car values: 257.285,6.63246,71.1467,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.628039,0,11.6643,49.3485,87.1078,
+0,0,0.466237,-6.21971,-18.3745,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.402
+acceleration: 0.790694
+Speed updated: 31.4822
+acceleration: 0.787579
+Speed updated: 31.566
+acceleration: 0.784332
+Speed updated: 31.6553
+acceleration: 0.780881
+Speed updated: 31.7513
+acceleration: 0.777184
+Speed updated: 31.8542
+the end: 1069.02,1168.79
+got the trajectory
+ Car values: 260.46,6.62608,71.1467,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.626997,0,11.7213,49.2529,86.9097,
+-2.77556e-17,0,0.410666,-7.26898,-19.7432,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.3498
+acceleration: 0.792722
+Speed updated: 31.4302
+acceleration: 0.789596
+Speed updated: 31.5139
+acceleration: 0.786348
+Speed updated: 31.6027
+acceleration: 0.782912
+Speed updated: 31.6975
+acceleration: 0.779253
+Speed updated: 31.7986
+the end: 1071.89,1170
+got the trajectory
+ Car values: 263.629,6.62153,71.0039,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.625564,0,10.8544,49.1617,86.7325,
+0,0,0.284769,-8.25275,-20.991,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.2782
+acceleration: 0.795516
+Speed updated: 31.3586
+acceleration: 0.79238
+Speed updated: 31.4417
+acceleration: 0.789149
+Speed updated: 31.5287
+acceleration: 0.785776
+Speed updated: 31.6201
+acceleration: 0.782241
+Speed updated: 31.7157
+the end: 1074.75,1171.21
+got the trajectory
+ Car values: 266.792,6.61611,70.903,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.623847,0,10.8683,49.1145,86.4786,
+0,0,-0.183501,-8.98668,-21.8022,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.1923
+acceleration: 0.798872
+Speed updated: 31.2722
+acceleration: 0.795748
+Speed updated: 31.3518
+acceleration: 0.792644
+Speed updated: 31.4311
+acceleration: 0.78956
+Speed updated: 31.5101
+acceleration: 0.786495
+Speed updated: 31.5887
+the end: 1077.63,1172.36
+got the trajectory
+ Car values: 269.952,6.60778,70.7896,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.623379,0,10.8965,49.3274,86.9958,
+0,0,-0.277213,-8.24757,-20.1483,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.169
+acceleration: 0.799788
+Speed updated: 31.249
+acceleration: 0.796658
+Speed updated: 31.3287
+acceleration: 0.793545
+Speed updated: 31.4084
+acceleration: 0.790445
+Speed updated: 31.488
+acceleration: 0.787352
+Speed updated: 31.5679
+the end: 1080.55,1173.43
+got the trajectory
+ Car values: 272.474,6.60272,70.4569,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.62539,0,10.2965,48.5926,86.8944,
+0,0,-0.199708,-7.19772,-18.1055,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 31.2695
+acceleration: 0.795855
+Speed updated: 31.3491
+acceleration: 0.792751
+Speed updated: 31.4284
+acceleration: 0.789665
+Speed updated: 31.5075
+acceleration: 0.786596
+Speed updated: 31.5864
+the end: 1082.92,1174.23
+got the trajectory
+ Car values: 275.626,6.58699,70.356,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.627714,0,10.9392,49.3012,87.823,
+2.77556e-17,0,-0.217911,-6.84465,-16.9455,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.3857
+acceleration: 0.791326
+Speed updated: 31.4648
+acceleration: 0.78825
+Speed updated: 31.5437
+acceleration: 0.785193
+Speed updated: 31.6223
+acceleration: 0.782153
+Speed updated: 31.7009
+acceleration: 0.779125
+Speed updated: 31.7794
+the end: 1085.92,1175.18
+got the trajectory
+ Car values: 278.089,6.5917,70.1174,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.63288,0,10.2533,48.6869,87.3955,
+0,0,-0.142074,-6.3706,-15.7285,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 31.644
+acceleration: 0.781317
+Speed updated: 31.7221
+acceleration: 0.778305
+Speed updated: 31.8
+acceleration: 0.775313
+Speed updated: 31.8775
+acceleration: 0.772339
+Speed updated: 31.9548
+the end: 1088.35,1175.91
+got the trajectory
+ Car values: 281.233,6.59408,70.1664,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.636572,0,10.8587,49.3033,88.1126,
+0,0,-0.150428,-6.3901,-15.3198,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 31.8286
+acceleration: 0.774213
+Speed updated: 31.906
+acceleration: 0.771246
+Speed updated: 31.9832
+acceleration: 0.768298
+Speed updated: 32.06
+acceleration: 0.765368
+Speed updated: 32.1365
+acceleration: 0.762456
+Speed updated: 32.2128
+the end: 1091.42,1176.78
+got the trajectory
+ Car values: 284.372,6.59038,70.0041,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.641338,0,10.8016,49.2662,88.1739,
+0,0,-0.110686,-6.35078,-14.8405,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.0669
+acceleration: 0.765105
+Speed updated: 32.1434
+acceleration: 0.762194
+Speed updated: 32.2197
+acceleration: 0.7593
+Speed updated: 32.2957
+acceleration: 0.756424
+Speed updated: 32.3714
+acceleration: 0.753565
+Speed updated: 32.4467
+the end: 1094.53,1177.64
+got the trajectory
+ Car values: 286.87,6.59218,69.6666,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.647006,0,9.38518,48.552,87.514,
+0,0,-0.109852,-6.38874,-14.6012,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 32.3503
+acceleration: 0.754359
+Speed updated: 32.4257
+acceleration: 0.751514
+Speed updated: 32.5009
+acceleration: 0.748687
+Speed updated: 32.5758
+acceleration: 0.745877
+Speed updated: 32.6504
+the end: 1097.04,1178.3
+got the trajectory
+ Car values: 289.987,6.58193,69.5409,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.650536,0,9.88078,49.0794,88.0992,
+0,0,-0.4235,-6.49644,-14.4307,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 32.5268
+acceleration: 0.747715
+Speed updated: 32.602
+acceleration: 0.744894
+Speed updated: 32.6785
+acceleration: 0.742031
+Speed updated: 32.7575
+acceleration: 0.739083
+Speed updated: 32.84
+acceleration: 0.736012
+Speed updated: 32.9269
+the end: 1100.22,1179.06
+got the trajectory
+ Car values: 292.477,6.56664,69.2265,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.657417,0,9.09908,48.4657,87.7213,
+0,0,-0.355085,-5.22073,-11.8934,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 32.8708
+acceleration: 0.734865
+Speed updated: 32.9448
+acceleration: 0.73212
+Speed updated: 33.0204
+acceleration: 0.729322
+Speed updated: 33.0987
+acceleration: 0.726429
+Speed updated: 33.1808
+the end: 1102.81,1179.59
+got the trajectory
+ Car values: 295.581,6.55829,69.0117,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.662677,0,9.56009,49.0322,88.4471,
+0,0,-0.329232,-4.25433,-9.91478,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 33.1339
+acceleration: 0.725133
+Speed updated: 33.2068
+acceleration: 0.722449
+Speed updated: 33.2808
+acceleration: 0.719729
+Speed updated: 33.3569
+acceleration: 0.716939
+Speed updated: 33.4359
+acceleration: 0.714053
+Speed updated: 33.5182
+the end: 1106.09,1180.18
+got the trajectory
+ Car values: 298.685,6.62287,69.2812,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.670422,0,9.33362,48.8895,88.438,
+-1.38778e-17,0,-0.212469,-3.19339,-7.83644,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 33.5211
+acceleration: 0.710944
+Speed updated: 33.5923
+acceleration: 0.708351
+Speed updated: 33.664
+acceleration: 0.705749
+Speed updated: 33.7364
+acceleration: 0.703125
+Speed updated: 33.81
+acceleration: 0.700465
+Speed updated: 33.8849
+the end: 1109.42,1180.7
+got the trajectory
+ Car values: 301.175,6.73722,69.9497,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.677422,0,8.45259,48.0534,87.6793,
+0,0,-0.100542,-2.43485,-6.37167,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 33.8711
+acceleration: 0.69826
+Speed updated: 33.9409
+acceleration: 0.695743
+Speed updated: 34.0107
+acceleration: 0.693235
+Speed updated: 34.0806
+acceleration: 0.69073
+Speed updated: 34.1505
+the end: 1112.12,1181.09
+got the trajectory
+ Car values: 305.33,6.62189,70.0755,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.683633,0,9.88485,49.3224,89.1455,
+-1.38778e-17,0,-0.0770545,-2.29663,-5.99873,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 34.1816
+acceleration: 0.687113
+Speed updated: 34.2504
+acceleration: 0.684661
+Speed updated: 34.3189
+acceleration: 0.682221
+Speed updated: 34.3872
+acceleration: 0.679793
+Speed updated: 34.4553
+acceleration: 0.677375
+Speed updated: 34.5234
+the end: 1115.52,1181.55
+got the trajectory
+ Car values: 307.846,6.46746,70.7889,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.690293,0,8.96301,48.4,88.2384,
+0,0,-0.0528045,-2.30962,-5.84341,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 34.5147
+acceleration: 0.675273
+Speed updated: 34.5822
+acceleration: 0.672886
+Speed updated: 34.6495
+acceleration: 0.670512
+Speed updated: 34.7166
+acceleration: 0.66815
+Speed updated: 34.7835
+the end: 1118.27,1181.92
+got the trajectory
+ Car values: 311.015,6.32829,71.0967,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.695975,0,9.35806,48.7926,88.6447,
+0,0,-0.0275532,-2.38581,-5.7625,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 34.7987
+acceleration: 0.665263
+Speed updated: 34.8653
+acceleration: 0.662931
+Speed updated: 34.9316
+acceleration: 0.660611
+Speed updated: 34.9976
+acceleration: 0.658303
+Speed updated: 35.0635
+acceleration: 0.656008
+Speed updated: 35.1291
+the end: 1121.74,1182.38
+got the trajectory
+ Car values: 314.856,6.21099,71.9017,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.702054,0,9.37515,49.1203,88.8936,
+0,0,-0.212414,-2.72111,-6.13223,
+ Spline points transformed
+Prev size is: 44 The path vec: 44
+	 in creating spline
+Spline Created
+Speed is: 35.1027
+acceleration: 0.654642
+Speed updated: 35.1684
+acceleration: 0.65236
+Speed updated: 35.2346
+acceleration: 0.650063
+Speed updated: 35.3018
+acceleration: 0.647736
+Speed updated: 35.3704
+acceleration: 0.645366
+Speed updated: 35.4406
+acceleration: 0.642943
+Speed updated: 35.5128
+the end: 1125.95,1182.88
+got the trajectory
+ Car values: 317.439,6.15374,72.3283,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.710296,0,7.719,47.5051,87.3399,
+0,0,-0.13392,-1.86605,-4.46032,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 35.5148
+acceleration: 0.64039
+Speed updated: 35.579
+acceleration: 0.638183
+Speed updated: 35.6437
+acceleration: 0.635964
+Speed updated: 35.7093
+acceleration: 0.633718
+Speed updated: 35.7761
+the end: 1128.79,1183.16
+got the trajectory
+ Car values: 320.039,6.12441,72.7676,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.71524,0,7.46612,47.271,87.138,
+0,0,-0.0858536,-1.30272,-3.34117,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 35.762
+acceleration: 0.631919
+Speed updated: 35.8253
+acceleration: 0.62976
+Speed updated: 35.8887
+acceleration: 0.627601
+Speed updated: 35.9524
+acceleration: 0.625435
+Speed updated: 36.0165
+the end: 1131.65,1183.42
+got the trajectory
+ Car values: 323.316,6.17794,73.5869,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.71959,0,7.87016,47.6833,87.5673,
+0,0,-0.0498945,-0.94885,-2.61859,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 35.9795
+acceleration: 0.624514
+Speed updated: 36.042
+acceleration: 0.622395
+Speed updated: 36.1043
+acceleration: 0.620285
+Speed updated: 36.1666
+acceleration: 0.61818
+Speed updated: 36.2288
+acceleration: 0.61608
+Speed updated: 36.2911
+the end: 1135.26,1183.71
+got the trajectory
+ Car values: 326.682,6.27036,74.2293,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.72624,0,7.61953,47.4307,87.3279,
+0,0,-0.0188197,-0.763208,-2.22644,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 36.312
+acceleration: 0.61328
+Speed updated: 36.3733
+acceleration: 0.611219
+Speed updated: 36.4345
+acceleration: 0.609168
+Speed updated: 36.4954
+acceleration: 0.607127
+Speed updated: 36.5562
+the end: 1138.17,1183.94
+got the trajectory
+ Car values: 330.022,6.12621,75.1461,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.731225,0,8.04216,47.852,87.7484,
+-6.93889e-18,0,-0.0208889,-0.842408,-2.32608,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 36.5612
+acceleration: 0.604927
+Speed updated: 36.6217
+acceleration: 0.602908
+Speed updated: 36.682
+acceleration: 0.600899
+Speed updated: 36.7422
+acceleration: 0.598899
+Speed updated: 36.8021
+acceleration: 0.596909
+Speed updated: 36.8618
+the end: 1141.83,1184.22
+got the trajectory
+ Car values: 332.722,6.06041,75.7719,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.73713,0,7.06835,46.8786,86.7766,
+0,0,-0.00853747,-0.830592,-2.26883,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 36.8565
+acceleration: 0.595104
+Speed updated: 36.916
+acceleration: 0.593134
+Speed updated: 36.9753
+acceleration: 0.591173
+Speed updated: 37.0345
+acceleration: 0.589222
+Speed updated: 37.0934
+the end: 1144.78,1184.44
+got the trajectory
+ Car values: 336.13,6.01894,76.5685,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.742116,0,7.51556,47.3248,87.222,
+0,0,-0.0046907,-0.906883,-2.36742,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 37.1058
+acceleration: 0.586872
+Speed updated: 37.1645
+acceleration: 0.584942
+Speed updated: 37.223
+acceleration: 0.583022
+Speed updated: 37.2813
+acceleration: 0.58111
+Speed updated: 37.3394
+acceleration: 0.579208
+Speed updated: 37.3973
+the end: 1148.5,1184.73
+got the trajectory
+ Car values: 338.883,6.00127,77.203,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.747177,0,6.54108,46.3483,86.243,
+-1.38778e-17,0,-0.010156,-1.02658,-2.55472,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 37.3589
+acceleration: 0.578572
+Speed updated: 37.4167
+acceleration: 0.576682
+Speed updated: 37.4744
+acceleration: 0.574801
+Speed updated: 37.5319
+acceleration: 0.572929
+Speed updated: 37.5892
+the end: 1151.49,1184.95
+got the trajectory
+ Car values: 341.657,5.99153,77.8352,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.752088,0,6.31479,46.1227,85.6188,
+0,0,0.00170735,-1.02359,-2.59143,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 37.6044
+acceleration: 0.570572
+Speed updated: 37.6615
+acceleration: 0.56872
+Speed updated: 37.7183
+acceleration: 0.566877
+Speed updated: 37.7751
+acceleration: 0.565042
+Speed updated: 37.8316
+the end: 1154.5,1185.18
+got the trajectory
+ Car values: 345.156,5.98602,78.5146,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.756151,0,6.62124,46.5996,86.0755,
+-6.93889e-18,0,-0.0187185,-1.1677,-3.045,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 37.8076
+acceleration: 0.563992
+Speed updated: 37.864
+acceleration: 0.562171
+Speed updated: 37.9202
+acceleration: 0.560359
+Speed updated: 37.9763
+acceleration: 0.558555
+Speed updated: 38.0322
+acceleration: 0.556758
+Speed updated: 38.088
+the end: 1158.29,1185.46
+got the trajectory
+ Car values: 347.976,6.00851,79.041,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.761988,0,5.64365,45.6254,85.0928,
+0,0,-0.0742617,-1.09723,-3.06783,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 38.0994
+acceleration: 0.554602
+Speed updated: 38.1551
+acceleration: 0.552817
+Speed updated: 38.2116
+acceleration: 0.551011
+Speed updated: 38.2691
+acceleration: 0.549174
+Speed updated: 38.3278
+the end: 1161.34,1185.65
+got the trajectory
+ Car values: 350.82,6.06922,79.7169,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.766264,0,5.42879,45.4213,84.9024,
+0,0,-0.0365751,-0.470523,-2.07928,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 38.3132
+acceleration: 0.547767
+Speed updated: 38.3681
+acceleration: 0.54602
+Speed updated: 38.4231
+acceleration: 0.544271
+Speed updated: 38.4782
+acceleration: 0.542519
+Speed updated: 38.5336
+the end: 1164.41,1185.81
+got the trajectory
+ Car values: 354.007,6.03715,80.2971,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.770987,0,5.53968,45.4587,85.0146,
+0,0,-0.0159402,-0.193756,-1.76605,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 38.5494
+acceleration: 0.540264
+Speed updated: 38.6034
+acceleration: 0.538553
+Speed updated: 38.6573
+acceleration: 0.536848
+Speed updated: 38.7112
+acceleration: 0.535148
+Speed updated: 38.7649
+the end: 1167.51,1185.96
+got the trajectory
+ Car values: 357.613,6.00791,80.906,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.774837,0,6.05071,45.9699,85.5211,
+0,0,0.00398351,-0.0572839,-1.70274,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 38.7418
+acceleration: 0.534181
+Speed updated: 38.7953
+acceleration: 0.532499
+Speed updated: 38.8485
+acceleration: 0.530824
+Speed updated: 38.9016
+acceleration: 0.529156
+Speed updated: 38.9545
+acceleration: 0.527496
+Speed updated: 39.0073
+the end: 1171.39,1186.14
+got the trajectory
+ Car values: 360.52,5.99997,81.5584,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.779878,0,5.06745,44.9863,84.5269,
+0,0,-0.000411611,-0.13981,-2.01477,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 38.9939
+acceleration: 0.526261
+Speed updated: 39.0465
+acceleration: 0.524614
+Speed updated: 39.099
+acceleration: 0.522975
+Speed updated: 39.1513
+acceleration: 0.521342
+Speed updated: 39.2034
+the end: 1174.52,1186.29
+got the trajectory
+ Car values: 363.447,5.99536,82.1176,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.784873,0,4.86365,44.7822,84.3146,
+0,0,0.000556383,-0.165931,-2.22087,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 39.2436
+acceleration: 0.518466
+Speed updated: 39.2955
+acceleration: 0.516853
+Speed updated: 39.3472
+acceleration: 0.515248
+Speed updated: 39.3987
+acceleration: 0.51365
+Speed updated: 39.4501
+the end: 1177.66,1186.44
+got the trajectory
+ Car values: 366.392,5.99329,82.5668,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.788868,0,4.65977,44.5781,84.1021,
+-6.93889e-18,0,0.00200144,-0.194352,-2.43302,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 39.4434
+acceleration: 0.512265
+Speed updated: 39.4946
+acceleration: 0.51068
+Speed updated: 39.5457
+acceleration: 0.509102
+Speed updated: 39.5966
+acceleration: 0.50753
+Speed updated: 39.6474
+the end: 1180.83,1186.59
+got the trajectory
+ Car values: 369.358,5.9937,83.1114,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.792911,0,4.45449,44.3775,83.89,
+0,0,-0.00492265,-0.279392,-2.75295,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 39.6456
+acceleration: 0.506022
+Speed updated: 39.6962
+acceleration: 0.504464
+Speed updated: 39.7466
+acceleration: 0.502913
+Speed updated: 39.797
+acceleration: 0.501367
+Speed updated: 39.8471
+the end: 1184,1186.74
+got the trajectory
+ Car values: 373.09,5.99322,83.6778,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.796859,0,5.00581,44.9289,84.4339,
+0,0,-0.000192145,-0.261834,-2.92116,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 39.843
+acceleration: 0.499956
+Speed updated: 39.893
+acceleration: 0.498425
+Speed updated: 39.9428
+acceleration: 0.4969
+Speed updated: 39.9925
+acceleration: 0.495381
+Speed updated: 40.042
+acceleration: 0.49387
+Speed updated: 40.0914
+the end: 1188,1186.92
+got the trajectory
+ Car values: 376.096,5.99458,84.2278,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.801901,0,4.01192,43.9345,83.3495,
+0,0,-0.00385288,-0.341363,-3.22987,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 40.095
+acceleration: 0.492254
+Speed updated: 40.1443
+acceleration: 0.490756
+Speed updated: 40.1934
+acceleration: 0.489263
+Speed updated: 40.2423
+acceleration: 0.487777
+Speed updated: 40.2911
+the end: 1191.21,1187.07
+got the trajectory
+ Car values: 379.877,5.99683,84.785,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.80585,0,4.57617,44.4989,83.9027,
+0,0,0.00209464,-0.323972,-3.45185,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 40.2925
+acceleration: 0.486255
+Speed updated: 40.3411
+acceleration: 0.484782
+Speed updated: 40.3896
+acceleration: 0.483316
+Speed updated: 40.4379
+acceleration: 0.481855
+Speed updated: 40.4861
+acceleration: 0.480401
+Speed updated: 40.5342
+the end: 1195.25,1187.26
+got the trajectory
+ Car values: 382.923,6.0083,85.326,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.809892,0,3.57785,43.0982,82.888,
+0,0,-0.00181107,-0.578314,-3.81333,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 40.4946
+acceleration: 0.480145
+Speed updated: 40.5426
+acceleration: 0.478698
+Speed updated: 40.5905
+acceleration: 0.477257
+Speed updated: 40.6382
+acceleration: 0.475822
+Speed updated: 40.6858
+the end: 1198.5,1187.41
+got the trajectory
+ Car values: 386.158,6.01332,85.8023,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.813888,0,3.56394,43.0745,82.8614,
+6.93889e-18,0,-0.00166143,-0.821824,-4.09001,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 40.6944
+acceleration: 0.474135
+Speed updated: 40.7418
+acceleration: 0.472713
+Speed updated: 40.7891
+acceleration: 0.471297
+Speed updated: 40.8362
+acceleration: 0.469887
+Speed updated: 40.8832
+the end: 1201.76,1187.56
+got the trajectory
+ Car values: 390.012,5.99987,86.4477,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.817883,0,4.15234,43.6512,83.4346,
+-6.93889e-18,0,-0.000908063,-1.11313,-4.42266,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 40.8942
+acceleration: 0.468155
+Speed updated: 40.941
+acceleration: 0.466757
+Speed updated: 40.9877
+acceleration: 0.465366
+Speed updated: 41.0342
+acceleration: 0.46398
+Speed updated: 41.0806
+acceleration: 0.4626
+Speed updated: 41.1269
+the end: 1205.86,1187.75
+got the trajectory
+ Car values: 393.892,6.00183,86.9951,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.822878,0,3.85378,43.4165,83.1965,
+0,0,-0.0138623,-1.40414,-4.75322,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 41.1439
+acceleration: 0.46072
+Speed updated: 41.19
+acceleration: 0.459352
+Speed updated: 41.2361
+acceleration: 0.457987
+Speed updated: 41.2822
+acceleration: 0.456622
+Speed updated: 41.3284
+acceleration: 0.455256
+Speed updated: 41.3747
+the end: 1209.98,1187.93
+got the trajectory
+ Car values: 397.015,6.00092,87.4509,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.827658,0,2.84753,42.4102,82.2074,
+0,0,-0.0191231,-1.36442,-4.50316,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 41.3829
+acceleration: 0.453646
+Speed updated: 41.4285
+acceleration: 0.452301
+Speed updated: 41.4746
+acceleration: 0.450942
+Speed updated: 41.5213
+acceleration: 0.449568
+Speed updated: 41.5685
+the end: 1213.3,1188.03
+got the trajectory
+ Car values: 400.943,6.00112,88.1192,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.831346,0,3.45619,43.0241,82.8499,
+0,0,0.0191493,-1.14831,-3.90021,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 41.5673
+acceleration: 0.448216
+Speed updated: 41.6123
+acceleration: 0.446894
+Speed updated: 41.6577
+acceleration: 0.445564
+Speed updated: 41.7032
+acceleration: 0.44423
+Speed updated: 41.7485
+acceleration: 0.442904
+Speed updated: 41.7934
+the end: 1217.47,1188.18
+got the trajectory
+ Car values: 404.105,6.00205,88.5692,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.836469,0,2.44729,42.0026,81.8123,
+-3.46945e-18,0,0.000622388,-1.55657,-4.53335,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 41.8234
+acceleration: 0.440715
+Speed updated: 41.8675
+acceleration: 0.439428
+Speed updated: 41.9115
+acceleration: 0.438147
+Speed updated: 41.9553
+acceleration: 0.436871
+Speed updated: 41.9991
+the end: 1220.82,1188.29
+got the trajectory
+ Car values: 408.084,6.0009,89.1284,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.840402,0,3.07223,42.6236,82.4371,
+3.46945e-18,0,0.0107238,-1.70723,-4.63512,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 42.0201
+acceleration: 0.434986
+Speed updated: 42.0637
+acceleration: 0.433718
+Speed updated: 42.1075
+acceleration: 0.432449
+Speed updated: 42.1511
+acceleration: 0.431185
+Speed updated: 42.1943
+acceleration: 0.429933
+Speed updated: 42.2373
+the end: 1225.04,1188.43
+got the trajectory
+ Car values: 412.084,6.00085,89.6927,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.8454,0,2.85607,42.3999,81.8108,
+-3.46945e-18,0,0.0118119,-1.96133,-4.93457,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 42.27
+acceleration: 0.427745
+Speed updated: 42.313
+acceleration: 0.426504
+Speed updated: 42.3561
+acceleration: 0.425259
+Speed updated: 42.3991
+acceleration: 0.42402
+Speed updated: 42.4416
+acceleration: 0.422796
+Speed updated: 42.4839
+the end: 1229.27,1188.57
+got the trajectory
+ Car values: 416.108,6.00086,90.2468,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.849368,0,2.64107,42.1016,81.5626,
+0,0,0.0156418,-2.16521,-5.40786,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 42.4684
+acceleration: 0.422026
+Speed updated: 42.511
+acceleration: 0.420802
+Speed updated: 42.5541
+acceleration: 0.419564
+Speed updated: 42.597
+acceleration: 0.418334
+Speed updated: 42.6391
+acceleration: 0.417129
+Speed updated: 42.6808
+the end: 1233.53,1188.71
+got the trajectory
+ Car values: 419.344,6.00045,90.5798,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.853366,0,1.61808,41.07,80.5085,
+0,0,0.0121253,-2.41807,-5.86811,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 42.6683
+acceleration: 0.416291
+Speed updated: 42.7108
+acceleration: 0.415074
+Speed updated: 42.7539
+acceleration: 0.413845
+Speed updated: 42.7957
+acceleration: 0.41265
+Speed updated: 42.837
+the end: 1236.95,1188.83
+got the trajectory
+ Car values: 423.409,5.99938,91.1383,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.856365,0,1.86098,41.7015,81.1115,
+0,0,-0.197451,-2.73251,-6.44578,
+ Spline points transformed
+Prev size is: 45 The path vec: 45
+	 in creating spline
+Spline Created
+Speed is: 42.8182
+acceleration: 0.412008
+Speed updated: 42.9865
+acceleration: 0.407219
+Speed updated: 43.3868
+acceleration: 0.395899
+Speed updated: 43.8301
+acceleration: 0.383485
+Speed updated: 44.2412
+acceleration: 0.372084
+Speed updated: 44.6214
+the end: 1241.31,1188.44
+got the trajectory
+ Car values: 426.678,5.99953,91.5884,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-0.893054,0,0.753338,40.6026,80.1724,
+0,0,0.219288,2.60913,3.60308,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+Spline Created
+Speed is: 44.6527
+acceleration: 0.360777
+Speed updated: 46.662
+acceleration: 0.307026
+Speed updated: 49.2817
+acceleration: 0.240321
+Speed updated: 51.6931
+acceleration: 0.181984
+Speed updated: 53.868
+the end: 1245.26,1189.25
+got the trajectory
+ Car values: 431.611,6.00261,92.2469,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-1.07655,0,1.57443,40.507,78.7129,
+2.77556e-17,0,-1.1365,-9.96384,-20.3065,
+ Spline points transformed
+Prev size is: 44 The path vec: 44
+	 in creating spline
+Spline Created
+Speed is: 53.8276
+acceleration: 0.132571
+Speed updated: 63.9016
+acceleration: -0.0769356
+Speed updated: 85.5865
+acceleration: -0.433748
+Speed updated: 110.184
+acceleration: -0.742247
+Speed updated: 134.574
+acceleration: -0.986445
+Speed updated: 155.256
+acceleration: -1.16103
+Speed updated: 169.729
+the end: 1258.53,1184.15
+got the trajectory
+ Car values: 434.995,5.99589,92.6704,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Spline points created
+Have the spline points
+-3.38629,0,-8.85125,30.4047,69.6166,
+0,0,2.28824,9.54328,14.9413,
+ Spline points transformed
+Prev size is: 46 The path vec: 46
+	 in creating spline
+path_planning: /home/workspace/CarND-Path-Planning-Project/src/spline.h:290: void {anonymous}::tk::spline::set_points(const std::vector<double>&, const std::vector<double>&, bool): Assertion `m_x[i] < m_x[i + 1]' failed.
+Aborted (core dumped)
+
+Script done on Wed Sep 16 23:46:31 2020
