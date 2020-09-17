@@ -1,0 +1,138 @@
+Script started on Thu Sep 17 03:31:25 2020
+Listening to port 4567
+Connected!!!
+ Car values: 124.834,6.16483,0,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 60,1
+
+Creating trajectory planner
+generating trajectory
+Prev size is: 0 The path vec: 0
+Spline points created
+Have the spline points
+-1,0,40.5128,80.4897,118.659,155.709,
+0,0,1.99404,9.27531,23.9294,39.1389,
+ Spline points transformed
+	 in creating spline
+Spline Created
+Speed is: 0
+acceleration: 5
+Speed updated: 0.5
+acceleration: 5
+Speed updated: 1
+acceleration: 5
+Speed updated: 1.5
+acceleration: 4.50485
+Speed updated: 1.95049
+acceleration: 4.18414
+Speed updated: 2.3689
+acceleration: 3.94681
+Speed updated: 2.76358
+acceleration: 3.75862
+Speed updated: 3.13945
+acceleration: 3.60289
+Speed updated: 3.49974
+acceleration: 3.47022
+Speed updated: 3.84677
+acceleration: 3.35476
+Speed updated: 4.18225
+acceleration: 3.25265
+Speed updated: 4.50753
+acceleration: 3.16118
+Speed updated: 4.82366
+acceleration: 3.07841
+Speed updated: 5.13151
+acceleration: 3.00285
+Speed updated: 5.43182
+acceleration: 2.9334
+Speed updated: 5.72518
+acceleration: 2.86916
+Speed updated: 6.01213
+acceleration: 2.80944
+Speed updated: 6.29312
+acceleration: 2.75366
+Speed updated: 6.56853
+acceleration: 2.70135
+Speed updated: 6.83872
+acceleration: 2.65213
+Speed updated: 7.10401
+acceleration: 2.60565
+Speed updated: 7.36465
+acceleration: 2.56165
+Speed updated: 7.62092
+acceleration: 2.51988
+Speed updated: 7.87303
+acceleration: 2.48013
+Speed updated: 8.12118
+acceleration: 2.44223
+Speed updated: 8.36556
+acceleration: 2.40603
+Speed updated: 8.60636
+acceleration: 2.37137
+Speed updated: 8.84371
+acceleration: 2.33815
+Speed updated: 9.07778
+acceleration: 2.30625
+Speed updated: 9.3087
+acceleration: 2.27557
+Speed updated: 9.53658
+acceleration: 2.24604
+Speed updated: 9.76156
+acceleration: 2.21756
+Speed updated: 9.98374
+acceleration: 2.19008
+Speed updated: 10.2032
+acceleration: 2.16352
+Speed updated: 10.4201
+acceleration: 2.13783
+Speed updated: 10.6345
+acceleration: 2.11296
+Speed updated: 10.8465
+acceleration: 2.08886
+Speed updated: 11.0561
+acceleration: 2.06548
+Speed updated: 11.2635
+acceleration: 2.04279
+Speed updated: 11.4687
+acceleration: 2.02074
+Speed updated: 11.6718
+acceleration: 1.9993
+Speed updated: 11.8729
+acceleration: 1.97844
+Speed updated: 12.072
+acceleration: 1.95814
+Speed updated: 12.2692
+acceleration: 1.93835
+Speed updated: 12.4645
+acceleration: 1.91906
+Speed updated: 12.6581
+acceleration: 1.90024
+Speed updated: 12.8499
+acceleration: 1.88188
+Speed updated: 13.04
+acceleration: 1.86394
+Speed updated: 13.2286
+acceleration: 1.84641
+Speed updated: 13.4155
+acceleration: 1.82927
+Speed updated: 13.601
+the end: 917.533,1128.75
+got the trajectory
+ Car values: 124.844,6.16492,1.11956,1,
+
+Created behaviour planner
+The order is: laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor
+The values are: 1000,1,100,10,1
+	In Constuctor
+	Next action and end: 21.712,1
+
+Creating trajectory planner
+generating trajectory
+Prev size is: 49 The path vec: 49
+Segmentation fault (core dumped)
+
+Script done on Thu Sep 17 03:31:31 2020
