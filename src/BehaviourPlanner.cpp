@@ -1,10 +1,12 @@
+
+
 #include "BehaviourPlanner.h"
 
 
 
 void BehaviourPlanner::nearestCar()
 {
-	
+
 	// initialise maxSpeed vector
 	_maxLaneSpeeds = vector<double>(nlane, maxVel);
 	for (int i = 0; i < nlane; ++i)
@@ -98,7 +100,7 @@ void BehaviourPlanner::nearestCar()
 // cost functions
 double BehaviourPlanner::laneChangeCost(int lane)
 {
-	return (fabs(_carCurr._lane - lane));
+	return (fabs(_carCurr->_lane - lane));
 }
 double BehaviourPlanner::speedChangeCost(int lane)
 {
@@ -108,7 +110,7 @@ double BehaviourPlanner::speedChangeCost(int lane)
 		return 0;
 	}
 
-	double deltaVel = fabs(_carCurr._speed - _maxLaneSpeeds[lane]);
+	double deltaVel = fabs(_carCurr->_speed - _maxLaneSpeeds[lane]);
 
 	return deltaVel;
 }
@@ -119,7 +121,7 @@ double BehaviourPlanner::speedCost(int lane)
 double BehaviourPlanner::safetyCost(int lane)
 {
 	// if same lane the return 0
-	if (_carCurr._lane == lane)
+	if (_carCurr->_lane == lane)
 	{
 		return 0;
 	}
@@ -127,7 +129,7 @@ double BehaviourPlanner::safetyCost(int lane)
 	// we only consider the cars in front
 
 	// cost of current lane, if there is a car within red zone return max
-	car* front = _relCars[_carCurr._lane][1];
+	car* front = _relCars[_carCurr->_lane][1];
 	if (front && front->_distance < redZone / 2)
 	{
 		return maxReturn;
@@ -154,8 +156,8 @@ double BehaviourPlanner::bufferCost(int lane)
 {
 
 	// Initial lane, see if any in 30
-	car* front = (_relCars[_carCurr._lane][1]);
-	car* back = (_relCars[_carCurr._lane][0]);
+	car* front = (_relCars[_carCurr->_lane][1]);
+	car* back = (_relCars[_carCurr->_lane][0]);
 
 	double cost = 0;
 
@@ -208,17 +210,21 @@ double BehaviourPlanner::bufferCost(int lane)
 
 bool BehaviourPlanner::collision()
 {
-	car* front = _relCars[_carCurr._lane][1];
+	car* front = _relCars[_carCurr->_lane][1];
 	if (front)
 	{
-		return ((_relCars[_carCurr._lane][1])->_distance < redZone);
+		return ((_relCars[_carCurr->_lane][1])->_distance < redZone);
 
 	}
 	return false;
 }
 
-BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<double>>& sensor_fusion) :_carCurr(carCurr), _prevSize(prevSize)
+void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const vector<vector<double>>& sensor_fusion)
 {
+	//initialise
+	_carCurr = &carCurr;
+	_prevSize = prevSize;
+
 	// load the weights 
 	streamIn();
 
@@ -226,8 +232,6 @@ BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<dou
 	cout << "\t" << "In Constuctor" << endl;
 	//set prevSize
 	_prevSize = std::min(maxUsePrev, prevSize);
-
-	cout << "\t" << "Previous size: " << _prevSize << endl;
 
 	// initialise hashCar
 	for (auto sensed : sensor_fusion)
@@ -246,15 +250,15 @@ BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<dou
 		if (0 <= lane && lane < nlane)
 		{
 			car temp(x, y, s, d, yaw, lane, speed);
-			if (lane == _carCurr._lane && _carCurr._s > s)
+			if (lane == _carCurr->_lane && _carCurr->_s > s)
 			{
-				cout << "Right Behind" << endl;
-				temp._distance = (s)-_carCurr._s;
+				// cout << "Right Behind" << endl;
+				temp._distance = (s)-_carCurr->_s;
 
 			}
 			else
 			{
-				temp._distance = (s + _prevSize * 0.02 * speed) - _carCurr._s;
+				temp._distance = (s + _prevSize * 0.02 * speed) - _carCurr->_s;
 			}
 			_hashCar[lane].emplace_back(temp);
 		}
@@ -263,17 +267,18 @@ BehaviourPlanner::BehaviourPlanner(car& carCurr, int prevSize, vector<vector<dou
 	// populate the lane vector
 	nearestCar();
 
-	cout << "\t" << "Nearest Car" << endl;
+	// cout << "\t" << "Nearest Car" << endl;
 
 	// collise or not
 	_collide = collision();
 
-	cout << "\t" << "Collision: " << _collide << endl;
+	if (_collide)
+		cout << "\t" << "Collision: " << _collide << endl;
 
 	// set next action
 	if (!_collide)
 	{
-		_next = make_pair(_maxLaneSpeeds[_carCurr._lane], _carCurr._lane);
+		_next = make_pair(_maxLaneSpeeds[_carCurr->_lane], _carCurr->_lane);
 	}
 	else
 	{
@@ -288,16 +293,16 @@ pair<double, int> BehaviourPlanner::choseAction()
 {
 
 	double max = maxReturn;
-	pair<double, int> result = make_pair(_maxLaneSpeeds[_carCurr._lane], _carCurr._lane);
+	pair<double, int> result = make_pair(_maxLaneSpeeds[_carCurr->_lane], _carCurr->_lane);
 
-	if (_carCurr._speed < 10)
+	if (_carCurr->_speed < 10)
 	{
 		return result;
 	}
 
 	for (int i = 0; i < nlane; ++i)
 	{
-		if (i > _carCurr._lane + 1 || i < _carCurr._lane - 1)
+		if (i > _carCurr->_lane + 1 || i < _carCurr->_lane - 1)
 		{
 			continue;
 		}
@@ -343,3 +348,5 @@ pair<double, int> BehaviourPlanner::returnNextAction()
 {
 	return _next;
 }
+
+BehaviourPlanner::BehaviourPlanner() {}

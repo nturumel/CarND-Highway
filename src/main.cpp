@@ -6,6 +6,7 @@
 #include "json.hpp"
 #include "BehaviourPlanner.h"
 #include "TrajectoryPlanner.h"
+#include "HighwayMap.h"
 
 // for convenience
 using nlohmann::json;
@@ -17,45 +18,19 @@ int main()
 
     uWS::Hub h;
 
-    // Load up map values for waypoint's x,y,s and d normalized normal vectors
-    vector<double> map_waypoints_x{};
-    vector<double> map_waypoints_y{};
-    vector<double> map_waypoints_s{};
-    vector<double> map_waypoints_dx{};
-    vector<double> map_waypoints_dy{};
-
     // Waypoint map to read from
     string map_file_ = "../data/highway_map.csv";
     // The max s value before wrapping around the track back to 0
     double max_s = 6945.554;
 
-    std::ifstream in_map_(map_file_.c_str(), std::ifstream::in);
-  
-   
-    string line;
-    while (getline(in_map_, line)) 
-    {
-    std::istringstream iss(line);
-    double x;
-    double y;
-    float s;
-    float d_x;
-    float d_y;
-    iss >> x;
-    iss >> y;
-    iss >> s;
-    iss >> d_x;
-    iss >> d_y;
-    map_waypoints_x.push_back(x);
-    map_waypoints_y.push_back(y);
-    map_waypoints_s.push_back(s);
-    map_waypoints_dx.push_back(d_x);
-    map_waypoints_dy.push_back(d_y);
-    }
+    HighwayMap* hMap = HighwayMap::getInstance(map_file_);
+
+    
+    BehaviourPlanner b;
+    TrajectoryPlanner t;
 
 
-
-     h.onMessage([&map_waypoints_x,&map_waypoints_y,&map_waypoints_s, &map_waypoints_dx,&map_waypoints_dy]
+     h.onMessage([&b, &t, hMap]
               (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                uWS::OpCode opCode) 
          {
@@ -106,36 +81,27 @@ int main()
                             */
 
                             //START ----------------------
-                            cout << endl << "New main Call" << endl;
                             car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
                             
                             std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
 
 
                             cout << endl << "Created behaviour planner" << endl;
-                            BehaviourPlanner b(carCurr, previous_path_x.size(), sensor_fusion);
+                            b.setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next = b.returnNextAction();
 
-                            cout << endl << "got next action" << endl;
-                            cout << next.first << "," << next.second << endl;
-                            
                             cout << endl << "Creating trajectory planner" << endl;
-                            TrajectoryPlanner t;  
                             vector<vector<double>> nextTraj = t.generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                            map_waypoints_x, map_waypoints_y, 
-                            map_waypoints_s, next.first, next.second);
-                            cout << endl << "got trajectory " << endl;
+                                hMap,
+                                next.first, next.second);
                             
-                            /*
-                            cout << "x size: " << nextTraj[0].size() << ", y size: " << nextTraj[1].size() << endl;
-                            cout << nextTraj[0].back() << "," << nextTraj[1].back() << endl;
-                            */
                             
                             //END ------------------------
                             json msgJson;
 
+                           
                             msgJson["next_x"] = nextTraj[0];
                             msgJson["next_y"] = nextTraj[1];
 

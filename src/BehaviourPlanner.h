@@ -19,7 +19,7 @@ class BehaviourPlanner
 {
 private:
 	unordered_map <int, vector<car>> _hashCar;
-	car& _carCurr;
+	const car* _carCurr;
 	vector <double> _maxLaneSpeeds;
 	vector<vector<car*>> _relCars;
 
@@ -51,8 +51,7 @@ private:
 
 
 public:
-	BehaviourPlanner(car& carCurr, int prevSize, vector<vector<double>>& sensor_fusion);
+	BehaviourPlanner();
+	void setEnvironment(const car& carCurr, int prevSize, const vector<vector<double>>& sensor_fusion);
 	pair<double, int> returnNextAction();
-
-	
 };

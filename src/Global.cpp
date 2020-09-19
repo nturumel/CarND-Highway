@@ -3,15 +3,16 @@
 #include <fstream>
 
 using namespace std;
+using namespace highway;
 
 namespace highway
 {
 	extern int laneWidth(4);
 	extern int nlane(3);
 	extern double maxAcc(5);
-	extern double maxVel(47.5);
+	extern double maxVel(60);
 	extern double maxReturn(1e6);
-	extern int maxUsePrev(10);
+	extern int maxUsePrev(50);
 	extern double newSize(50);
 	extern double redZone(30.0);
 	extern double laneChangeFactor(0);

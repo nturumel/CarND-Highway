@@ -11,6 +11,7 @@ set(sources src/main.cpp \\
 			src/spline.cpp \\
 			src/Global.cpp \\
             src/helpers.cpp \\
+            src/HighwayMap.cpp \\
             src/BehaviourPlanner.cpp \\
             src/TrajectoryPlanner.cpp)
 

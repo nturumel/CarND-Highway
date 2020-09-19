@@ -2274,6 +2274,9 @@
     <ClCompile Include="spline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HighwayMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BehaviourPlanner.h">
@@ -3876,6 +3879,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TrajectoryPlanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HighwayMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

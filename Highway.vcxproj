@@ -108,6 +108,7 @@
     <ClCompile Include="car.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="helpers.cpp" />
+    <ClCompile Include="HighwayMap.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="src\eigen-3.3\bench\analyze-blocking-sizes.cpp" />
     <ClCompile Include="src\eigen-3.3\bench\basicbenchmark.cpp" />
@@ -854,6 +855,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.h" />
+    <ClInclude Include="HighwayMap.h" />
     <ClInclude Include="src\BehaviourPlanner.h" />
     <ClInclude Include="src\car.h" />
     <ClInclude Include="src\eigen-3.3\bench\basicbenchmark.h" />
