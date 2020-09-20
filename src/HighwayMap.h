@@ -1,13 +1,11 @@
 #pragma once
 #include <iostream>
 #include "spline.h"
-#include "Global.h"
 #include <fstream>
 #include "helpers.h"
 #include <sstream>
 
 using namespace std;
-using namespace highway;
 
 
 // we are making this a singleton class
@@ -15,7 +13,7 @@ class HighwayMap
 {
 private:
 	// constructor
-	HighwayMap(string filename);
+	HighwayMap();
 
 	// destructor
 	~HighwayMap();
@@ -36,7 +34,7 @@ private:
 	vector<tk::spline> _splineMap;
 public:
 	// singleton get instance
-	static HighwayMap* getInstance(string filename);
+	static HighwayMap* getInstance();
 
 	// helper functions
 	double getLaneCenter(int lane);
@@ -48,7 +46,23 @@ public:
 	HighwayMap(HighwayMap& other) = delete;
 	HighwayMap& operator=(const HighwayMap& other) = delete;
 
+	//highway constants
+	 int laneWidth = 4;
+	 int nlane = 3;
+	 double maxAcc = 5;
+	 double maxVel = 60;
+	 double maxReturn = 1e6;
+	 int maxUsePrev = 50;
+	 double newSize = 50;
+	 double redZone = 30.0;
+	 double laneChangeFactor = 0;
+	 double  speedChangeFactor = 0;
+	 double speedFactor = 0;
+	 double bufferFactor = 0;
+	 double safetyFactor = 0;
+	 string _filename = "../data/highway_map.csv";
 
-
+	 // this is temporary the weights will be fixed
+	 void streamIn();
 };
 

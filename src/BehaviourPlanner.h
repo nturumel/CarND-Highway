@@ -5,19 +5,21 @@
 #include <unordered_map>
 #include "helpers.h"
 #include "json.hpp"
+#include "HighwayMap.h"
 #include <math.h>
 #include <climits>
 #include <fstream>
-#include "Global.h"
 #include "car.h"
 
 using namespace std;
-using namespace highway;
 
 
 class BehaviourPlanner
 {
 private:
+	// highway
+	HighwayMap* _h;
+
 	unordered_map <int, vector<car>> _hashCar;
 	const car* _carCurr;
 	vector <double> _maxLaneSpeeds;
@@ -51,7 +53,7 @@ private:
 
 
 public:
-	BehaviourPlanner();
+	BehaviourPlanner(HighwayMap* h);
 	void setEnvironment(const car& carCurr, int prevSize, const vector<vector<double>>& sensor_fusion);
 	pair<double, int> returnNextAction();
 };

@@ -19,15 +19,14 @@ int main()
     uWS::Hub h;
 
     // Waypoint map to read from
-    string map_file_ = "../data/highway_map.csv";
     // The max s value before wrapping around the track back to 0
     double max_s = 6945.554;
 
-    HighwayMap* hMap = HighwayMap::getInstance(map_file_);
+    HighwayMap* hMap = HighwayMap::getInstance();
 
     
-    BehaviourPlanner b;
-    TrajectoryPlanner t;
+    BehaviourPlanner b(hMap);
+    TrajectoryPlanner t(hMap);
 
 
      h.onMessage([&b, &t, hMap]
@@ -94,7 +93,6 @@ int main()
                             vector<vector<double>> nextTraj = t.generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                                hMap,
                                 next.first, next.second);
                             
                             

@@ -4,20 +4,19 @@ double TrajectoryPlanner::getAcc(double speed, double targetSpeed) const
 {
     if (fabs(speed) < 1)
     {
-        return maxAcc;
+        return _h->maxAcc;
     }
 
-    return (maxAcc - maxAcc * log(speed) / log(targetSpeed));    
+    return (_h->maxAcc - _h->maxAcc * log(speed) / log(targetSpeed));    
 }
 
 vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     vector<double> previous_path_x, vector<double> previous_path_y,
     car& carCurr,
-    HighwayMap* h,
     double ref_vel, int finalLane)
 {
     std::cout << "generating trajectory" << std::endl;
-    vector<vector<double>> nextVals(2, vector<double>(newSize, 0));
+    vector<vector<double>> nextVals(2, vector<double>(_h->newSize, 0));
 
     double refX = carCurr._x;
     double refY = carCurr._y;
@@ -27,7 +26,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     //we are pushing back all the pts left from our previous cycle
     int previous_path_size = previous_path_x.size();
 
-    int maxPrev = std::min(maxUsePrev, previous_path_size);
+    int maxPrev = std::min(_h->maxUsePrev, previous_path_size);
 
     std::cout << "Prev size is: " << maxPrev << " The path vec: " << previous_path_size << std::endl;
 
@@ -80,12 +79,12 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
 
     //In Frenet
-    double laneCenter = h->getLaneCenter(finalLane);
+    double laneCenter = _h->getLaneCenter(finalLane);
 
-    vector<double> next_wp0 = h->frenet2cartesian({ carCurr._s + 40, laneCenter });
-    vector<double> next_wp1 = h->frenet2cartesian({ carCurr._s + 80, laneCenter });
-    vector<double> next_wp2 = h->frenet2cartesian({ carCurr._s + 120, laneCenter });
-    vector<double> next_wp3 = h->frenet2cartesian({ carCurr._s + 160, laneCenter });
+    vector<double> next_wp0 = _h->frenet2cartesian({ carCurr._s + 40, laneCenter });
+    vector<double> next_wp1 = _h->frenet2cartesian({ carCurr._s + 80, laneCenter });
+    vector<double> next_wp2 = _h->frenet2cartesian({ carCurr._s + 120, laneCenter });
+    vector<double> next_wp3 = _h->frenet2cartesian({ carCurr._s + 160, laneCenter });
 
     
 
@@ -148,7 +147,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
     std::cout << "Speed is: " << prev_speed << std::endl;
 
-    for (int i = nextValsCount; i < newSize; ++i)
+    for (int i = nextValsCount; i < _h->newSize; ++i)
     {
         acc = getAcc(prev_speed, ref_vel);
         if (prev_speed > ref_vel && acc > 0.0) {
@@ -190,4 +189,4 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
 }
 
-TrajectoryPlanner::TrajectoryPlanner() : _oldTrajectory(2) {};
+TrajectoryPlanner::TrajectoryPlanner(HighwayMap* h) : _oldTrajectory(2), _h(h) {};
