@@ -89,7 +89,6 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     vector<double> next_wp7 = _h->frenet2cartesian({ endPointS + 120, laneCenter });
     vector<double> next_wp8 = _h->frenet2cartesian({ endPointS + 135, laneCenter });
 
-    // 
     
 
     // std::cout << "Spline points created" << std::endl;
