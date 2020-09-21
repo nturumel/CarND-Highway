@@ -50,7 +50,7 @@ double HighwayMap::getLaneCenter(const int lane) const
 
 vector<double> HighwayMap::frenet2cartesian(const vector<double>& frenetPosition) const
 {
-    const double& s = frenetPosition[0];
+    double s = fmod(frenetPosition[0], _maxS);
     const double& d = frenetPosition[1];
 
     return getXY(s, d, _wayPointsS, _wayPointsX, _wayPointsY);

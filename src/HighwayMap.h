@@ -4,6 +4,7 @@
 #include <fstream>
 #include "helpers.h"
 #include <sstream>
+#include <math.h>
 
 using namespace std;
 
@@ -50,7 +51,8 @@ public:
 	 int _laneWidth = 4;
 	 int _nlane = 3;
 	 double _maxAcc = 0.09;
-	 double _maxVel = 47.5;
+	 double _maxVel = 47.5 / 2.24;
+	 double _maxS = 6945.554;
 
 	 
 

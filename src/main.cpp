@@ -20,7 +20,6 @@ int main()
 
     // Waypoint map to read from
     // The max s value before wrapping around the track back to 0
-    double max_s = 6945.554;
 
     HighwayMap* hMap = HighwayMap::getInstance();
     BehaviourPlanner b(hMap);
@@ -85,7 +84,6 @@ int main()
                             // cout << endl << "Created behaviour planner" << endl;
                             carCurr._tp->setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next =  carCurr._tp->returnNextAction();
-                            next.first /= 2.24;
                             */
                             // cout << endl << "Creating trajectory planner" << endl;
                             vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory

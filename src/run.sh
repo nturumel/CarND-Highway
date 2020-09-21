@@ -1,1 +1,2 @@
-cd CarND-Path-Planning-Project/build/ && ./path_planning 
+cd CarND-Path-Planning-Project/build/ 
+./path_planning 
