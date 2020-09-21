@@ -25,9 +25,10 @@ int main()
     HighwayMap* hMap = HighwayMap::getInstance();
     BehaviourPlanner b(hMap);
     TrajectoryPlanner t(hMap);
+    car carCurr(&b, &t);
 
 
-     h.onMessage([&b, &t, hMap]
+     h.onMessage([&b, &t, &carCurr, hMap]
               (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                uWS::OpCode opCode) 
          {
@@ -76,17 +77,17 @@ int main()
                             */
 
                             //START ----------------------
-                            car carCurr(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), car_speed);
+                            carCurr.setValues(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), car_speed);
                             
                             // std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
 
                             /*
                             // cout << endl << "Created behaviour planner" << endl;
                             b.setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
-                            pair<double, int> next = b.returnNextAction();
+                            pair<double, int> next =  carCurr._tp->returnNextAction();
                             */
                             // cout << endl << "Creating trajectory planner" << endl;
-                            vector<vector<double>> nextTraj = t.generateTrajectory
+                            vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
                                 10, 1, end_path_s);
