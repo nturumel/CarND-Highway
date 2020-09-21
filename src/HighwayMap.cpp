@@ -1,9 +1,8 @@
 #include "HighwayMap.h"
 
-const bool smooth = true;
 HighwayMap* HighwayMap::_instance = 0;
 
-HighwayMap::HighwayMap() : _splineMap(4)
+HighwayMap::HighwayMap()
 {
     std::ifstream in_map_(_filename.c_str(), std::ifstream::in);
 
@@ -30,14 +29,8 @@ HighwayMap::HighwayMap() : _splineMap(4)
         _wayPointsDy.push_back(d_y);
     }
 
-    // creating spline of the road in x, y and d
-    _splineMap[0].set_points(_wayPointsS, _wayPointsX);
-    _splineMap[1].set_points(_wayPointsS, _wayPointsY);
-    _splineMap[2].set_points(_wayPointsS, _wayPointsDx);
-    _splineMap[3].set_points(_wayPointsS, _wayPointsDy);
-
-    // initialising the constants
-    streamIn();
+    
+    
 }
 
 HighwayMap* HighwayMap::getInstance()
@@ -50,39 +43,29 @@ HighwayMap* HighwayMap::getInstance()
     return _instance;
 }
 
-double HighwayMap::getLaneCenter(int lane)
+double HighwayMap::getLaneCenter(const int lane) const 
 {
-    return laneWidth * (lane)+(laneWidth / 2);
+    return _laneWidth * (lane) + (_laneWidth / 2);
 }
 
-vector<double> HighwayMap::frenet2cartesian(const vector<double> frenetPosition) const
+vector<double> HighwayMap::frenet2cartesian(const vector<double>& frenetPosition) const
 {
     const double& s = frenetPosition[0];
     const double& d = frenetPosition[1];
 
-    if (smooth)
-    {
-        double x = _splineMap[0](s) + _splineMap[2](s) * d;
-        double y = _splineMap[1](s) + _splineMap[3](s) * d;
-        return { x, y };
-    }
-    else
-        return getXY(s, d, _wayPointsS, _wayPointsX, _wayPointsY);
+    return getXY(s, d, _wayPointsS, _wayPointsX, _wayPointsY);
 }
 
-void HighwayMap::streamIn()
+vector<double> HighwayMap::cartesian2frenet(const vector<double>& cartPosition) const
 {
-    ifstream in;
-    in.open("/home/workspace/CarND-Path-Planning-Project/src/values.txt");
-    in >> laneChangeFactor;
-    in >> speedChangeFactor;
-    in >> speedFactor;
-    in >> bufferFactor;
-    in >> safetyFactor;
-    cout << "The order is: " << "laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor" << endl;
-    cout << "The values are: " << laneChangeFactor << "," << speedChangeFactor << "," << speedFactor << "," << bufferFactor << "," << safetyFactor << endl;
-    in.close();
+    const double& x = cartPosition[0];
+    const double& y = cartPosition[1];
+    const double& theta = cartPosition[3];
+
+    return getFrenet(x, y, theta, _wayPointsX, _wayPointsY);
+
 }
+
 
 HighwayMap::~HighwayMap()
 {

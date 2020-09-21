@@ -23,8 +23,6 @@ int main()
     double max_s = 6945.554;
 
     HighwayMap* hMap = HighwayMap::getInstance();
-
-    
     BehaviourPlanner b(hMap);
     TrajectoryPlanner t(hMap);
 
@@ -65,14 +63,12 @@ int main()
                             // Previous path's end s and d values 
                             double end_path_s = j[1]["end_path_s"];
                             double end_path_d = j[1]["end_path_d"];
+                            
 
                             // Sensor Fusion Data, a list of all other cars on the same side 
                             //   of the road.
                             vector<vector<double>> sensor_fusion = j[1]["sensor_fusion"];
 
-
-                            
-                           
 
                             /**
                              * TODO: define a path made up of (x,y) points that the car will visit
@@ -80,20 +76,20 @@ int main()
                             */
 
                             //START ----------------------
-                            car carCurr(car_x, car_y, car_s, car_d, car_yaw, (car_d / 4), car_speed);
+                            car carCurr(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), car_speed);
                             
-                            std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
+                            // std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
 
-
-                            cout << endl << "Created behaviour planner" << endl;
+                            /*
+                            // cout << endl << "Created behaviour planner" << endl;
                             b.setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next = b.returnNextAction();
-
-                            cout << endl << "Creating trajectory planner" << endl;
+                            */
+                            // cout << endl << "Creating trajectory planner" << endl;
                             vector<vector<double>> nextTraj = t.generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                                next.first, next.second);
+                                10, 1, end_path_s);
                             
                             
                             //END ------------------------

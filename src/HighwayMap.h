@@ -30,39 +30,32 @@ private:
 	vector<double> _wayPointsDy;
 
 
-	// road spline
-	vector<tk::spline> _splineMap;
+	
 public:
 	// singleton get instance
 	static HighwayMap* getInstance();
 
 	// helper functions
-	double getLaneCenter(int lane);
+	double getLaneCenter(const int lane) const;
 
 	// spline functions map
-	vector<double> frenet2cartesian(const vector<double> frenetPosition) const;
+	vector<double> frenet2cartesian(const vector<double>& frenetPosition) const;
+	vector<double> cartesian2frenet(const vector<double>& cartPosition) const;
 
 	// disabling others
 	HighwayMap(HighwayMap& other) = delete;
 	HighwayMap& operator=(const HighwayMap& other) = delete;
 
 	//highway constants
-	 int laneWidth = 4;
-	 int nlane = 3;
-	 double maxAcc = 5;
-	 double maxVel = 60;
-	 double maxReturn = 1e6;
-	 int maxUsePrev = 50;
-	 double newSize = 50;
-	 double redZone = 30.0;
-	 double laneChangeFactor = 0;
-	 double  speedChangeFactor = 0;
-	 double speedFactor = 0;
-	 double bufferFactor = 0;
-	 double safetyFactor = 0;
+	 int _laneWidth = 4;
+	 int _nlane = 3;
+	 double _maxAcc = 0.09;
+	 double _maxVel = 47.5;
+
+	 
+
 	 string _filename = "../data/highway_map.csv";
 
-	 // this is temporary the weights will be fixed
-	 void streamIn();
+	 
 };
 

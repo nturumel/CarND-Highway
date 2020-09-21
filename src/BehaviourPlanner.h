@@ -17,8 +17,19 @@ using namespace std;
 class BehaviourPlanner
 {
 private:
+	// behaviour planner
+	double _maxReturn = 1e6;
+	double _redZone = 30.0;
+	double _laneChangeFactor = 0;
+	double  _speedChangeFactor = 0;
+	double _speedFactor = 0;
+	double _bufferFactor = 0;
+	double _safetyFactor = 0;
+	// this is temporary the weights will be fixed
+	void streamIn();
+
 	// highway
-	HighwayMap* _h;
+	const HighwayMap* _h;
 
 	unordered_map <int, vector<car>> _hashCar;
 	const car* _carCurr;
@@ -53,7 +64,7 @@ private:
 
 
 public:
-	BehaviourPlanner(HighwayMap* h);
+	BehaviourPlanner(const HighwayMap* h);
 	void setEnvironment(const car& carCurr, int prevSize, const vector<vector<double>>& sensor_fusion);
 	pair<double, int> returnNextAction();
 };

@@ -8,20 +8,20 @@ void BehaviourPlanner::nearestCar()
 {
 
 	// initialise maxSpeed vector
-	_maxLaneSpeeds = vector<double>(_h->nlane, _h->maxVel);
-	for (int i = 0; i < _h->nlane; ++i)
+	_maxLaneSpeeds = vector<double>(_h->_laneWidth, _h->_maxVel);
+	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		_relCars.push_back({ nullptr,nullptr });
 	}
 
 	// fill up rel vector
-	for (int i = 0; i < _h->nlane; ++i)
+	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		car* closestBack = nullptr;
 		car* closestFront = nullptr;
 
-		double backDistance = _h->maxReturn;
-		double frontDistance = _h->maxReturn;
+		double backDistance = _maxReturn;
+		double frontDistance = _maxReturn;
 
 		for (car& othercar : _hashCar[i])
 		{
@@ -47,18 +47,18 @@ void BehaviourPlanner::nearestCar()
 
 		_relCars[i] = vector<car*>{ closestBack ,closestFront };
 
-		if (closestBack && closestFront && ((closestBack->_distance < 1.5 * _h->redZone)))
+		if (closestBack && closestFront && ((closestBack->_distance < 1.5 * _redZone)))
 		{
 			_maxLaneSpeeds[i] = (closestBack->_speed + closestFront->_speed);
 			_maxLaneSpeeds[i] /= 2;
 		}
-		else if (closestFront && (closestFront->_distance < 1.5 * _h->redZone))
+		else if (closestFront && (closestFront->_distance < 1.5 * _redZone))
 		{
 			_maxLaneSpeeds[i] = closestFront->_speed;
 		}
 		else
 		{
-			_maxLaneSpeeds[i] = _h->maxVel;
+			_maxLaneSpeeds[i] = _h->_maxVel;
 		}
 
 	}
@@ -67,7 +67,7 @@ void BehaviourPlanner::nearestCar()
 
 	// debug info
 	cout << "hashcars" << endl;
-	for (int i = 0; i < _h->nlane; ++i)
+	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		cout << "i: " << i << endl;
 		for (int j = 0; j < _hashCar[i].size(); ++j)
@@ -77,7 +77,7 @@ void BehaviourPlanner::nearestCar()
 		cout << endl;
 	}
 	cout << "relcars" << endl;
-	for (int i = 0; i < _h->nlane; ++i)
+	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		cout << "i: " << i << endl;
 		for (int j = 0; j < _relCars[i].size(); ++j)
@@ -116,7 +116,7 @@ double BehaviourPlanner::speedChangeCost(int lane)
 }
 double BehaviourPlanner::speedCost(int lane)
 {
-	return fabs(_maxLaneSpeeds[lane] - _h->maxVel);
+	return fabs(_maxLaneSpeeds[lane] - _h->_maxVel);
 }
 double BehaviourPlanner::safetyCost(int lane)
 {
@@ -130,17 +130,17 @@ double BehaviourPlanner::safetyCost(int lane)
 
 	// cost of current lane, if there is a car within red zone return max
 	car* front = _relCars[_carCurr->_lane][1];
-	if (front && front->_distance < _h->redZone / 2)
+	if (front && front->_distance < _redZone / 2)
 	{
-		return _h->maxReturn;
+		return _maxReturn;
 	}
 
 	front = _relCars[lane][1];
 	if (front)
 	{
-		if (fabs(front->_s) < _h->redZone)
+		if (fabs(front->_s) < _redZone)
 		{
-			return _h->maxReturn;
+			return _maxReturn;
 		}
 		else
 		{
@@ -213,7 +213,7 @@ bool BehaviourPlanner::collision()
 	car* front = _relCars[_carCurr->_lane][1];
 	if (front)
 	{
-		return ((_relCars[_carCurr->_lane][1])->_distance < _h->redZone);
+		return ((_relCars[_carCurr->_lane][1])->_distance < _redZone);
 
 	}
 	return false;
@@ -226,9 +226,8 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	_prevSize = prevSize;
 
 
-	cout << "\t" << "In Constuctor" << endl;
+	// cout << "\t" << "In Constuctor" << endl;
 	//set prevSize
-	_prevSize = std::min(_h->maxUsePrev, prevSize);
 
 	// initialise hashCar
 	for (auto sensed : sensor_fusion)
@@ -242,9 +241,9 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 
 		double speed = sqrt(vx * vx + vy * vy);
 		double yaw = atan2(vy, vx);
-		int lane = (d / _h->laneWidth);
+		int lane = (d / _h->_laneWidth);
 
-		if (0 <= lane && lane < _h->nlane)
+		if (0 <= lane && lane < _h->_laneWidth)
 		{
 			car temp(x, y, s, d, yaw, lane, speed);
 			if (lane == _carCurr->_lane && _carCurr->_s > s)
@@ -270,7 +269,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	_collide = collision();
 
 	if (_collide)
-		cout << "\t" << "Collision: " << _collide << endl;
+		// cout << "\t" << "Collision: " << _collide << endl;
 
 	// set next action
 	if (!_collide)
@@ -282,14 +281,14 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 		_next = choseAction();
 	}
 
-	cout << "\t" << "Next action and end: " << _next.first << "," << _next.second << endl;
+	// cout << "\t" << "Next action and end: " << _next.first << "," << _next.second << endl;
 
 }
 
 pair<double, int> BehaviourPlanner::choseAction()
 {
 
-	double max = _h->maxReturn;
+	double max = _maxReturn;
 	pair<double, int> result = make_pair(_maxLaneSpeeds[_carCurr->_lane], _carCurr->_lane);
 
 	if (_carCurr->_speed < 10)
@@ -297,7 +296,7 @@ pair<double, int> BehaviourPlanner::choseAction()
 		return result;
 	}
 
-	for (int i = 0; i < _h->nlane; ++i)
+	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		if (i > _carCurr->_lane + 1 || i < _carCurr->_lane - 1)
 		{
@@ -309,25 +308,25 @@ pair<double, int> BehaviourPlanner::choseAction()
 
 			double costAdd;
 			costAdd = laneChangeCost(i);
-			cout << "Lane change cost: " << costAdd << endl;
-			cost += _h->laneChangeFactor * costAdd;
+			// cout << "Lane change cost: " << costAdd << endl;
+			cost += _laneChangeFactor * costAdd;
 
 			costAdd = speedChangeCost(i);
-			cout << "Speed change cost: " << costAdd << endl;
-			cost += _h->speedChangeFactor * costAdd;
+			// cout << "Speed change cost: " << costAdd << endl;
+			cost += _speedChangeFactor * costAdd;
 
 			costAdd = speedCost(i);
-			cout << "Max speed change cost: " << costAdd << endl;
-			cost += _h->speedFactor * costAdd;
+			// cout << "Max speed change cost: " << costAdd << endl;
+			cost += _speedFactor * costAdd;
 
 			costAdd = bufferCost(i);
-			cout << "Buffer cost: " << costAdd << endl;
-			cost += _h->bufferFactor * costAdd;
+			// cout << "Buffer cost: " << costAdd << endl;
+			cost += _bufferFactor * costAdd;
 
 
 			costAdd = safetyCost(i);
-			cout << "Safety cost: " << costAdd << endl;
-			cost += _h->safetyFactor * costAdd;
+			// cout << "Safety cost: " << costAdd << endl;
+			cost += _safetyFactor * costAdd;
 
 			if (max > cost)
 			{
@@ -346,4 +345,22 @@ pair<double, int> BehaviourPlanner::returnNextAction()
 	return _next;
 }
 
-BehaviourPlanner::BehaviourPlanner(HighwayMap* h): _h(h) {}
+void BehaviourPlanner::streamIn()
+{
+	ifstream in;
+	in.open("/home/workspace/CarND-Path-Planning-Project/src/values.txt");
+	in >> _laneChangeFactor;
+	in >> _speedChangeFactor;
+	in >> _speedFactor;
+	in >> _bufferFactor;
+	in >> _safetyFactor;
+	// cout << "The order is: " << "laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor" << endl;
+	// cout << "The values are: " << _laneChangeFactor << "," << _speedChangeFactor << "," << _speedFactor << "," << _bufferFactor << "," << _safetyFactor << endl;
+	in.close();
+}
+
+BehaviourPlanner::BehaviourPlanner(const HighwayMap* h): _h(h) 
+{
+	// initialise
+	streamIn();
+}

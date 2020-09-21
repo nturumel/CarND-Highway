@@ -14,17 +14,21 @@ using namespace std;
 class TrajectoryPlanner
 {
 private:
+    // trajectory planner
+    int _maxUsePrev = 50;
+    double _newSize = 50;
+    double _refVel = 0.0;
+
     double getAcc(double speed, double targetSpeed) const;
-    vector<vector<double>> _oldTrajectory; // previous generated trajectory
-    HighwayMap* _h;
+    const HighwayMap* _h;
 
 public:
-    TrajectoryPlanner(HighwayMap* h);
+    TrajectoryPlanner(const HighwayMap* h);
 
     vector<vector<double>> generateTrajectory(
-        vector<double> previous_path_x, vector<double> previous_path_y,
-        car& carCurr,
-        double ref_vel, int finalLane);
+        const vector<double>& previous_path_x, const vector<double>& previous_path_y,
+        const car& carCurr,
+        const double ref_vel, const int finalLane, const double endS);
 };
 
 

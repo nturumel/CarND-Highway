@@ -278,7 +278,6 @@ void spline::set_boundary(spline::bd_type left, double left_value,
 void spline::set_points(const std::vector<double>& x,
     const std::vector<double>& y, bool cubic_spline)
 {
-    cout << "\t in creating spline" << endl;
     assert(x.size() == y.size());
     assert(x.size() > 2);
     m_x = x;
