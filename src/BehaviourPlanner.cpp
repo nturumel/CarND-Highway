@@ -227,8 +227,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 
 
 	// cout << "\t" << "In Constuctor" << endl;
-	//set prevSize
-
+	
 	// initialise hashCar
 	for (auto sensed : sensor_fusion)
 	{
@@ -245,7 +244,8 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 
 		if (0 <= lane && lane < _h->_laneWidth)
 		{
-			car temp(x, y, s, d, yaw, lane, speed);
+			car temp;
+			temp.setValues(x, y, s, d, yaw, lane, speed);
 			if (lane == _carCurr->_lane && _carCurr->_s > s)
 			{
 				// cout << "Right Behind" << endl;

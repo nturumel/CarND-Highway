@@ -89,7 +89,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     vector<double> next_wp7 = _h->frenet2cartesian({ endPointS + 120, laneCenter });
     vector<double> next_wp8 = _h->frenet2cartesian({ endPointS + 135, laneCenter });
 
-
+    // 
     
 
     // std::cout << "Spline points created" << std::endl;
@@ -157,13 +157,14 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         _refVel = std::min(_h->_maxVel, _refVel);
 
         //debug 
-        _refVel = 10.0;
+        _refVel = 15.0;
 
         // std::cout << " Assumed speed  and Acceleration are: " << _refVel << "," << acc << std::endl;
 
         double N = (targetDist / (0.02 * _refVel));
         double x = xAddOn + targetX / N;
         double y = sp(x);
+        
         xAddOn = x;
         
         car2Global(x, y, refYaw, refX, refY);
