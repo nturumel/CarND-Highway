@@ -78,20 +78,15 @@ int main()
                             //START ----------------------
                             carCurr.setValues(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), car_speed);
                             
-                            // std::cout << " Car values: " << carCurr._s << "," << carCurr._d << "," << carCurr._speed << "," << carCurr._lane << "," << std::endl;
-
-                            /*
-                            // cout << endl << "Created behaviour planner" << endl;
                             
                             carCurr._bp->setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next =  carCurr._bp->returnNextAction();
-                            */
-                            // cout << endl << "Creating trajectory planner" << endl;
                             vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                                (47.5/2.24), 1, end_path_s);
+                                next.first, next.second, end_path_s);
                             
+                            std::cout << "Expected speed and actual speed: " << next.first << "," << next.second << endl;
                             
                             //END ------------------------
                             json msgJson;

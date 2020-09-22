@@ -155,8 +155,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         _refVel = std::min(_h->_maxVel, _refVel);
 
         
-        // std::cout << " Assumed speed  and Acceleration are: " << _refVel << "," << acc << std::endl;
-
+       
         double N = (targetDist / (0.02 * _refVel));
         double x = xAddOn + targetX / N;
         double y = sp(x);
@@ -166,7 +165,6 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         car2Global(x, y, refYaw, refX, refY);
 
        
-       // // std::cout << "x and y: " << x << "," << y << std::endl;
 
         nextVals[0].push_back(x);
         nextVals[1].push_back(y);
@@ -174,7 +172,6 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
      }
 
     
-    // std::cout << "got the trajectory" << std::endl;
     prevRefVel = _refVel;
 
     return nextVals;

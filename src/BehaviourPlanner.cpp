@@ -223,7 +223,6 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 {
 	//initialise
 	_carCurr = &carCurr;
-	_prevSize = prevSize;
 
 
 	// cout << "\t" << "In Constuctor" << endl;
@@ -254,7 +253,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 			}
 			else
 			{
-				temp._distance = (s + _prevSize * 0.02 * speed) - _carCurr->_s;
+				temp._distance = (s + prevSize * 0.02 * speed) - _carCurr->_s;
 			}
 			_hashCar[lane].emplace_back(temp);
 		}
@@ -268,9 +267,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	// collise or not
 	_collide = collision();
 
-	if (_collide)
-		// cout << "\t" << "Collision: " << _collide << endl;
-
+	
 	// set next action
 	if (!_collide)
 	{
