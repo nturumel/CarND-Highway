@@ -81,12 +81,14 @@ int main()
                             
                             carCurr._bp->setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
                             pair<double, int> next =  carCurr._bp->returnNextAction();
+                           
+                            
                             vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
                                 next.first, next.second, end_path_s);
                             
-                            std::cout << "Expected speed and actual speed: " << next.first << "," << next.second << endl;
+                            std::cout << "Expected speed and actual speed: " << next.first << "," << (car_speed / 2.24) << std::endl;
                             
                             //END ------------------------
                             json msgJson;

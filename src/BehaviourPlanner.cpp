@@ -63,9 +63,10 @@ void BehaviourPlanner::nearestCar()
 
 	}
 
-	/*
-
+	
 	// debug info
+
+	/*
 	cout << "hashcars" << endl;
 	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
@@ -76,6 +77,7 @@ void BehaviourPlanner::nearestCar()
 		}
 		cout << endl;
 	}
+	*/
 	cout << "relcars" << endl;
 	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
@@ -83,11 +85,14 @@ void BehaviourPlanner::nearestCar()
 		for (int j = 0; j < _relCars[i].size(); ++j)
 		{
 			if (_relCars[i][j])
-				cout << _relCars[i][j]->_speed << ",";
+				cout << _relCars[i][j]->_distance << "," << _relCars[i][j]->_speed << ",";
 		}
 		cout << endl;
 	}
-	cout << "speeds" << endl;
+	cout << "end relcars" << endl;
+
+	/*
+	cout << "speeds" << endl;	
 	for (int i = 0; i < _maxLaneSpeeds.size(); ++i)
 	{
 		cout << "i: " << i << ":" << _maxLaneSpeeds[i] << endl;
