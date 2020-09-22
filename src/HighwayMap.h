@@ -54,10 +54,7 @@ public:
 	 double _maxVel = 47.5 / 2.24;
 	 double _maxS = 6945.554;
 
-	 
-
 	 string _filename = "../data/highway_map.csv";
-
 	 
 };
 

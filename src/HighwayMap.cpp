@@ -28,8 +28,6 @@ HighwayMap::HighwayMap()
         _wayPointsDx.push_back(d_x);
         _wayPointsDy.push_back(d_y);
     }
-
-    
     
 }
 
@@ -50,20 +48,20 @@ double HighwayMap::getLaneCenter(const int lane) const
 
 vector<double> HighwayMap::frenet2cartesian(const vector<double>& frenetPosition) const
 {
-    double s = fmod(frenetPosition[0], _maxS);
+    const double& s = frenetPosition[0];
     const double& d = frenetPosition[1];
 
-    return getXY(s, d, _wayPointsS, _wayPointsX, _wayPointsY);
+    return getXY(fmod(s, _maxS), d, _wayPointsS, _wayPointsX, _wayPointsY);
 }
 
 vector<double> HighwayMap::cartesian2frenet(const vector<double>& cartPosition) const
 {
     const double& x = cartPosition[0];
     const double& y = cartPosition[1];
-    const double& theta = cartPosition[3];
+    const double& theta = cartPosition[2];
+
 
     return getFrenet(x, y, theta, _wayPointsX, _wayPointsY);
-
 }
 
 

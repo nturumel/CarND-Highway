@@ -154,9 +154,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         _refVel = std::max(0.5, _refVel + acc);
         _refVel = std::min(_h->_maxVel, _refVel);
 
-        //debug 
-        _refVel = 15.0;
-
+        
         // std::cout << " Assumed speed  and Acceleration are: " << _refVel << "," << acc << std::endl;
 
         double N = (targetDist / (0.02 * _refVel));

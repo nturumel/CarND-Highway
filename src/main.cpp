@@ -89,7 +89,7 @@ int main()
                             vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                                10, 1, end_path_s);
+                                (47.5/2.24), 1, end_path_s);
                             
                             
                             //END ------------------------
