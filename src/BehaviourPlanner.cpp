@@ -7,15 +7,20 @@
 void BehaviourPlanner::nearestCar()
 {
 
-	// initialise maxSpeed vector
-	_maxLaneSpeeds = vector<double>(_h->_laneWidth, _h->_maxVel);
-	for (int i = 0; i < _h->_laneWidth; ++i)
-	{
-		_relCars.push_back({ nullptr,nullptr });
-	}
+	// initialise maxSpeed vector and rel car vector
+	_maxLaneSpeeds = vector<double>(_h->_nlane, _h->_maxVel);
+	_relCars = vector<vector<car*>>(_h->_nlane);
+
+	
+	// initialise inevstiagation constant
+	// the faster the car moves, the further out it needs to look
+	double investigationConstant = ((_carCurr->_speed - 0) * (0.7 / 21.2) + 0.8);
+
+	// debug 
+	cout << "Investigation Zone: " << investigationConstant * _redZone << endl;
 
 	// fill up rel vector
-	for (int i = 0; i < _h->_laneWidth; ++i)
+	for (int i = 0; i < _h->_nlane; ++i)
 	{
 		car* closestBack = nullptr;
 		car* closestFront = nullptr;
@@ -47,14 +52,11 @@ void BehaviourPlanner::nearestCar()
 
 		_relCars[i] = vector<car*>{ closestBack ,closestFront };
 
-		if (closestBack && closestFront && ((closestBack->_distance < 1.5 * _redZone)))
+		
+
+		if (closestFront && (closestFront->_distance < investigationConstant * _redZone))
 		{
-			_maxLaneSpeeds[i] = (closestBack->_speed + closestFront->_speed);
-			_maxLaneSpeeds[i] /= 2;
-		}
-		else if (closestFront && (closestFront->_distance < 1.5 * _redZone))
-		{
-			_maxLaneSpeeds[i] = closestFront->_speed;
+			_maxLaneSpeeds[i] = closestFront->_speed * 0.9;
 		}
 		else
 		{
@@ -89,8 +91,7 @@ void BehaviourPlanner::nearestCar()
 		}
 		cout << endl;
 	}
-	cout << "end relcars" << endl;
-
+	
 	/*
 	cout << "speeds" << endl;	
 	for (int i = 0; i < _maxLaneSpeeds.size(); ++i)
@@ -217,8 +218,8 @@ bool BehaviourPlanner::collision()
 {
 	car* front = _relCars[_carCurr->_lane][1];
 	if (front)
-	{
-		return ((_relCars[_carCurr->_lane][1])->_distance < _redZone);
+	{ 
+		return ((_relCars[_carCurr->_lane][1])->_distance < _redZone * 1.5);
 
 	}
 	return false;
@@ -258,7 +259,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 			}
 			else
 			{
-				temp._distance = (s + prevSize * 0.02 * speed) - _carCurr->_s;
+				temp._distance = (s + prevSize * 0.02 * speed) - _carCurr->_endS;
 			}
 			_hashCar[lane].emplace_back(temp);
 		}
@@ -280,11 +281,16 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	}
 	else
 	{
+		cout << "Collision imminent" << endl;
 		_next = choseAction();
 	}
 
 	// cout << "\t" << "Next action and end: " << _next.first << "," << _next.second << endl;
 
+	// clear _hashCars and reset
+	_hashCar.clear();
+	_maxLaneSpeeds.clear();
+	_relCars.clear();
 }
 
 pair<double, int> BehaviourPlanner::choseAction()
@@ -297,7 +303,7 @@ pair<double, int> BehaviourPlanner::choseAction()
 	{
 		return result;
 	}
-
+	
 	for (int i = 0; i < _h->_laneWidth; ++i)
 	{
 		if (i > _carCurr->_lane + 1 || i < _carCurr->_lane - 1)
@@ -339,6 +345,7 @@ pair<double, int> BehaviourPlanner::choseAction()
 		}
 
 	}
+	
 	return result;
 }
 
@@ -356,8 +363,6 @@ void BehaviourPlanner::streamIn()
 	in >> _speedFactor;
 	in >> _bufferFactor;
 	in >> _safetyFactor;
-	// cout << "The order is: " << "laneChangeFactor , speedChangeFactor , speedFactor , bufferFactor , safetyFactor" << endl;
-	// cout << "The values are: " << _laneChangeFactor << "," << _speedChangeFactor << "," << _speedFactor << "," << _bufferFactor << "," << _safetyFactor << endl;
 	in.close();
 }
 

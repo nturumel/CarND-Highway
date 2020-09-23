@@ -28,7 +28,7 @@ public:
     vector<vector<double>> generateTrajectory(
         const vector<double>& previous_path_x, const vector<double>& previous_path_y,
         const car& carCurr,
-        const double ref_vel, const int finalLane, const double endS);
+        const double ref_vel, const int finalLane);
 };
 
 

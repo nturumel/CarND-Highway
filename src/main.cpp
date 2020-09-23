@@ -76,7 +76,7 @@ int main()
                             */
 
                             //START ----------------------
-                            carCurr.setValues(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), car_speed);
+                            carCurr.setValues(car_x, car_y, car_s, car_d, deg2rad(car_yaw), (car_d / 4), (car_speed / 2.24), end_path_s, end_path_d);
                             
                             
                             carCurr._bp->setEnvironment(carCurr, previous_path_x.size(), sensor_fusion);
@@ -86,9 +86,9 @@ int main()
                             vector<vector<double>> nextTraj = carCurr._tp->generateTrajectory
                             (previous_path_x, previous_path_y, 
                                 carCurr, 
-                                next.first, next.second, end_path_s);
+                                next.first, next.second);
                             
-                            std::cout << "Expected speed and actual speed: " << next.first << "," << (car_speed / 2.24) << std::endl;
+                            std::cout << "Expected speed, lane and actual speed: " << next.first << "," << next.second << "," << (car_speed / 2.24) << std::endl;
                             
                             //END ------------------------
                             json msgJson;
