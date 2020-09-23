@@ -10,7 +10,11 @@
 #include <climits>
 #include <fstream>
 #include "car.h"
+#include <chrono>
+#include <ratio>
+#include <chrono>
 
+using namespace std::chrono;
 using namespace std;
 
 
@@ -20,6 +24,11 @@ private:
 	// behaviour planner
 	double _maxReturn = 1e6;
 	double _redZone = 30.0;
+	int _suggestedLane = 1;
+	bool _laneChanged = true;
+	steady_clock::time_point _lastLaneChange = steady_clock::now();
+	seconds _minTimeRequired{10};
+
 	double _laneChangeFactor = 0;
 	double  _speedChangeFactor = 0;
 	double _speedFactor = 0;
