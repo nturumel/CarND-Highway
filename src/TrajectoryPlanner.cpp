@@ -12,7 +12,7 @@ double TrajectoryPlanner::getAcc(double speed, double targetSpeed) const
 vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     const vector<double>& previous_path_x, const vector<double>& previous_path_y,
     const car& carCurr,
-    const double desiredVel, const int finalLane, const double endS)
+    const double desiredVel, const int finalLane)
 {
     // prev vel
     static double prevRefVel = 0.0;
@@ -71,7 +71,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         // convert x,y of the last point in prev
         // ref x and ref y 
         // debug
-        endPointS = endS;
+        endPointS = carCurr._endS;
     }
     else
     {

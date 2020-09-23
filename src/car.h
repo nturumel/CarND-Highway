@@ -15,6 +15,8 @@ public:
    int _lane = 0;
    double _speed = 0;
    double _distance = 0;
+   double _endS = 0;
+   double _endD = 0;
 
    BehaviourPlanner* _bp;
    TrajectoryPlanner* _tp;
@@ -22,7 +24,7 @@ public:
 
    car(BehaviourPlanner* bp = nullptr, TrajectoryPlanner* tp = nullptr) : _bp(bp), _tp(tp) {};
    
-   void setValues(double x, double y, double s, double d, double yaw, int lane, double speed)
+   void setValues(double x, double y, double s, double d, double yaw, int lane, double speed, double endS = 0, double endD = 0)
    {
 	   _x = (x);
 	   _y = (y);
@@ -31,6 +33,9 @@ public:
 	   _yaw = (yaw);
 	   _lane = (lane);
 	   _speed = (speed);
+	   _endS = (endS);
+	   _endD = (endD);
+
    };
  
 };
