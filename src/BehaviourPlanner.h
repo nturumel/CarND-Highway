@@ -22,7 +22,7 @@ class BehaviourPlanner
 {
 private:
 	// behaviour planner
-	double _maxReturn = 1e6;
+	double _maxReturn = 1e9;
 	double _redZone = 30.0;
 	int _suggestedLane = 1;
 	bool _laneChanged = true;
@@ -31,8 +31,8 @@ private:
 
 	double _laneChangeFactor = 1.0;
 	double  _speedChangeFactor = 1.0;
-	double _speedFactor = 0.01;
-	double _bufferFactor = 0.01;
+	double _speedFactor = 1.0;
+	double _bufferFactor = 1.0;
 	double _safetyFactor = 1;
 	
 	// highway

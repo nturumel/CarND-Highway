@@ -3,13 +3,12 @@
 #include "BehaviourPlanner.h"
 
 
-
 void BehaviourPlanner::nearestCar()
 {
 
 	// initialise maxSpeed vector and rel car vector
-	_maxLaneSpeeds = vector<double>(_h->_nlane, _h->_maxVel);
-	_relCars = vector<vector<car*>>(_h->_nlane);
+	_maxLaneSpeeds = vector<double>(_h->_nlanes, _h->_maxVel);
+	_relCars = vector<vector<car*>>(_h->_nlanes);
 
 	
 	// initialise inevstiagation constant
@@ -18,7 +17,7 @@ void BehaviourPlanner::nearestCar()
 
 
 	// fill up rel vector
-	for (int i = 0; i < _h->_nlane; ++i)
+	for (int i = 0; i < _h->_nlanes; ++i)
 	{
 		car* closestBack = nullptr;
 		car* closestFront = nullptr;
@@ -70,12 +69,15 @@ void BehaviourPlanner::nearestCar()
 double BehaviourPlanner::laneChangeCost(int lane)
 {
 	// if last lane change occured within 10 seconds return max
-	seconds delta = duration_cast<seconds> (steady_clock::now() - _lastLaneChange);
-	if (delta < _minTimeRequired)
+	if (lane != _carCurr->_lane)
 	{
-		return _maxReturn;
+		seconds delta = duration_cast<seconds> (steady_clock::now() - _lastLaneChange);
+		if (delta < _minTimeRequired)
+		{
+			return _maxReturn;
+		}
 	}
-
+	
 	return (fabs(_carCurr->_lane - lane));
 }
 double BehaviourPlanner::speedChangeCost(int lane)
@@ -104,22 +106,21 @@ double BehaviourPlanner::safetyCost(int lane)
 
 	// we only consider the cars in front for the current lane if there is a car within red zone return max
 	car* interestedVehicle = _relCars[_carCurr->_lane][1];
-	if (interestedVehicle && interestedVehicle->_distance < (_redZone / 2))
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (_redZone / 2))
 	{
 		return _maxReturn;
 	}
 
 	interestedVehicle = _relCars[lane][1];
-	if (interestedVehicle && interestedVehicle->_distance < (2 / 3) * _redZone)
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (_redZone / 2))
 	{
 		return _maxReturn;
 	}
 
 	interestedVehicle = _relCars[lane][0];
-	if (interestedVehicle && fabs(interestedVehicle->_distance) < (3 / 3) * _redZone)
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (_redZone / 2))
 	{
 		return _maxReturn;
-		
 	}
 
 	return 0;
@@ -142,14 +143,10 @@ double BehaviourPlanner::bufferCost(int lane)
 		{
 			cost *= (1 / fabs(back->_distance));
 		}
+		return cost;
 		
 	}
-
-	if (cost != 1)
-	{
-		return cost;
-	}
-
+	
 	return 0; // no vehicle in that lane
 }
 
@@ -184,7 +181,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 		double yaw = atan2(vy, vx);
 		int lane = (d / _h->_laneWidth);
 
-		if (0 <= lane && lane < _h->_nlane)
+		if (0 <= lane && lane < _h->_nlanes)
 		{
 			car temp;
 			temp.setValues(x, y, s, d, yaw, lane, speed);
@@ -238,7 +235,7 @@ pair<double, int> BehaviourPlanner::choseAction()
 		return result;
 	}
 	
-	for (int i = 0; i < _h->_nlane; ++i)
+	for (int i = 0; i < _h->_nlanes; ++i)
 	{
 		if (i > _carCurr->_lane + 1 || i < _carCurr->_lane - 1)
 		{
@@ -246,24 +243,16 @@ pair<double, int> BehaviourPlanner::choseAction()
 		}
 		else
 		{
-			double cost = 0;
-
-			double costAdd;
-			costAdd = laneChangeCost(i);
-			cost += _laneChangeFactor * costAdd;
-
-			costAdd = speedChangeCost(i);
-			cost += _speedChangeFactor * costAdd;
-
-			costAdd = speedCost(i);
-			cost += _speedFactor * costAdd;
-
-			costAdd = bufferCost(i);
-			cost += _bufferFactor * costAdd;
-
-
-			costAdd = safetyCost(i);
-			cost += _safetyFactor * costAdd;
+			// if safety is max, then we cannot consider it
+			if (safetyCost(i) == _maxReturn)
+			{
+				continue;
+			}
+			double cost = 
+				_laneChangeFactor * laneChangeCost(i) +
+				_speedChangeFactor * speedChangeCost(i) + 
+				_speedFactor * speedCost(i) + 
+				_bufferFactor * bufferCost(i);
 
 			if (max > cost)
 			{

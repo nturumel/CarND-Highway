@@ -49,7 +49,7 @@ public:
 
 	//highway constants
 	 int _laneWidth = 4;
-	 int _nlane = 3;
+	 int _nlanes = 3;
 	 double _maxAcc = 0.09;
 	 double _maxVel = 47.5 / 2.24;
 	 double _maxS = 6945.554;
