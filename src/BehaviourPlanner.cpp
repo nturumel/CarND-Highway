@@ -16,8 +16,9 @@ void BehaviourPlanner::nearestCar()
 	// the faster the car moves, the further out it needs to look
 	double investigationConstant = ((_carCurr->_speed - 0) * (0.7 / 21.2) + 0.8);
 
-	// debug 
-	cout << "Investigation Zone: " << investigationConstant * _redZone << endl;
+
+	//// debug 
+	//cout << "Investigation Zone: " << investigationConstant * _redZone << endl;
 
 	// fill up rel vector
 	for (int i = 0; i < _h->_nlane; ++i)
@@ -79,9 +80,9 @@ void BehaviourPlanner::nearestCar()
 		}
 		cout << endl;
 	}
-	*/
+	
 	cout << "relcars" << endl;
-	for (int i = 0; i < _h->_laneWidth; ++i)
+	for (int i = 0; i < _h->_nlane; ++i)
 	{
 		cout << "i: " << i << endl;
 		for (int j = 0; j < _relCars[i].size(); ++j)
@@ -92,7 +93,7 @@ void BehaviourPlanner::nearestCar()
 		cout << endl;
 	}
 	
-	/*
+	
 	cout << "speeds" << endl;	
 	for (int i = 0; i < _maxLaneSpeeds.size(); ++i)
 	{
@@ -106,6 +107,18 @@ void BehaviourPlanner::nearestCar()
 // cost functions
 double BehaviourPlanner::laneChangeCost(int lane)
 {
+	// if speed is more than 32, too fast fo lane change
+	if (_carCurr->_speed > 15)
+	{
+		return _maxReturn;
+	}
+	// if last lane change occured within 10 seconds return max
+	seconds delta = duration_cast<seconds> (steady_clock::now() - _lastLaneChange);
+	if (delta < _minTimeRequired)
+	{
+		return _maxReturn;
+	}
+
 	return (fabs(_carCurr->_lane - lane));
 }
 double BehaviourPlanner::speedChangeCost(int lane)
@@ -247,7 +260,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 		double yaw = atan2(vy, vx);
 		int lane = (d / _h->_laneWidth);
 
-		if (0 <= lane && lane < _h->_laneWidth)
+		if (0 <= lane && lane < _h->_nlane)
 		{
 			car temp;
 			temp.setValues(x, y, s, d, yaw, lane, speed);
@@ -275,14 +288,15 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 
 	
 	// set next action
-	if (!_collide)
+	if (_collide && _suggestedLane == _carCurr->_lane)
 	{
-		_next = make_pair(_maxLaneSpeeds[_carCurr->_lane], _carCurr->_lane);
+		// cout << "Collision imminent" << endl;
+		_next = choseAction();
 	}
 	else
 	{
-		cout << "Collision imminent" << endl;
-		_next = choseAction();
+		_next = make_pair(_maxLaneSpeeds[_suggestedLane], _suggestedLane);
+		
 	}
 
 	// cout << "\t" << "Next action and end: " << _next.first << "," << _next.second << endl;
@@ -297,14 +311,14 @@ pair<double, int> BehaviourPlanner::choseAction()
 {
 
 	double max = _maxReturn;
-	pair<double, int> result = make_pair(_maxLaneSpeeds[_carCurr->_lane], _carCurr->_lane);
+	pair<double, int> result = make_pair(_maxLaneSpeeds[_suggestedLane], _carCurr->_lane);
 
 	if (_carCurr->_speed < 10)
 	{
 		return result;
 	}
 	
-	for (int i = 0; i < _h->_laneWidth; ++i)
+	for (int i = 0; i < _h->_nlane; ++i)
 	{
 		if (i > _carCurr->_lane + 1 || i < _carCurr->_lane - 1)
 		{
@@ -346,6 +360,14 @@ pair<double, int> BehaviourPlanner::choseAction()
 
 	}
 	
+	// update _lastLane Change if lane change recommended 
+	if (result.second != _carCurr->_lane)
+	{
+		cout << "Lane Changed" << endl;
+		_suggestedLane = result.second;
+		_lastLaneChange = steady_clock::now();
+	}
+
 	return result;
 }
 

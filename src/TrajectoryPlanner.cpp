@@ -146,25 +146,23 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
     // // std::cout << "Speed is: " << prev_speed << std::endl;
 
+    
     while(nextVals[0].size() < _newSize)
     {
         acc = getAcc(_refVel, desiredVel);
-
+       
         // update the speed
         _refVel = std::max(0.5, _refVel + acc);
         _refVel = std::min(_h->_maxVel, _refVel);
 
-        
        
         double N = (targetDist / (0.02 * _refVel));
         double x = xAddOn + targetX / N;
         double y = sp(x);
         
         xAddOn = x;
-        
         car2Global(x, y, refYaw, refX, refY);
 
-       
 
         nextVals[0].push_back(x);
         nextVals[1].push_back(y);
