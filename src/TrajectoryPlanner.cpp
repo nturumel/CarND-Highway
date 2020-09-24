@@ -2,6 +2,7 @@
 
 double TrajectoryPlanner::getAcc(double speed, double targetSpeed) const
 {
+    
     if (speed < targetSpeed)
         return _h->_maxAcc;
     else if (speed > targetSpeed)
@@ -12,19 +13,19 @@ double TrajectoryPlanner::getAcc(double speed, double targetSpeed) const
 vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     const vector<double>& previous_path_x, const vector<double>& previous_path_y,
     const car& carCurr,
-    const double desiredVel, const int finalLane)
+    const double desiredVel, const int desiredLane)
 {
     // prev vel
     static double prevRefVel = 0.0;
-    
-    
+
+
     // other variables
     double refX = carCurr._x;
     double refY = carCurr._y;
     double refYaw = carCurr._yaw;
     int previousPathSize = static_cast<int> (previous_path_x.size());
+    _laneChange = (carCurr._lane != desiredLane);
 
-    
     // spline    
     vector<double> ptsX, ptsY;
 
@@ -63,7 +64,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         _refVel = prevRefVel;
     }
 
-    
+
     //In Frenet
     double endPointS;
     if (previousPathSize > 0)
@@ -77,46 +78,71 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     {
         endPointS = carCurr._s;
     }
-    double laneCenter = _h->getLaneCenter(finalLane);
-
-    vector<double> next_wp0 = _h->frenet2cartesian({ endPointS + 15, laneCenter });
-    vector<double> next_wp1 = _h->frenet2cartesian({ endPointS + 30, laneCenter });
-    vector<double> next_wp2 = _h->frenet2cartesian({ endPointS + 45, laneCenter });
-    vector<double> next_wp3 = _h->frenet2cartesian({ endPointS + 60, laneCenter });
-    vector<double> next_wp4 = _h->frenet2cartesian({ endPointS + 75, laneCenter });
-    vector<double> next_wp5 = _h->frenet2cartesian({ endPointS + 90, laneCenter });
-    vector<double> next_wp6 = _h->frenet2cartesian({ endPointS + 105, laneCenter });
-    vector<double> next_wp7 = _h->frenet2cartesian({ endPointS + 120, laneCenter });
-    vector<double> next_wp8 = _h->frenet2cartesian({ endPointS + 135, laneCenter });
-    
-
-    // std::cout << "Spline points created" << std::endl;
+    double laneCenter = _h->getLaneCenter(desiredLane);
+    if (!_laneChange)
+    {
+        vector<double> next_wp0 = _h->frenet2cartesian({ endPointS + 15, laneCenter });
+        vector<double> next_wp1 = _h->frenet2cartesian({ endPointS + 30, laneCenter });
+        vector<double> next_wp2 = _h->frenet2cartesian({ endPointS + 45, laneCenter });
+        vector<double> next_wp3 = _h->frenet2cartesian({ endPointS + 60, laneCenter });
+        vector<double> next_wp4 = _h->frenet2cartesian({ endPointS + 75, laneCenter });
+        vector<double> next_wp5 = _h->frenet2cartesian({ endPointS + 90, laneCenter });
+        vector<double> next_wp6 = _h->frenet2cartesian({ endPointS + 105, laneCenter });
+        vector<double> next_wp7 = _h->frenet2cartesian({ endPointS + 120, laneCenter });
+        vector<double> next_wp8 = _h->frenet2cartesian({ endPointS + 135, laneCenter });
 
 
-    ptsX.push_back(next_wp0[0]);
-    ptsX.push_back(next_wp1[0]);
-    ptsX.push_back(next_wp2[0]);
-    ptsX.push_back(next_wp3[0]);
-    ptsX.push_back(next_wp4[0]);
-    ptsX.push_back(next_wp5[0]);
-    ptsX.push_back(next_wp6[0]);
-    ptsX.push_back(next_wp7[0]);
-    ptsX.push_back(next_wp8[0]);
-    
-    ptsY.push_back(next_wp0[1]);
-    ptsY.push_back(next_wp1[1]);
-    ptsY.push_back(next_wp2[1]);
-    ptsY.push_back(next_wp3[1]);
-    ptsY.push_back(next_wp4[1]);
-    ptsY.push_back(next_wp5[1]);
-    ptsY.push_back(next_wp6[1]);
-    ptsY.push_back(next_wp7[1]);
-    ptsY.push_back(next_wp8[1]);
-    
-    //transform to car coordinates
-    global2Car(ptsX, ptsY, refYaw, refX, refY);
-   
-   
+        // std::cout << "Spline points created" << std::endl;
+
+
+        ptsX.push_back(next_wp0[0]);
+        ptsX.push_back(next_wp1[0]);
+        ptsX.push_back(next_wp2[0]);
+        ptsX.push_back(next_wp3[0]);
+        ptsX.push_back(next_wp4[0]);
+        ptsX.push_back(next_wp5[0]);
+        ptsX.push_back(next_wp6[0]);
+        ptsX.push_back(next_wp7[0]);
+        ptsX.push_back(next_wp8[0]);
+
+        ptsY.push_back(next_wp0[1]);
+        ptsY.push_back(next_wp1[1]);
+        ptsY.push_back(next_wp2[1]);
+        ptsY.push_back(next_wp3[1]);
+        ptsY.push_back(next_wp4[1]);
+        ptsY.push_back(next_wp5[1]);
+        ptsY.push_back(next_wp6[1]);
+        ptsY.push_back(next_wp7[1]);
+        ptsY.push_back(next_wp8[1]);
+
+        //transform to car coordinates
+        global2Car(ptsX, ptsY, refYaw, refX, refY);
+
+    }
+    else
+    {
+        vector<double> next_wp0 = _h->frenet2cartesian({ endPointS + 30, laneCenter });
+        vector<double> next_wp1 = _h->frenet2cartesian({ endPointS + 60, laneCenter });
+        vector<double> next_wp2 = _h->frenet2cartesian({ endPointS + 90, laneCenter });
+        
+
+
+        // std::cout << "Spline points created" << std::endl;
+
+
+        ptsX.push_back(next_wp0[0]);
+        ptsX.push_back(next_wp1[0]);
+        ptsX.push_back(next_wp2[0]);
+        
+
+        ptsY.push_back(next_wp0[1]);
+        ptsY.push_back(next_wp1[1]);
+        ptsY.push_back(next_wp2[1]);
+        
+        //transform to car coordinates
+        global2Car(ptsX, ptsY, refYaw, refX, refY);
+    }
+
          
     // create a spline
     tk::spline sp;
@@ -138,7 +164,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
     // spline spacing
     // note: straight line distance
-    double targetX = 15.0;
+    double targetX = 15.0 + static_cast<int>(_laneChange) * 15;
     double targetY = sp(targetX);
     double targetDist = sqrt(pow(targetX, 2) + pow(targetY, 2));
     double xAddOn = 0.0;

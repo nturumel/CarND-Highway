@@ -107,11 +107,6 @@ void BehaviourPlanner::nearestCar()
 // cost functions
 double BehaviourPlanner::laneChangeCost(int lane)
 {
-	// if speed is more than 32, too fast fo lane change
-	if (_carCurr->_speed > 15)
-	{
-		return _maxReturn;
-	}
 	// if last lane change occured within 10 seconds return max
 	seconds delta = duration_cast<seconds> (steady_clock::now() - _lastLaneChange);
 	if (delta < _minTimeRequired)
@@ -145,28 +140,42 @@ double BehaviourPlanner::safetyCost(int lane)
 		return 0;
 	}
 
-	// we only consider the cars in front
+	// we only consider the cars in front for the current lane
 
 	// cost of current lane, if there is a car within red zone return max
-	car* front = _relCars[_carCurr->_lane][1];
-	if (front && front->_distance < _redZone / 2)
+	car* interestedVehicle = _relCars[_carCurr->_lane][1];
+	if (interestedVehicle && interestedVehicle->_distance < _redZone / 2)
 	{
 		return _maxReturn;
 	}
 
-	front = _relCars[lane][1];
-	if (front)
+	interestedVehicle = _relCars[lane][1];
+	if (interestedVehicle)
 	{
-		if (fabs(front->_s) < _redZone)
+		if (fabs(interestedVehicle->_s) < _redZone)
 		{
 			return _maxReturn;
 		}
 		else
 		{
-			return (1 / front->_distance);
+			return 0;
 		}
 
 	}
+	interestedVehicle = _relCars[lane][0];
+	if (interestedVehicle)
+	{
+		if (fabs(interestedVehicle->_s) < _redZone)
+		{
+			return _maxReturn;
+		}
+		else
+		{
+			return 0;
+		}
+
+	}
+
 
 	return 0;
 
