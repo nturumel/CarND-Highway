@@ -176,7 +176,11 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     while(nextVals[0].size() < _newSize)
     {
         acc = getAcc(_refVel, desiredVel);
-       
+        
+        // not really required except for the curves... it seems, just make max 0.7 ...
+        if(_laneChange)
+            acc -= (0.02);
+
         // update the speed
         _refVel = std::max(0.5, _refVel + acc);
         _refVel = std::min(_h->_maxVel, _refVel);

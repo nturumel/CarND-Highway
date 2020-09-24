@@ -88,7 +88,6 @@ int main()
                                 carCurr, 
                                 next.first, next.second);
                             
-                            std::cout << "Expected speed, lane and actual speed, actual lane: " << next.first << "," << next.second << "," << (carCurr._speed) << "," << carCurr._lane << std::endl;
                             
                             //END ------------------------
                             json msgJson;
