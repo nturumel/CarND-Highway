@@ -116,7 +116,7 @@ double BehaviourPlanner::safetyCost(int lane)
 	}
 
 	interestedVehicle = _relCars[lane][0];
-	if (interestedVehicle && fabs(interestedVehicle->_distance) < (2 / 3) * _redZone)
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (3 / 3) * _redZone)
 	{
 		return _maxReturn;
 		
