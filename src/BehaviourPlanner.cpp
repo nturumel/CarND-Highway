@@ -93,7 +93,7 @@ void BehaviourPlanner::nearestCar()
 		cout << endl;
 	}
 	
-	
+	/*
 	cout << "speeds" << endl;	
 	for (int i = 0; i < _maxLaneSpeeds.size(); ++i)
 	{
@@ -150,32 +150,17 @@ double BehaviourPlanner::safetyCost(int lane)
 	}
 
 	interestedVehicle = _relCars[lane][1];
-	if (interestedVehicle)
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (2 / 3) * _redZone)
 	{
-		if (fabs(interestedVehicle->_s) < _redZone)
-		{
-			return _maxReturn;
-		}
-		else
-		{
-			return 0;
-		}
-
+		return _maxReturn;
 	}
+
 	interestedVehicle = _relCars[lane][0];
-	if (interestedVehicle)
+	if (interestedVehicle && fabs(interestedVehicle->_distance) < (2 / 3) * _redZone)
 	{
-		if (fabs(interestedVehicle->_s) < _redZone)
-		{
-			return _maxReturn;
-		}
-		else
-		{
-			return 0;
-		}
-
+		return _maxReturn;
+		
 	}
-
 
 	return 0;
 
@@ -194,11 +179,11 @@ double BehaviourPlanner::bufferCost(int lane)
 		double initialCost = 1;
 		if (front)
 		{
-			initialCost *= (1 / fabs(front->_s));
+			initialCost *= (1 / fabs(front->_distance));
 		}
 		if (back)
 		{
-			initialCost *= (1 / fabs(back->_s));
+			initialCost *= (1 / fabs(back->_distance));
 		}
 		if (initialCost > 1)
 		{
@@ -213,11 +198,11 @@ double BehaviourPlanner::bufferCost(int lane)
 		double finalCost = 1;
 		if (front)
 		{
-			finalCost *= (1 / fabs(front->_s));
+			finalCost *= (1 / fabs(front->_distance));
 		}
 		if (back)
 		{
-			finalCost *= (1 / fabs(back->_s));
+			finalCost *= (1 / fabs(back->_distance));
 		}
 		if (finalCost > 1)
 		{
@@ -275,7 +260,6 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 			temp.setValues(x, y, s, d, yaw, lane, speed);
 			if (lane == _carCurr->_lane && _carCurr->_s > s)
 			{
-				// cout << "Right Behind" << endl;
 				temp._distance = (s)-_carCurr->_s;
 
 			}
@@ -290,8 +274,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	// populate the lane vector
 	nearestCar();
 
-	// cout << "\t" << "Nearest Car" << endl;
-
+	
 	// collise or not
 	_collide = collision();
 
@@ -299,7 +282,6 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	// set next action
 	if (_collide && _suggestedLane == _carCurr->_lane)
 	{
-		// cout << "Collision imminent" << endl;
 		_next = choseAction();
 	}
 	else
@@ -308,8 +290,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 		
 	}
 
-	// cout << "\t" << "Next action and end: " << _next.first << "," << _next.second << endl;
-
+	
 	// clear _hashCars and reset
 	_hashCar.clear();
 	_maxLaneSpeeds.clear();
@@ -372,7 +353,20 @@ pair<double, int> BehaviourPlanner::choseAction()
 	// update _lastLane Change if lane change recommended 
 	if (result.second != _carCurr->_lane)
 	{
-		cout << "Lane Changed" << endl;
+		//debug
+		cout << "Lane Change suggested" << endl;
+		cout << "Suggested lane and speed, current lane and speed: " << result.second << "," << result.first << "<-" << _carCurr->_lane << "," << _carCurr->_speed << endl;
+		cout << "relcars" << endl;
+		for (int i = 0; i < _h->_nlane; ++i)
+		{
+			cout << "i: " << i << endl;
+			for (int j = 0; j < _relCars[i].size(); ++j)
+			{
+				if (_relCars[i][j])
+					cout << _relCars[i][j]->_distance << "," << _relCars[i][j]->_speed << ",";
+			}
+			cout << endl;
+		}
 		_suggestedLane = result.second;
 		_lastLaneChange = steady_clock::now();
 	}
