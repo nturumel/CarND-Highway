@@ -146,17 +146,11 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
 
     // // std::cout << "Speed is: " << prev_speed << std::endl;
 
-    double reduceForLaneChange = 1.0;
-    if (carCurr._lane != finalLane)
-    {
-        reduceForLaneChange = (0.7 / 0.9);
-    }
-
+    
     while(nextVals[0].size() < _newSize)
     {
         acc = getAcc(_refVel, desiredVel);
-        acc *= reduceForLaneChange;
-
+       
         // update the speed
         _refVel = std::max(0.5, _refVel + acc);
         _refVel = std::min(_h->_maxVel, _refVel);

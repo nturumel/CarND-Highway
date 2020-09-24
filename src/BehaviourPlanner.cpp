@@ -107,6 +107,11 @@ void BehaviourPlanner::nearestCar()
 // cost functions
 double BehaviourPlanner::laneChangeCost(int lane)
 {
+	// if speed is more than 32, too fast fo lane change
+	if (_carCurr->_speed > 15)
+	{
+		return _maxReturn;
+	}
 	// if last lane change occured within 10 seconds return max
 	seconds delta = duration_cast<seconds> (steady_clock::now() - _lastLaneChange);
 	if (delta < _minTimeRequired)
@@ -285,7 +290,7 @@ void BehaviourPlanner::setEnvironment(const car& carCurr, int prevSize, const ve
 	// set next action
 	if (_collide && _suggestedLane == _carCurr->_lane)
 	{
-		cout << "Collision imminent" << endl;
+		// cout << "Collision imminent" << endl;
 		_next = choseAction();
 	}
 	else
