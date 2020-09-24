@@ -92,9 +92,7 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         vector<double> next_wp8 = _h->frenet2cartesian({ endPointS + 135, laneCenter });
 
 
-        // std::cout << "Spline points created" << std::endl;
-
-
+      
         ptsX.push_back(next_wp0[0]);
         ptsX.push_back(next_wp1[0]);
         ptsX.push_back(next_wp2[0]);
@@ -125,9 +123,6 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
         vector<double> next_wp1 = _h->frenet2cartesian({ endPointS + 60, laneCenter });
         vector<double> next_wp2 = _h->frenet2cartesian({ endPointS + 90, laneCenter });
         
-
-
-        // std::cout << "Spline points created" << std::endl;
 
 
         ptsX.push_back(next_wp0[0]);
@@ -169,8 +164,6 @@ vector<vector<double>> TrajectoryPlanner::generateTrajectory(
     double targetDist = sqrt(pow(targetX, 2) + pow(targetY, 2));
     double xAddOn = 0.0;
     double acc = 0;
-
-    // // std::cout << "Speed is: " << prev_speed << std::endl;
 
     
     while(nextVals[0].size() < _newSize)

@@ -29,14 +29,12 @@ private:
 	steady_clock::time_point _lastLaneChange = steady_clock::now();
 	seconds _minTimeRequired{10};
 
-	double _laneChangeFactor = 0;
-	double  _speedChangeFactor = 0;
-	double _speedFactor = 0;
-	double _bufferFactor = 0;
-	double _safetyFactor = 0;
-	// this is temporary the weights will be fixed
-	void streamIn();
-
+	double _laneChangeFactor = 1.0;
+	double  _speedChangeFactor = 1.0;
+	double _speedFactor = 0.01;
+	double _bufferFactor = 0.01;
+	double _safetyFactor = 1;
+	
 	// highway
 	const HighwayMap* _h;
 
