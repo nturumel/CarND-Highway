@@ -15,9 +15,9 @@ class TrajectoryPlanner
 {
 private:
     // trajectory planner
-    int _maxUsePrev = 50;
     double _newSize = 50;
     double _refVel = 0.0;
+    bool _laneChange = false;
 
     double getAcc(double speed, double targetSpeed) const;
     const HighwayMap* _h;
