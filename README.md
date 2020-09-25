@@ -206,7 +206,7 @@ The car is able to successfully navigate the track, it maintains good speed, and
 
 https://youtu.be/SHhATswKndI
 
-![Highway](.\Highway.gif)
+![Highway](Highway.gif)
 
 #### Improvements
 
