@@ -8,9 +8,15 @@ set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 
 set(sources src/main.cpp \\
+<<<<<<< HEAD
             src/spline.cpp \\
 	    src/helpers.cpp \\
             src/HighwayMap.cpp \\
+=======
+			src/spline.cpp \\
+			src/Global.cpp \\
+            src/helpers.cpp \\
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
             src/BehaviourPlanner.cpp \\
             src/TrajectoryPlanner.cpp)
 

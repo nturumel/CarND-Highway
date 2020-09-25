@@ -31,9 +31,13 @@
 #include <cassert>
 #include <vector>
 #include <algorithm>
+<<<<<<< HEAD
 #include <iostream>
 
 using namespace std;
+=======
+
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
 // unnamed namespace only because the implementation is in this
 // header file and we don't want to export symbols to the obj files
@@ -278,6 +282,10 @@ void spline::set_boundary(spline::bd_type left, double left_value,
 void spline::set_points(const std::vector<double>& x,
     const std::vector<double>& y, bool cubic_spline)
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
     assert(x.size() == y.size());
     assert(x.size() > 2);
     m_x = x;

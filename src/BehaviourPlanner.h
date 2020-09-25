@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include "helpers.h"
 #include "json.hpp"
+<<<<<<< HEAD
 #include "HighwayMap.h"
 #include <math.h>
 #include <climits>
@@ -16,11 +17,22 @@
 
 using namespace std::chrono;
 using namespace std;
+=======
+#include <math.h>
+#include <climits>
+#include <fstream>
+#include "Global.h"
+#include "car.h"
+
+using namespace std;
+using namespace highway;
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
 
 class BehaviourPlanner
 {
 private:
+<<<<<<< HEAD
 	// behaviour planner
 	double _maxReturn = 1e9;
 	double _redZone = 30.0;
@@ -40,6 +52,10 @@ private:
 
 	unordered_map <int, vector<car>> _hashCar;
 	const car* _carCurr;
+=======
+	unordered_map <int, vector<car>> _hashCar;
+	car& _carCurr;
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 	vector <double> _maxLaneSpeeds;
 	vector<vector<car*>> _relCars;
 
@@ -71,7 +87,14 @@ private:
 
 
 public:
+<<<<<<< HEAD
 	BehaviourPlanner(const HighwayMap* h);
 	void setEnvironment(const car& carCurr, int prevSize, const vector<vector<double>>& sensor_fusion);
 	pair<double, int> returnNextAction();
+=======
+	BehaviourPlanner(car& carCurr, int prevSize, vector<vector<double>>& sensor_fusion);
+	pair<double, int> returnNextAction();
+
+	
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 };

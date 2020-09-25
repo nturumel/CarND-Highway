@@ -1,9 +1,26 @@
+<<<<<<< HEAD
 # CarND-Path-Planning-Project (Self-Driving Car Engineer Nanodegree Program)
 ### Project Description
 
 This Project is set on a virtual environment consisting of a track and multiple vehicles. The track is 6946m long, has 6 lanes, each 4m wide, 3 on each side of the yellow line. There is one vehicle on the track that we control. The rest of the traffic is populated at random locations, have speeds ranging from 40 to 60 MPH and there behavior is controlled by the simulator. 
 
 ### Goals
+=======
+<<<<<<< HEAD
+# CarND-Path-Planning-Project
+Self-Driving Car Engineer Nanodegree Program
+   
+### Simulator.
+You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
+
+To run the simulator on Mac/Linux, first make the binary file executable with the following command:
+```shell
+sudo chmod u+x {simulator_file_name}
+```
+
+### Goals
+In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
 1.  Navigate our car safely across the track.
 2. Strictly adhere to the speed limit of 50 MPH.
@@ -128,7 +145,28 @@ The solution consists of two parts. The behavior planner and the trajectory plan
 
 ​	corner, we decelerate. A spline is generated from the car's current d, s value to a the d value of the desired lane's center and a suitable
 
+<<<<<<< HEAD
 ​	s value ahead. Then the following linear interpolation technique is used to get the set of x and y coordinates to move the car.
+=======
+* cmake >= 3.5
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.org/)
+* [uWebSockets](https://github.com/uWebSockets/uWebSockets)
+  * Run either `install-mac.sh` or `install-ubuntu.sh`.
+  * If you install from source, checkout to commit `e94b6e1`, i.e.
+    ```
+    git clone https://github.com/uWebSockets/uWebSockets 
+    cd uWebSockets
+    git checkout e94b6e1
+    ```
+>>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
 ​	
 
@@ -177,3 +215,6 @@ https://youtu.be/SHhATswKndI
 
 
 
+=======
+# Highway_Driving
+>>>>>>> 93356ce928794ccfd44c03ea86f73189dfa51de8
