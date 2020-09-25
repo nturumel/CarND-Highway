@@ -168,6 +168,8 @@ The car is able to successfully navigate the track, it maintains good speed, and
 
 https://youtu.be/SHhATswKndI
 
+![Highway](.\Highway.gif)
+
 #### Improvements
 
 1.  The car cannot do two successive lane changes.
