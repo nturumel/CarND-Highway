@@ -1,4 +1,0 @@
-Scanning dependencies of target path_planning
-[ 50%] Building CXX object CMakeFiles/path_planning.dir/src/main.cpp.o
-[100%] Linking CXX executable path_planning
-[100%] Built target path_planning
