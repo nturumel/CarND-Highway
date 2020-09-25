@@ -52,11 +52,7 @@ vector<double> getXY(double s, double d,
     const vector<double>& maps_y);
 
 void global2Car(vector<double>& ptsx, vector<double>& ptsy, double refYaw, double refX, double refY);
-<<<<<<< HEAD
 void car2Global(double& x, double& y, double refYaw, double refX, double refY);
-=======
-void car2Global(double x, double y, double refYaw, double refX, double refY);
->>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
 
 #endif  // HELPERS_H

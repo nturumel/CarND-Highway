@@ -157,7 +157,6 @@ void global2Car(vector<double>& ptsx, vector<double>& ptsy, double refYaw, doubl
     }
 }
 
-<<<<<<< HEAD
 void car2Global(double& x, double& y, double refYaw, double refX, double refY)
 {
     double xRef = x;
@@ -165,12 +164,6 @@ void car2Global(double& x, double& y, double refYaw, double refX, double refY)
 
     x = (xRef * cos(refYaw) - yRef * sin(refYaw));
     y = (xRef * sin(refYaw) + yRef * cos(refYaw));
-=======
-void car2Global(double x, double y, double refYaw, double refX, double refY)
-{
-    x = (x * cos(refYaw) - y * sin(refYaw));
-    y = (x * sin(refYaw) + y * cos(refYaw));
->>>>>>> 438f8d990020bfd1fcec447adb2653dbd9116285
 
     x += refX;
     y += refY;
