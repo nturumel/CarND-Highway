@@ -97,16 +97,18 @@ The simulator provides us with sensing data. The sensing data is a 2D vector of 
 
 The simulator usually asks for the next set of instructions before completely executing the previous set. We get access to the following data:
 
-| ["previous_path_x"] | The previous list of x points previously given to the simulator |
+| Name                | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
+| ["previous_path_x"] | The previous list of x points previously given to the simulator |
 | ["previous_path_y"] | The previous list of y points previously given to the simulator |
 
 #### 	Main car's localization Data (No Noise):
 
 We get access to the car's localization data:
 
-| ["x"]     | The car's x position in map coordinates    |
+| Name      | Description                                |
 | --------- | ------------------------------------------ |
+| ["x"]     | The car's x position in map coordinates    |
 | ["y"]     | The car's y position in map coordinates    |
 | ["s"]     | The car's s position in frenet coordinates |
 | ["d"]     | The car's d position in frenet coordinates |
@@ -119,8 +121,9 @@ We get access to the car's localization data:
 
 We also have access to the location that the car will after the completion of the previous instruction.
 
+| Name           | Description                                     |
+| :------------- | ----------------------------------------------- |
 | ["end_path_s"] | The previous list's last point's frenet s value |
-| -------------- | ----------------------------------------------- |
 | ["end_path_d"] | The previous list's last point's frenet d value |
 
 ### Solution:
@@ -135,8 +138,9 @@ Immediately upon receiving the sensing data, the Behavior planner calculates a s
 
 The behavior planner calculates the best possible action based on the following costs:
 
-| Lane Change Cost:  | The car cannot change lane within 10 seconds of a previous lane change. As changing lanes affects comfort, it returns a value based on the difference between the current lane and intended lane. |
+| Name               | Description                                                  |
 | :----------------- | ------------------------------------------------------------ |
+| Lane Change Cost:  | The car cannot change lane within 10 seconds of a previous lane change. As changing lanes affects comfort, it returns a value based on the difference between the current lane and intended lane. |
 | Speed Change Cost: | This returns the cost of the difference between the current speed and the target speed of recommended action. |
 | Speed Cost:        | We want to drive fast. This cost returns a lower cost if we are travelling close to the maximum allowable speed, and a higher cost if we are driving really slow. |
 | Safety Cost:       | This is perhaps the most important cost, a lane change will not be considered if this cost evaluation does not return 0. It considers if the vehicle in front in the current lane is too close and if the closest front and back vehicle are too close in the intended . |
