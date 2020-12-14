@@ -156,11 +156,7 @@ The solution consists of two parts. The behavior planner and the trajectory plan
 
 #### 	Behavior Planner:
 
-The behavior planner takes in the sensing information and our car's localization data, and suggests the most suitable action, intended lane and intended speed.
-
-Immediately upon receiving the sensing data, the Behavior planner calculates a suitable speed for each lane, that is the max speed the car can safely travel.
-
-The behavior planner calculates the best possible action based on the following costs:
+The behavior planner takes in the sensing information and our car's localization data, and suggests the most suitable action, intended lane and intended speed. Immediately upon receiving the sensing data, the Behavior planner calculates a suitable speed for each lane, that is the max speed the car can safely travel. The behavior planner calculates the best possible action based on the following costs:
 
 | Name               | Description                                                  |
 | :----------------- | ------------------------------------------------------------ |
