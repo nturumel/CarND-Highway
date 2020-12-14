@@ -28,10 +28,6 @@
 
 This Project is set on a virtual environment consisting of a track and multiple vehicles. The track is 6946m long, has 6 lanes, each 4m wide, 3 on each side of the yellow line. There is one vehicle on the track that we control. The rest of the traffic is populated at random locations, have speeds ranging from 40 to 60 MPH and there behavior is controlled by the simulator. 
 
-# CarND-Path-Planning-Project
-
-Self-Driving Car Engineer Nanodegree Program
-
 ### Simulator.
 
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
